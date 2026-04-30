@@ -23,10 +23,11 @@ jobs:
         with:
           toolchain: 1.75
 
-      - name: Install vcpkg
-        run: |
-          git clone https://github.com/microsoft/vcpkg.git $env:VCPKG_ROOT
-          $env:VCPKG_ROOT/scripts/bootstrap-vcpkg.bat -disableMetrics
+      - name: Setup vcpkg
+        uses: lukka/run-vcpkg@v11
+        with:
+          vcpkgDirectory: C:\vcpkg
+          vcpkgGitCommitId: 6f29f12e82a8293156836ad81cc9bf5af41fe836
 
       - name: Build Flutter Windows
         run: |
