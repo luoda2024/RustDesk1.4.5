@@ -7,11 +7,21 @@ on:
   workflow_dispatch:
 
 jobs:
+  generate-bridge:
+    uses: ./.github/workflows/bridge.yml
+
   build-windows:
     runs-on: windows-2022
+    needs: generate-bridge
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Restore bridge files
+        uses: actions/download-artifact@master
+        with:
+          name: bridge-artifact
+          path: ./
 
       - name: Export GitHub Actions cache environment variables
         uses: actions/github-script@v6
