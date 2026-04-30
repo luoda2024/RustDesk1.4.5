@@ -20,13 +20,17 @@ jobs:
           channel: "stable"
 
       - name: Get Flutter dependencies
-        run: flutter pub get
+        run: |
+          cd flutter
+          flutter pub get
 
       - name: Build Windows EXE
-        run: flutter build windows --release
+        run: |
+          cd flutter
+          flutter build windows --release
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
           name: luoda-exe
-          path: build/windows/x64/runner/Release/
+          path: flutter/build/windows/x64/runner/Release/
