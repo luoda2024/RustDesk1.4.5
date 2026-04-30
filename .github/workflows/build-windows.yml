@@ -35,6 +35,7 @@ jobs:
           cd flutter
           flutter config --no-analytics
           flutter precache --windows
+          flutter pub get
           flutter build windows --release --no-pub
         env:
           VCPKG_ROOT: C:\vcpkg
