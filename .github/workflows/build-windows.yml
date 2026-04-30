@@ -26,8 +26,8 @@ jobs:
 
       - name: Install vcpkg
         run: |
-          git clone https://github.com/microsoft/vcpkg.git $env:VCPKG_ROOT
-          & "$env:VCPKG_ROOT/scripts/bootstrap-vcpkg.bat" -disableMetrics
+          git clone https://github.com/microsoft/vcpkg.git C:\vcpkg
+          C:\vcpkg\scripts\bootstrap-vcpkg.bat -disableMetrics
 
       - name: Build Flutter Windows
         run: |
