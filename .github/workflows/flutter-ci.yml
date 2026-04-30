@@ -9,7 +9,6 @@ on:
   push:
     branches:
       - master
-      - luoda-custom
     paths-ignore:
       - ".github/**"
       - "docs/**"
@@ -23,5 +22,3 @@ jobs:
     uses: ./.github/workflows/flutter-build.yml
     with:
       upload-artifact: true
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
