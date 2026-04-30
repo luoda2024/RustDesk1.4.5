@@ -1831,6 +1831,13 @@ pub fn load_custom_client() {
             .entry("allow-hide-cm".to_string())
             .or_insert("Y".to_string());
     }
+    // Disable auto update by default
+    {
+        let mut defaults = config::DEFAULT_SETTINGS.write().unwrap();
+        defaults
+            .entry(config::keys::OPTION_ALLOW_AUTO_UPDATE.to_string())
+            .or_insert("N".to_string());
+    }
 }
 
 fn read_custom_client_advanced_settings(
