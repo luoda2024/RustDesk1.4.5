@@ -3,6 +3,7 @@ name: Build Windows EXE
 on:
   push:
     branches:
+      - master
       - luoda-custom
   workflow_dispatch:
 
