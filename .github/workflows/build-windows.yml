@@ -1,0 +1,45 @@
+name: Build Windows EXE
+
+on:
+  push:
+    branches:
+      - luoda-custom
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-2022
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.24.5
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.75
+
+      - name: Install vcpkg
+        run: |
+          git clone https://github.com/microsoft/vcpkg.git $env:VCPKG_ROOT
+          $env:VCPKG_ROOT/scripts/bootstrap-vcpkg.bat -disableMetrics
+
+      - name: Build Flutter Windows
+        run: |
+          cd flutter
+          flutter config --no-analytics
+          flutter precache --windows
+          flutter build windows --release --no-pub
+        env:
+          VCPKG_ROOT: C:\vcpkg
+          VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+
+      - name: Upload EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: luoda-windows-x86_64
+          path: flutter/build/windows/x64/runner/Release/
