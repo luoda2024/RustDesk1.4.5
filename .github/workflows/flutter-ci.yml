@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - master
+      - luoda-custom
     paths-ignore:
       - ".github/**"
       - "docs/**"
