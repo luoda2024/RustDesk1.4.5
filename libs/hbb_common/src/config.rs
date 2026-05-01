@@ -89,13 +89,13 @@ lazy_static::lazy_static! {
 pub const LINK_DOCS_HOME: &str = "https://dicad.cn/docs/en/";
 pub const LINK_DOCS_X11_REQUIRED: &str = "https://dicad.cn/docs/en/manual/linux/#x11-required";
 pub const LINK_HEADLESS_LINUX_SUPPORT: &str =
-    "https://github.com/rustdesk/rustdesk/wiki/Headless-Linux-Support";
+    "https://github.com/luoda/luoda/wiki/Headless-Linux-Support";
 
 lazy_static::lazy_static! {
     pub static ref HELPER_URL: HashMap<&'static str, &'static str> = HashMap::from([
-        ("rustdesk docs home", LINK_DOCS_HOME),
-        ("rustdesk docs x11-required", LINK_DOCS_X11_REQUIRED),
-        ("rustdesk x11 headless", LINK_HEADLESS_LINUX_SUPPORT),
+        ("luoda docs home", LINK_DOCS_HOME),
+        ("luoda docs x11-required", LINK_DOCS_X11_REQUIRED),
+        ("luoda x11 headless", LINK_HEADLESS_LINUX_SUPPORT),
         ]);
 }
 
@@ -106,7 +106,7 @@ const CHARS: &[char] = &[
     'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 ];
 
-pub const RENDEZVOUS_SERVERS: &[&str] = &["rustdesk.dicad.cn"];
+pub const RENDEZVOUS_SERVERS: &[&str] = &["luoda.dicad.cn"];
 pub const RS_PUB_KEY: &str = "OQnLEvt6xjfPCUc1ozpTUiAxijwnn624zy0GH9IxX90=";
 
 pub const RENDEZVOUS_PORT: i32 = 21116;

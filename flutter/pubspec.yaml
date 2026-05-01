@@ -56,7 +56,7 @@ dependencies:
       url: https://github.com/luoda2024/window_manager
   desktop_multi_window:
     git:
-      url: https://github.com/luoda2024/rustdesk_desktop_multi_window
+      url: https://github.com/luoda2024/luoda_desktop_multi_window
   freezed_annotation: ^2.0.3
   flutter_custom_cursor: ^0.0.4
   window_size:
@@ -87,13 +87,13 @@ dependencies:
   flutter_keyboard_visibility: ^5.4.0
   texture_rgba_renderer:
     git:
-      url: https://github.com/rustdesk-org/flutter_texture_rgba_renderer
+      url: https://github.com/luoda-org/flutter_texture_rgba_renderer
       ref: 42797e0f03141dc2b585f76c64a13974508058b4
   percent_indicator: ^4.2.2
   dropdown_button2: ^2.0.0
   flutter_gpu_texture_renderer:
     git:
-      url: https://github.com/rustdesk-org/flutter_gpu_texture_renderer
+      url: https://github.com/luoda-org/flutter_gpu_texture_renderer
       ref: 08a471bb8ceccdd50483c81cdfa8b81b07b14b87
   uuid: ^3.0.7
   auto_size_text_field: ^2.2.1

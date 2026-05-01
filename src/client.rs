@@ -1108,7 +1108,7 @@ impl ClientClipboardHandler {
             if let Some(urls) = check_clipboard_files(&mut self.ctx, ClipboardSide::Client, false) {
                 if !urls.is_empty() {
                     #[cfg(target_os = "macos")]
-                    if crate::clipboard::is_file_url_set_by_rustdesk(&urls) {
+                    if crate::clipboard::is_file_url_set_by_luoda(&urls) {
                         return;
                     }
                     if self.is_file_required() {
@@ -3645,7 +3645,7 @@ pub trait Interface: Send + Clone + 'static + Sized {
             && ((cfg!(windows) && (errno == 10054 || err.contains("10054")))
                 || (!cfg!(windows) && (errno == 104 || err.contains("104")))
                 || (!err.contains("Failed") && err.contains("deadline")))
-        // deadline: https://github.com/rustdesk/rustdesk-server-pro/discussions/325, most likely comes from secure tcp timeout
+        // deadline: https://github.com/luoda/luoda-server-pro/discussions/325, most likely comes from secure tcp timeout
         {
             relay_hint = true;
             if !received {
@@ -3873,7 +3873,7 @@ async fn hc_connection_(
     mut rx: UnboundedReceiver<()>,
     token: String,
 ) -> ResultType<()> {
-    let mut timer = crate::rustdesk_interval(interval(crate::TIMER_OUT));
+    let mut timer = crate::luoda_interval(interval(crate::TIMER_OUT));
     let mut last_recv_msg = Instant::now();
     let mut keep_alive = crate::DEFAULT_KEEP_ALIVE;
 
