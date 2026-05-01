@@ -53,7 +53,7 @@
     53|pub type NotifyMessageBox = fn(String, String, String, String) -> dyn Future<Output = ()>;
     54|
     55|// the executable name of the portable version
-    56|pub const PORTABLE_APPNAME_RUNTIME_ENV_KEY: &str = "RUSTDESK_APPNAME";
+    56|pub const PORTABLE_APPNAME_RUNTIME_ENV_KEY: &str = "luoda_APPNAME";
     57|
     58|pub const PLATFORM_WINDOWS: &str = "Windows";
     59|pub const PLATFORM_LINUX: &str = "Linux";
