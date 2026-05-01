@@ -115,7 +115,6 @@ jobs:
           cd flutter
           flutter pub get
 
-        run: |
           flutter doctor -v
           flutter precache --windows
           Invoke-WebRequest -Uri https://github.com/rustdesk/engine/releases/download/main/windows-x64-release.zip -OutFile windows-x64-release.zip
