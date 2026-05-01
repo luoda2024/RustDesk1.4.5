@@ -257,7 +257,6 @@ jobs:
           mv ./Package/bin/x64/Release/en-us/Package.msi ../../SignOutput/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.msi
           sha256sum ../../SignOutput/rustdesk-*.msi
 
-      # - name: Sign rustdesk self-extracted file (disabled)
       - name: Publish Release
         uses: softprops/action-gh-release@v1
         env:
@@ -400,7 +399,6 @@ jobs:
           mkdir -p ./SignOutput
           mv ./target/release/rustdesk-portable-packer.exe ./SignOutput/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}-sciter.exe
 
-      # - name: Sign rustdesk self-extracted file (disabled)
       - name: Publish Release
         uses: softprops/action-gh-release@v1
         env:
