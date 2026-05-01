@@ -231,7 +231,7 @@ jobs:
           name: rustdesk-unsigned-windows-${{ matrix.job.arch }}
           path: rustdesk
 
-      # - name: Sign rustdesk files (disabled for testing)
+# Sign rustdesk files (disabled for testing)
         if: env.UPLOAD_ARTIFACT == 'true' && env.SIGN_BASE_URL != '-2'
         shell: bash
         run: |
@@ -399,7 +399,7 @@ jobs:
           name: rustdesk-unsigned-windows-${{ matrix.job.arch }}
           path: Release
 
-      # - name: Sign rustdesk files (disabled for testing)
+# Sign rustdesk files (disabled for testing)
         if: env.UPLOAD_ARTIFACT == 'true' && env.SIGN_BASE_URL != '-2'
         shell: bash
         run: |
