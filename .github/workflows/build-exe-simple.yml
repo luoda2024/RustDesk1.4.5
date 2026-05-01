@@ -24,6 +24,11 @@ jobs:
           cd flutter
           flutter pub get
 
+      - name: Generate FFI bridge
+        run: |
+          cd flutter
+          flutter pub run build_runner build --delete-conflicting-outputs
+
       - name: Build Windows EXE
         run: |
           cd flutter
