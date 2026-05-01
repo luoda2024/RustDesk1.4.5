@@ -578,7 +578,7 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("2FA code must be 6 digits.", "Ο κωδικός 2FA πρέπει να είναι 6ψήφιος."),
         ("Multiple Windows sessions found", ""),
         ("Please select the session you want to connect to", "Επιλέξτε τη συνεδρία στην οποία θέλετε να συνδεθείτε"),
-        ("powered_by_me", "Με την υποστήριξη της RustDesk"),
+        ("powered_by_me", "由 LUODA 提供支持"),
         ("outgoing_only_desk_tip", ""),
         ("preset_password_warning", "προειδοποίηση προκαθορισμένου κωδικού πρόσβασης"),
         ("Security Alert", "Ειδοποίηση ασφαλείας"),
