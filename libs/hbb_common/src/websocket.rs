@@ -409,14 +409,14 @@ mod tests {
         assert_eq!(check_ws("127.0.0.1:21115"), "ws://127.0.0.1:21118");
         assert_eq!(check_ws("127.0.0.1:21116"), "ws://127.0.0.1:21118");
         assert_eq!(check_ws("127.0.0.1:21117"), "ws://127.0.0.1:21119");
-        assert_eq!(check_ws("rustdesk.com:21115"), "ws://rustdesk.com/ws/id");
-        assert_eq!(check_ws("rustdesk.com:21116"), "ws://rustdesk.com/ws/id");
-        assert_eq!(check_ws("rustdesk.com:21117"), "ws://rustdesk.com/ws/relay");
+        assert_eq!(check_ws("dicad.cn:21115"), "ws://dicad.cn/ws/id");
+        assert_eq!(check_ws("dicad.cn:21116"), "ws://dicad.cn/ws/id");
+        assert_eq!(check_ws("dicad.cn:21117"), "ws://dicad.cn/ws/relay");
         // set relay-server without port
         Config::set_option("relay-server".to_string(), "127.0.0.1".to_string());
         Config::set_option(
             "api-server".to_string(),
-            "https://api.rustdesk.com".to_string(),
+            "https://api.dicad.cn".to_string(),
         );
         assert_eq!(
             check_ws("[0:0:0:0:0:0:0:1]:21115"),
@@ -430,11 +430,11 @@ mod tests {
             check_ws("[0:0:0:0:0:0:0:1]:21117"),
             "ws://[0:0:0:0:0:0:0:1]:21119"
         );
-        assert_eq!(check_ws("rustdesk.com:21115"), "wss://rustdesk.com/ws/id");
-        assert_eq!(check_ws("rustdesk.com:21116"), "wss://rustdesk.com/ws/id");
+        assert_eq!(check_ws("dicad.cn:21115"), "wss://dicad.cn/ws/id");
+        assert_eq!(check_ws("dicad.cn:21116"), "wss://dicad.cn/ws/id");
         assert_eq!(
-            check_ws("rustdesk.com:21117"),
-            "wss://rustdesk.com/ws/relay"
+            check_ws("dicad.cn:21117"),
+            "wss://dicad.cn/ws/relay"
         );
         // set relay-server with default port
         Config::set_option("relay-server".to_string(), "127.0.0.1:21117".to_string());
@@ -443,11 +443,11 @@ mod tests {
         assert_eq!(check_ws("127.0.0.1:21117"), "ws://127.0.0.1:21119");
         // set relay-server with custom port
         Config::set_option("relay-server".to_string(), "127.0.0.1:34567".to_string());
-        assert_eq!(check_ws("rustdesk.com:21115"), "wss://rustdesk.com/ws/id");
-        assert_eq!(check_ws("rustdesk.com:21116"), "wss://rustdesk.com/ws/id");
+        assert_eq!(check_ws("dicad.cn:21115"), "wss://dicad.cn/ws/id");
+        assert_eq!(check_ws("dicad.cn:21116"), "wss://dicad.cn/ws/id");
         assert_eq!(
-            check_ws("rustdesk.com:34567"),
-            "wss://rustdesk.com/ws/relay"
+            check_ws("dicad.cn:34567"),
+            "wss://dicad.cn/ws/relay"
         );
 
         // set custom-rendezvous-server without port
