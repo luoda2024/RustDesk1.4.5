@@ -66,7 +66,8 @@ impl RendezvousMediator {
         crate::hbbs_http::sync::start();
         #[cfg(target_os = "windows")]
         if crate::platform::is_installed() && crate::is_server() && !crate::is_custom_client() {
-            crate::updater::start_auto_update();
+            // 禁用自动更新 for LUODA custom client
+            // crate::updater::start_auto_update();
         }
         check_zombie();
         let server = new_server();
