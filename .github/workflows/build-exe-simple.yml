@@ -6,6 +6,9 @@ on:
       - luoda-custom
   workflow_dispatch:
 
+env:
+  VCPKG_BINARY_SOURCES: "clear;x-gha,readwrite"
+
 jobs:
   generate-bridge:
     runs-on: ubuntu-22.04
