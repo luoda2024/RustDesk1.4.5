@@ -127,12 +127,18 @@ jobs:
       - name: Patch flutter
         shell: bash
         run: |
-          FLUTTER_DIR=$(pwd)/../flutter_windows
           flutter doctor -v
           FLUTTER_DIR=$(dirname $(dirname $(which flutter)))
           cp .github/patches/flutter_3.24.4_dropdown_menu_enableFilter.diff $FLUTTER_DIR
           cd $FLUTTER_DIR
           git apply flutter_3.24.4_dropdown_menu_enableFilter.diff
+
+      - name: Install Rust toolchain for build
+        uses: dtolnay/rust-toolchain@v1
+        with:
+          toolchain: '1.75'
+          targets: x86_64-pc-windows-msvc
+          components: 'rustfmt'
 
       - name: Setup vcpkg with Github Actions binary cache
         uses: lukka/run-vcpkg@v11
@@ -153,11 +159,21 @@ jobs:
           cd flutter
           flutter pub get
 
+      - name: Build librustdesk.dll
+        shell: bash
+        run: |
+          cargo build --release --features flutter,hwcodec
+
       - name: Build Windows EXE
         shell: bash
         run: |
           cd flutter
           flutter build windows --release
+
+      - name: Copy librustdesk.dll to build output
+        shell: bash
+        run: |
+          cp ./target/release/librustdesk.dll ./flutter/build/windows/x64/runner/Release/
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
