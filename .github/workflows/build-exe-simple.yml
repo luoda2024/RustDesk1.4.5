@@ -62,9 +62,12 @@ jobs:
       - name: Install flutter rust bridge deps
         shell: bash
         run: |
+          set -e
           cargo install cargo-expand --version 1.0.95 --locked || true
           cargo install flutter_rust_bridge_codegen --version 1.80.1 --features 'uuid' --locked
-          cd flutter && sed -i -e 's/extended_text: 14.0.0/extended_text: 13.0.0/g' pubspec.yaml && flutter pub get
+          cd flutter
+          sed -i -e 's/extended_text: 14.0.0/extended_text: 13.0.0/g' pubspec.yaml
+          flutter pub get
 
       - name: Run flutter rust bridge
         run: |
