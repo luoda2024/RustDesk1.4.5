@@ -1,4 +1,4 @@
-[package]
+﻿[package]
 name = "rustdesk"
 version = "1.4.5"
 authors = ["rustdesk <info@rustdesk.com>"]
