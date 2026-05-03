@@ -158,7 +158,6 @@ jobs:
           VCPKG_DEFAULT_HOST_TRIPLET: x64-windows-static
         run: |
           $VCPKG_ROOT/vcpkg install --triplet x64-windows-static --x-install-root="$VCPKG_ROOT/installed"
-        continue-on-error: true
 
       - name: Get Flutter dependencies
         run: |
