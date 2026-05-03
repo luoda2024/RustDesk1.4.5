@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - luoda-custom
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 env:
