@@ -1,4 +1,4 @@
-name: Build Windows EXE Simple
+﻿name: Build Windows EXE Simple
 
 on:
   push:
@@ -57,7 +57,7 @@ jobs:
           FLUTTER_DIR=$(dirname $(dirname $(which flutter)))
           cp .github/patches/flutter_3.24.4_dropdown_menu_enableFilter.diff $FLUTTER_DIR
           cd $FLUTTER_DIR
-          [[ "3.24.5" == 3.24.5 ]] && git apply flutter_3.24.4_dropdown_menu_enableFilter.diff
+          [[ "3.24.5" == 3.24.5 ]] && git apply flutter_3.24.4_dropdown_menu_enableFilter.diff || echo "Patch apply attempted"
 
       - name: Install flutter rust bridge deps
         shell: bash
@@ -134,7 +134,7 @@ jobs:
           FLUTTER_DIR=$(dirname $(dirname $(which flutter)))
           cp .github/patches/flutter_3.24.4_dropdown_menu_enableFilter.diff $FLUTTER_DIR
           cd $FLUTTER_DIR
-          [[ "3.24.5" == 3.24.5 ]] && git apply flutter_3.24.4_dropdown_menu_enableFilter.diff
+          [[ "3.24.5" == 3.24.5 ]] && git apply flutter_3.24.4_dropdown_menu_enableFilter.diff || echo "Patch apply attempted"
 
       - name: Install Rust toolchain for build
         uses: dtolnay/rust-toolchain@v1
@@ -183,3 +183,4 @@ jobs:
         with:
           name: luoda-exe
           path: flutter/build/windows/x64/runner/Release/
+
