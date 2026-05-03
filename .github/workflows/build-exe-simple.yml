@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Install prerequisites
         run: |
@@ -35,26 +37,33 @@ jobs:
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@v1
         with:
-          toolchain: "1.75"
+          toolchain: '1.75'
           targets: x86_64-unknown-linux-gnu
-          components: "rustfmt"
-
+          components: 'rustfmt'
       - uses: Swatinem/rust-cache@v2
         with:
           prefix-key: bridge-ubuntu-22.04
 
       - name: Install flutter
-        uses: subosito/flutter-action@v2
+        uses: subosito/flutter-action@v2.12.0
         with:
-          channel: "stable"
-          flutter-version: "3.22.3"
+          channel: 'stable'
+          flutter-version: '3.24.5'
           cache: true
+
+      - name: Patch flutter
+        shell: bash
+        run: |
+          FLUTTER_DIR=$(dirname $(dirname $(which flutter)))
+          cp .github/patches/flutter_3.24.4_dropdown_menu_enableFilter.diff $FLUTTER_DIR
+          cd $FLUTTER_DIR
+          git apply flutter_3.24.4_dropdown_menu_enableFilter.diff
 
       - name: Install flutter rust bridge deps
         shell: bash
         run: |
           cargo install cargo-expand --version 1.0.95 --locked || true
-          cargo install flutter_rust_bridge_codegen --version 1.80.1 --features "uuid" --locked
+          cargo install flutter_rust_bridge_codegen --version 1.80.1 --features 'uuid' --locked
           cd flutter && sed -i -e 's/extended_text: 14.0.0/extended_text: 13.0.0/g' pubspec.yaml && flutter pub get
 
       - name: Run flutter rust bridge
@@ -78,8 +87,17 @@ jobs:
     runs-on: windows-2022
     needs: generate-bridge
     steps:
+      - name: Export GitHub Actions cache environment variables
+        uses: actions/github-script@v6
+        with:
+          script: |
+            core.exportVariable('ACTIONS_CACHE_URL', process.env.ACTIONS_CACHE_URL || '');
+            core.exportVariable('ACTIONS_RUNTIME_TOKEN', process.env.ACTIONS_RUNTIME_TOKEN || '');
+
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Restore bridge files
         uses: actions/download-artifact@master
@@ -87,11 +105,48 @@ jobs:
           name: bridge-artifact
           path: ./
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
+      - name: Install LLVM and Clang
+        uses: KyleMayes/install-llvm-action@v1
         with:
-          flutter-version: "3.24.5"
-          channel: "stable"
+          version: '15.0.6'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2.12.0
+        with:
+          flutter-version: '3.24.5'
+          channel: 'stable'
+
+      - name: Replace engine with rustdesk custom flutter engine
+        run: |
+          flutter doctor -v
+          flutter precache --windows
+          Invoke-WebRequest -Uri https://github.com/rustdesk/engine/releases/download/main/windows-x64-release.zip -OutFile windows-x64-release.zip
+          Expand-Archive -Path windows-x64-release.zip -DestinationPath windows-x64-release
+          mv -Force windows-x64-release/*  C:/hostedtoolcache/windows/flutter/stable-3.24.5-x64/bin/cache/artifacts/engine/windows-x64-release/
+
+      - name: Patch flutter
+        shell: bash
+        run: |
+          FLUTTER_DIR=$(pwd)/../flutter_windows
+          flutter doctor -v
+          FLUTTER_DIR=$(dirname $(dirname $(which flutter)))
+          cp .github/patches/flutter_3.24.4_dropdown_menu_enableFilter.diff $FLUTTER_DIR
+          cd $FLUTTER_DIR
+          git apply flutter_3.24.4_dropdown_menu_enableFilter.diff
+
+      - name: Setup vcpkg with Github Actions binary cache
+        uses: lukka/run-vcpkg@v11
+        with:
+          vcpkgDirectory: C:\vcpkg
+          vcpkgGitCommitId: 120deac3062162151622ca4860575a33844ba10b
+          doNotCache: false
+
+      - name: Install vcpkg dependencies
+        env:
+          VCPKG_DEFAULT_HOST_TRIPLET: x64-windows-static
+        run: |
+          $VCPKG_ROOT/vcpkg install --triplet x64-windows-static --x-install-root="$VCPKG_ROOT/installed"
+        continue-on-error: true
 
       - name: Get Flutter dependencies
         run: |
@@ -99,6 +154,7 @@ jobs:
           flutter pub get
 
       - name: Build Windows EXE
+        shell: bash
         run: |
           cd flutter
           flutter build windows --release
