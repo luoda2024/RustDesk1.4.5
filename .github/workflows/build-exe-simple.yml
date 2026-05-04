@@ -170,7 +170,7 @@ jobs:
             Get-ChildItem $env:VCPKG_ROOT -ErrorAction SilentlyContinue | Select-Object -First 20
             throw "vcpkg.exe not found"
           }
-          Write-Host "vcpkg.exe found, running install..."
+          Write-Host "vcpkg.exe found, running install (manifest mode without package arguments)..."
           & $vcpkgExe install --triplet x64-windows-static --x-install-root=(Join-Path $env:VCPKG_ROOT "installed")
           if ($LASTEXITCODE -ne 0) {
             Write-Host "ERROR: vcpkg install failed with exit code $LASTEXITCODE"
