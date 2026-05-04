@@ -155,7 +155,7 @@ jobs:
         with:
           vcpkgDirectory: C:\vcpkg
           vcpkgGitCommitId: 120deac3062162151622ca4860575a33844ba10b
-          doNotCache: false
+          doNotCache: true
 
       - name: Install vcpkg dependencies
         shell: pwsh
