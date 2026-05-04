@@ -1,4 +1,4 @@
-name: Build Windows EXE Simple
+﻿name: Build Windows EXE Simple
 
 on:
   push:
@@ -158,7 +158,7 @@ jobs:
       - name: Install vcpkg dependencies
         shell: bash
         run: |
-          "${VCPKG_ROOT}/vcpkg install --triplet x64-windows-static --x-install-root="${VCPKG_ROOT}/installed" --retry 3 --retry-delay 5
+          "${VCPKG_ROOT}/vcpkg install --triplet x64-windows-static --x-install-root=${VCPKG_ROOT}/installed --retry 3 --retry-delay 5
           ls "${VCPKG_ROOT}/installed/x64-windows-static/"
 
       - name: Get Flutter dependencies
