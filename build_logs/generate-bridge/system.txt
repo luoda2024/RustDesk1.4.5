@@ -1,0 +1,8 @@
+2026-05-03T20:39:47.0130000Z Requested labels: ubuntu-22.04
+2026-05-03T20:39:47.0130000Z Job defined at: luoda2024/RustDesk1.4.5/.github/workflows/build-exe-simple.yml@refs/tags/v1.4.5-luoda15
+2026-05-03T20:39:47.0130000Z Waiting for a runner to pick up this job...
+2026-05-03T20:39:47.0120000Z Evaluating generate-bridge.if
+2026-05-03T20:39:47.0120000Z Evaluating: success()
+2026-05-03T20:39:47.0120000Z Result: true
+2026-05-03T20:39:47.5050000Z Job is about to start running on the hosted runner: GitHub Actions 1000002527
+2026-05-03T20:39:47.5050000Z Job is waiting for a hosted runner to come online.

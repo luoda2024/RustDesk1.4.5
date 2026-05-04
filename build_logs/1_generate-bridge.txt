@@ -1,0 +1,1768 @@
+﻿2026-05-03T20:39:55.5767910Z Current runner version: '2.334.0'
+2026-05-03T20:39:55.5793019Z ##[group]Runner Image Provisioner
+2026-05-03T20:39:55.5793806Z Hosted Compute Agent
+2026-05-03T20:39:55.5794310Z Version: 20260213.493
+2026-05-03T20:39:55.5795200Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-03T20:39:55.5795906Z Build Date: 2026-02-13T00:28:41Z
+2026-05-03T20:39:55.5796560Z Worker ID: {6cd7bc51-8a32-4b65-82c7-d7acefabbeb7}
+2026-05-03T20:39:55.5797212Z Azure Region: eastus
+2026-05-03T20:39:55.5797861Z ##[endgroup]
+2026-05-03T20:39:55.5799245Z ##[group]Operating System
+2026-05-03T20:39:55.5799842Z Ubuntu
+2026-05-03T20:39:55.5800449Z 22.04.5
+2026-05-03T20:39:55.5800868Z LTS
+2026-05-03T20:39:55.5801317Z ##[endgroup]
+2026-05-03T20:39:55.5801867Z ##[group]Runner Image
+2026-05-03T20:39:55.5802419Z Image: ubuntu-22.04
+2026-05-03T20:39:55.5802885Z Version: 20260413.88.1
+2026-05-03T20:39:55.5804131Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20260413.88/images/ubuntu/Ubuntu2204-Readme.md
+2026-05-03T20:39:55.5805931Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20260413.88
+2026-05-03T20:39:55.5806953Z ##[endgroup]
+2026-05-03T20:39:55.5807975Z ##[group]GITHUB_TOKEN Permissions
+2026-05-03T20:39:55.5810199Z Contents: read
+2026-05-03T20:39:55.5810765Z Metadata: read
+2026-05-03T20:39:55.5811286Z Packages: read
+2026-05-03T20:39:55.5811832Z ##[endgroup]
+2026-05-03T20:39:55.5813859Z Secret source: Actions
+2026-05-03T20:39:55.5815074Z Prepare workflow directory
+2026-05-03T20:39:55.6197949Z Prepare all required actions
+2026-05-03T20:39:55.6234307Z Getting action download info
+2026-05-03T20:39:55.9411517Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-05-03T20:39:56.2047610Z Download action repository 'dtolnay/rust-toolchain@v1' (SHA:e97e2d8cc328f1b50210efc529dca0028893a2d9)
+2026-05-03T20:39:56.2802686Z Download action repository 'Swatinem/rust-cache@v2' (SHA:e18b497796c12c097a38f9edb9d0641fb99eee32)
+2026-05-03T20:39:56.5156875Z Download action repository 'subosito/flutter-action@v2.12.0' (SHA:2783a3f08e1baf891508463f8c6653c258246225)
+2026-05-03T20:39:56.6194211Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-05-03T20:39:57.0627481Z Getting action download info
+2026-05-03T20:39:57.1565798Z Download action repository 'actions/cache@v3' (SHA:6f8efc29b200d32929f49075959781ed54ec270c)
+2026-05-03T20:39:57.3827110Z Complete job name: generate-bridge
+2026-05-03T20:39:57.4509809Z ##[group]Run actions/checkout@v4
+2026-05-03T20:39:57.4510468Z with:
+2026-05-03T20:39:57.4510706Z   submodules: recursive
+2026-05-03T20:39:57.4511007Z   repository: luoda2024/RustDesk1.4.5
+2026-05-03T20:39:57.4511512Z   token: ***
+2026-05-03T20:39:57.4511748Z   ssh-strict: true
+2026-05-03T20:39:57.4511999Z   ssh-user: git
+2026-05-03T20:39:57.4512256Z   persist-credentials: true
+2026-05-03T20:39:57.4512544Z   clean: true
+2026-05-03T20:39:57.4512794Z   sparse-checkout-cone-mode: true
+2026-05-03T20:39:57.4513120Z   fetch-depth: 1
+2026-05-03T20:39:57.4513365Z   fetch-tags: false
+2026-05-03T20:39:57.4513625Z   show-progress: true
+2026-05-03T20:39:57.4513867Z   lfs: false
+2026-05-03T20:39:57.4514105Z   set-safe-directory: true
+2026-05-03T20:39:57.4514585Z env:
+2026-05-03T20:39:57.4515025Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:39:57.4515369Z ##[endgroup]
+2026-05-03T20:39:57.5650789Z Syncing repository: luoda2024/RustDesk1.4.5
+2026-05-03T20:39:57.5652686Z ##[group]Getting Git version info
+2026-05-03T20:39:57.5653476Z Working directory is '/home/runner/work/RustDesk1.4.5/RustDesk1.4.5'
+2026-05-03T20:39:57.5654293Z [command]/usr/bin/git version
+2026-05-03T20:39:57.5767033Z git version 2.53.0
+2026-05-03T20:39:57.5808556Z ##[endgroup]
+2026-05-03T20:39:57.5834996Z Temporarily overriding HOME='/home/runner/work/_temp/fb39fd3c-fcf0-49b5-ba8e-9b47d02b9f96' before making global git config changes
+2026-05-03T20:39:57.5836179Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-03T20:39:57.5842510Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/RustDesk1.4.5/RustDesk1.4.5
+2026-05-03T20:39:57.5884990Z Deleting the contents of '/home/runner/work/RustDesk1.4.5/RustDesk1.4.5'
+2026-05-03T20:39:57.5889395Z ##[group]Initializing the repository
+2026-05-03T20:39:57.5894970Z [command]/usr/bin/git init /home/runner/work/RustDesk1.4.5/RustDesk1.4.5
+2026-05-03T20:39:57.6062301Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-05-03T20:39:57.6063833Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-05-03T20:39:57.6065341Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-05-03T20:39:57.6066350Z hint: call:
+2026-05-03T20:39:57.6066912Z hint:
+2026-05-03T20:39:57.6067696Z hint: 	git config --global init.defaultBranch <name>
+2026-05-03T20:39:57.6068513Z hint:
+2026-05-03T20:39:57.6069470Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-05-03T20:39:57.6070959Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-05-03T20:39:57.6071957Z hint:
+2026-05-03T20:39:57.6072664Z hint: 	git branch -m <name>
+2026-05-03T20:39:57.6073351Z hint:
+2026-05-03T20:39:57.6074229Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-05-03T20:39:57.6079215Z Initialized empty Git repository in /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/.git/
+2026-05-03T20:39:57.6094303Z [command]/usr/bin/git remote add origin https://github.com/luoda2024/RustDesk1.4.5
+2026-05-03T20:39:57.6135142Z ##[endgroup]
+2026-05-03T20:39:57.6136004Z ##[group]Disabling automatic garbage collection
+2026-05-03T20:39:57.6140265Z [command]/usr/bin/git config --local gc.auto 0
+2026-05-03T20:39:57.6173247Z ##[endgroup]
+2026-05-03T20:39:57.6173875Z ##[group]Setting up auth
+2026-05-03T20:39:57.6183756Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-03T20:39:57.6218389Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-03T20:39:57.6821398Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-03T20:39:57.6826802Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-03T20:39:57.7065017Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-03T20:39:57.7104265Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-03T20:39:57.7353476Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-05-03T20:39:57.8213325Z ##[endgroup]
+2026-05-03T20:39:57.8215475Z ##[group]Fetching the repository
+2026-05-03T20:39:57.8223805Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +54a74bfe655d3d6902b6be7e3ededda88004d3eb:refs/tags/v1.4.5-luoda15
+2026-05-03T20:39:58.7722778Z From https://github.com/luoda2024/RustDesk1.4.5
+2026-05-03T20:39:58.7723950Z  * [new ref]         54a74bfe655d3d6902b6be7e3ededda88004d3eb -> v1.4.5-luoda15
+2026-05-03T20:39:58.7751970Z ##[endgroup]
+2026-05-03T20:39:58.7752737Z ##[group]Determining the checkout info
+2026-05-03T20:39:58.7754668Z ##[endgroup]
+2026-05-03T20:39:58.7760543Z [command]/usr/bin/git sparse-checkout disable
+2026-05-03T20:39:58.7801035Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-05-03T20:39:58.7826403Z ##[group]Checking out the ref
+2026-05-03T20:39:58.7829971Z [command]/usr/bin/git checkout --progress --force refs/tags/v1.4.5-luoda15
+2026-05-03T20:39:58.8772371Z Note: switching to 'refs/tags/v1.4.5-luoda15'.
+2026-05-03T20:39:58.8772846Z 
+2026-05-03T20:39:58.8773521Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-03T20:39:58.8774140Z changes and commit them, and you can discard any commits you make in this
+2026-05-03T20:39:58.8774970Z state without impacting any branches by switching back to a branch.
+2026-05-03T20:39:58.8775393Z 
+2026-05-03T20:39:58.8775651Z If you want to create a new branch to retain commits you create, you may
+2026-05-03T20:39:58.8776229Z do so (now or later) by using -c with the switch command. Example:
+2026-05-03T20:39:58.8776541Z 
+2026-05-03T20:39:58.8776683Z   git switch -c <new-branch-name>
+2026-05-03T20:39:58.8776896Z 
+2026-05-03T20:39:58.8777032Z Or undo this operation with:
+2026-05-03T20:39:58.8777234Z 
+2026-05-03T20:39:58.8777348Z   git switch -
+2026-05-03T20:39:58.8777521Z 
+2026-05-03T20:39:58.8777785Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-03T20:39:58.8778199Z 
+2026-05-03T20:39:58.8778967Z HEAD is now at 54a74bf fix: 添加tag触发器到workflow，确保tag push能触发构建
+2026-05-03T20:39:58.8784097Z ##[endgroup]
+2026-05-03T20:39:58.8785200Z ##[group]Setting up auth for fetching submodules
+2026-05-03T20:39:58.8790033Z [command]/usr/bin/git config --global http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-05-03T20:39:58.8824243Z [command]/usr/bin/git config --global --unset-all url.https://github.com/.insteadOf
+2026-05-03T20:39:58.8851949Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf git@github.com:
+2026-05-03T20:39:58.8880634Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf org-174583460@github.com:
+2026-05-03T20:39:58.8906347Z ##[endgroup]
+2026-05-03T20:39:58.8907031Z ##[group]Fetching submodules
+2026-05-03T20:39:58.8911100Z [command]/usr/bin/git submodule sync --recursive
+2026-05-03T20:39:58.9137604Z [command]/usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1 --recursive
+2026-05-03T20:39:58.9356810Z [command]/usr/bin/git submodule foreach --recursive git config --local gc.auto 0
+2026-05-03T20:39:58.9572672Z ##[endgroup]
+2026-05-03T20:39:58.9573506Z ##[group]Persisting credentials for submodules
+2026-05-03T20:39:58.9580184Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :"
+2026-05-03T20:39:58.9807001Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-03T20:39:59.0049112Z [command]/usr/bin/git submodule foreach --recursive git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'
+2026-05-03T20:39:59.0296679Z [command]/usr/bin/git submodule foreach --recursive git config --local --add 'url.https://github.com/.insteadOf' 'org-174583460@github.com:'
+2026-05-03T20:39:59.0534958Z ##[endgroup]
+2026-05-03T20:39:59.0572615Z [command]/usr/bin/git log -1 --format=%H
+2026-05-03T20:39:59.0594241Z 54a74bfe655d3d6902b6be7e3ededda88004d3eb
+2026-05-03T20:39:59.0770125Z ##[group]Run sudo apt-get install ca-certificates -y
+2026-05-03T20:39:59.0770609Z [36;1msudo apt-get install ca-certificates -y[0m
+2026-05-03T20:39:59.0770955Z [36;1msudo apt-get update -y[0m
+2026-05-03T20:39:59.0771242Z [36;1msudo apt-get install -y \[0m
+2026-05-03T20:39:59.0771517Z [36;1m  clang \[0m
+2026-05-03T20:39:59.0771727Z [36;1m  cmake \[0m
+2026-05-03T20:39:59.0771935Z [36;1m  curl \[0m
+2026-05-03T20:39:59.0772141Z [36;1m  gcc \[0m
+2026-05-03T20:39:59.0772338Z [36;1m  git \[0m
+2026-05-03T20:39:59.0772538Z [36;1m  g++ \[0m
+2026-05-03T20:39:59.0772750Z [36;1m  libclang-dev \[0m
+2026-05-03T20:39:59.0772995Z [36;1m  libgtk-3-dev \[0m
+2026-05-03T20:39:59.0773222Z [36;1m  llvm-dev \[0m
+2026-05-03T20:39:59.0773441Z [36;1m  nasm \[0m
+2026-05-03T20:39:59.0773650Z [36;1m  ninja-build \[0m
+2026-05-03T20:39:59.0773890Z [36;1m  pkg-config \[0m
+2026-05-03T20:39:59.0774306Z [36;1m  wget[0m
+2026-05-03T20:39:59.0842961Z shell: /usr/bin/bash -e {0}
+2026-05-03T20:39:59.0843289Z env:
+2026-05-03T20:39:59.0843541Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:39:59.0843855Z ##[endgroup]
+2026-05-03T20:40:09.0729838Z Reading package lists...
+2026-05-03T20:40:09.2638562Z Building dependency tree...
+2026-05-03T20:40:09.2655672Z Reading state information...
+2026-05-03T20:40:09.4266203Z ca-certificates is already the newest version (20240203~22.04.1).
+2026-05-03T20:40:09.4267333Z 0 upgraded, 0 newly installed, 0 to remove and 14 not upgraded.
+2026-05-03T20:40:09.5257602Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-05-03T20:40:09.5727050Z Hit:6 https://packages.microsoft.com/repos/azure-cli jammy InRelease
+2026-05-03T20:40:09.5736261Z Hit:2 http://azure.archive.ubuntu.com/ubuntu jammy InRelease
+2026-05-03T20:40:09.5740355Z Get:7 https://packages.microsoft.com/ubuntu/22.04/prod jammy InRelease [3632 B]
+2026-05-03T20:40:09.5762538Z Get:3 http://azure.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+2026-05-03T20:40:09.5799599Z Get:4 http://azure.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+2026-05-03T20:40:09.5825047Z Get:5 http://azure.archive.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+2026-05-03T20:40:09.5890201Z Get:8 https://dl.google.com/linux/chrome-stable/deb stable InRelease [1825 B]
+2026-05-03T20:40:09.7551338Z Get:9 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main arm64 Packages [163 kB]
+2026-05-03T20:40:09.7673119Z Get:10 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main armhf Packages [21.7 kB]
+2026-05-03T20:40:09.7718472Z Get:11 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main amd64 Packages [344 kB]
+2026-05-03T20:40:09.8396597Z Get:12 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [3476 kB]
+2026-05-03T20:40:09.8586484Z Get:13 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [523 kB]
+2026-05-03T20:40:09.8623647Z Get:14 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [19.8 kB]
+2026-05-03T20:40:09.8636086Z Get:15 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [5895 kB]
+2026-05-03T20:40:09.8922539Z Get:16 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [1119 kB]
+2026-05-03T20:40:09.8984516Z Get:17 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 c-n-f Metadata [600 B]
+2026-05-03T20:40:09.8993654Z Get:18 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1268 kB]
+2026-05-03T20:40:09.9059772Z Get:19 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [316 kB]
+2026-05-03T20:40:09.9084226Z Get:20 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [30.5 kB]
+2026-05-03T20:40:09.9095157Z Get:21 http://azure.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [71.3 kB]
+2026-05-03T20:40:09.9530269Z Get:22 http://azure.archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [15.5 kB]
+2026-05-03T20:40:09.9541623Z Get:23 http://azure.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [756 B]
+2026-05-03T20:40:09.9549098Z Get:24 http://azure.archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [94.5 kB]
+2026-05-03T20:40:09.9566726Z Get:25 http://azure.archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [11.4 kB]
+2026-05-03T20:40:09.9570487Z Get:26 http://azure.archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [412 B]
+2026-05-03T20:40:09.9582591Z Get:27 http://azure.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [33.5 kB]
+2026-05-03T20:40:09.9592400Z Get:28 http://azure.archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [16.9 kB]
+2026-05-03T20:40:09.9598188Z Get:29 http://azure.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [676 B]
+2026-05-03T20:40:10.0124320Z Get:30 http://azure.archive.ubuntu.com/ubuntu jammy-security/main amd64 Packages [3174 kB]
+2026-05-03T20:40:10.0338691Z Get:31 http://azure.archive.ubuntu.com/ubuntu jammy-security/main Translation-en [448 kB]
+2026-05-03T20:40:10.0353046Z Get:32 http://azure.archive.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [14.3 kB]
+2026-05-03T20:40:10.0375827Z Get:33 http://azure.archive.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [5594 kB]
+2026-05-03T20:40:10.0641756Z Get:34 http://azure.archive.ubuntu.com/ubuntu jammy-security/restricted Translation-en [1070 kB]
+2026-05-03T20:40:10.0701420Z Get:35 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1029 kB]
+2026-05-03T20:40:10.0826256Z Get:40 https://dl.google.com/linux/chrome-stable/deb stable/main amd64 Packages [1220 B]
+2026-05-03T20:40:10.1172139Z Get:36 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe Translation-en [226 kB]
+2026-05-03T20:40:10.1197673Z Get:37 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [22.9 kB]
+2026-05-03T20:40:10.1207398Z Get:38 http://azure.archive.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [52.3 kB]
+2026-05-03T20:40:10.1219721Z Get:39 http://azure.archive.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [10.5 kB]
+2026-05-03T20:40:16.3554625Z Fetched 25.5 MB in 3s (8785 kB/s)
+2026-05-03T20:40:17.2844532Z Reading package lists...
+2026-05-03T20:40:17.3449123Z Reading package lists...
+2026-05-03T20:40:17.5392881Z Building dependency tree...
+2026-05-03T20:40:17.5404313Z Reading state information...
+2026-05-03T20:40:17.6983879Z g++ is already the newest version (4:11.2.0-1ubuntu1).
+2026-05-03T20:40:17.6984571Z gcc is already the newest version (4:11.2.0-1ubuntu1).
+2026-05-03T20:40:17.6985526Z curl is already the newest version (7.81.0-1ubuntu1.23).
+2026-05-03T20:40:17.6986205Z wget is already the newest version (1.21.2-2ubuntu1.1).
+2026-05-03T20:40:17.6986929Z git is already the newest version (1:2.53.0-0ppa1~ubuntu22.04.1).
+2026-05-03T20:40:17.6987577Z The following additional packages will be installed:
+2026-05-03T20:40:17.6988243Z   cmake-data dh-elpa-helper gir1.2-atk-1.0 gir1.2-atspi-2.0 gir1.2-gtk-3.0
+2026-05-03T20:40:17.6989112Z   gir1.2-harfbuzz-0.0 gir1.2-pango-1.0 libatk-bridge2.0-dev libatk1.0-dev
+2026-05-03T20:40:17.6989693Z   libatspi2.0-dev libclang-14-dev libdatrie-dev libdbus-1-dev libegl-dev
+2026-05-03T20:40:17.6990355Z   libegl-mesa0 libegl1 libegl1-mesa-dev libepoxy-dev libfribidi-dev libgl-dev
+2026-05-03T20:40:17.6991079Z   libgles-dev libgles1 libgles2 libglvnd-core-dev libglvnd-dev libglx-dev
+2026-05-03T20:40:17.6991641Z   libgraphite2-dev libharfbuzz-dev libharfbuzz-gobject0 libharfbuzz-icu0
+2026-05-03T20:40:17.6992209Z   libjsoncpp25 libopengl-dev libopengl0 libpango1.0-dev libpangoxft-1.0-0
+2026-05-03T20:40:17.6992768Z   librhash0 libthai-dev libwayland-bin libwayland-dev libxcomposite-dev
+2026-05-03T20:40:17.6993294Z   libxcursor-dev libxdamage-dev libxfixes-dev libxft-dev libxi-dev
+2026-05-03T20:40:17.6993850Z   libxinerama-dev libxkbcommon-dev libxrandr-dev libxtst-dev llvm llvm-runtime
+2026-05-03T20:40:17.6994910Z   pango1.0-tools wayland-protocols
+2026-05-03T20:40:17.6996555Z Suggested packages:
+2026-05-03T20:40:17.6996971Z   cmake-doc cmake-format libdatrie-doc libgraphite2-utils libgtk-3-doc
+2026-05-03T20:40:17.6997466Z   libpango1.0-doc libthai-doc libwayland-doc graphicsmagick
+2026-05-03T20:40:17.7814072Z The following packages will be REMOVED:
+2026-05-03T20:40:17.7815049Z   pkgconf r-base-dev
+2026-05-03T20:40:17.7815537Z The following NEW packages will be installed:
+2026-05-03T20:40:17.7816395Z   clang cmake cmake-data dh-elpa-helper gir1.2-atk-1.0 gir1.2-atspi-2.0
+2026-05-03T20:40:17.7817353Z   gir1.2-gtk-3.0 gir1.2-harfbuzz-0.0 gir1.2-pango-1.0 libatk-bridge2.0-dev
+2026-05-03T20:40:17.7818244Z   libatk1.0-dev libatspi2.0-dev libclang-14-dev libclang-dev libdatrie-dev
+2026-05-03T20:40:17.7819100Z   libdbus-1-dev libegl-dev libegl-mesa0 libegl1 libegl1-mesa-dev libepoxy-dev
+2026-05-03T20:40:17.7819699Z   libfribidi-dev libgl-dev libgles-dev libgles1 libgles2 libglvnd-core-dev
+2026-05-03T20:40:17.7820626Z   libglvnd-dev libglx-dev libgraphite2-dev libgtk-3-dev libharfbuzz-dev
+2026-05-03T20:40:17.7821294Z   libharfbuzz-gobject0 libharfbuzz-icu0 libjsoncpp25 libopengl-dev libopengl0
+2026-05-03T20:40:17.7822014Z   libpango1.0-dev libpangoxft-1.0-0 librhash0 libthai-dev libwayland-bin
+2026-05-03T20:40:17.7822734Z   libwayland-dev libxcomposite-dev libxcursor-dev libxdamage-dev libxfixes-dev
+2026-05-03T20:40:17.7823307Z   libxft-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev
+2026-05-03T20:40:17.7823836Z   libxtst-dev llvm llvm-dev llvm-runtime nasm ninja-build pango1.0-tools
+2026-05-03T20:40:17.7824265Z   pkg-config wayland-protocols
+2026-05-03T20:40:17.7991833Z 0 upgraded, 61 newly installed, 2 to remove and 61 not upgraded.
+2026-05-03T20:40:17.7992298Z Need to get 36.8 MB of archives.
+2026-05-03T20:40:17.7992834Z After this operation, 314 MB of additional disk space will be used.
+2026-05-03T20:40:17.7993485Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-05-03T20:40:17.8554686Z Get:2 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 pkg-config amd64 0.29.2-1ubuntu3 [48.2 kB]
+2026-05-03T20:40:17.8747606Z Get:3 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 clang amd64 1:14.0-55~exp2 [3558 B]
+2026-05-03T20:40:17.8827357Z Get:4 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libjsoncpp25 amd64 1.9.5-3 [80.0 kB]
+2026-05-03T20:40:17.8962128Z Get:5 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 librhash0 amd64 1.4.2-1ubuntu1 [125 kB]
+2026-05-03T20:40:17.9052499Z Get:6 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 dh-elpa-helper all 2.0.9ubuntu1 [7610 B]
+2026-05-03T20:40:17.9125384Z Get:7 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 cmake-data all 3.22.1-1ubuntu1.22.04.2 [1913 kB]
+2026-05-03T20:40:17.9552228Z Get:8 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 cmake amd64 3.22.1-1ubuntu1.22.04.2 [5010 kB]
+2026-05-03T20:40:18.0077384Z Get:9 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 gir1.2-atk-1.0 amd64 2.36.0-3build1 [21.0 kB]
+2026-05-03T20:40:18.0148283Z Get:10 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 gir1.2-atspi-2.0 amd64 2.44.0-3 [18.1 kB]
+2026-05-03T20:40:18.0225032Z Get:11 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 gir1.2-harfbuzz-0.0 amd64 2.7.4-1ubuntu3.2 [31.6 kB]
+2026-05-03T20:40:18.0301001Z Get:12 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpangoxft-1.0-0 amd64 1.50.6+ds-2ubuntu1 [31.0 kB]
+2026-05-03T20:40:18.0375264Z Get:13 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 gir1.2-pango-1.0 amd64 1.50.6+ds-2ubuntu1 [44.0 kB]
+2026-05-03T20:40:18.0461381Z Get:14 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 gir1.2-gtk-3.0 amd64 3.24.33-1ubuntu2.2 [240 kB]
+2026-05-03T20:40:18.0560109Z Get:15 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libatk1.0-dev amd64 2.36.0-3build1 [96.6 kB]
+2026-05-03T20:40:18.0648042Z Get:16 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libdbus-1-dev amd64 1.12.20-2ubuntu4.1 [188 kB]
+2026-05-03T20:40:18.0747065Z Get:17 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxfixes-dev amd64 1:6.0.0-1 [12.2 kB]
+2026-05-03T20:40:18.0823498Z Get:18 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxi-dev amd64 2:1.8-1build1 [193 kB]
+2026-05-03T20:40:18.1128472Z Get:19 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxtst-dev amd64 2:1.2.3-1build4 [16.3 kB]
+2026-05-03T20:40:18.1638236Z Get:20 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libatspi2.0-dev amd64 2.44.0-3 [71.5 kB]
+2026-05-03T20:40:18.1819936Z Get:21 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libatk-bridge2.0-dev amd64 2.38.0-3 [2954 B]
+2026-05-03T20:40:18.1894596Z Get:22 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libclang-14-dev amd64 1:14.0.0-1ubuntu1.1 [25.2 MB]
+2026-05-03T20:40:18.4696213Z Get:23 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libclang-dev amd64 1:14.0-55~exp2 [3138 B]
+2026-05-03T20:40:18.4799806Z Get:24 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libdatrie-dev amd64 0.2.13-2 [19.7 kB]
+2026-05-03T20:40:18.4877730Z Get:25 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libegl-mesa0 amd64 23.2.1-1ubuntu3.1~22.04.3 [118 kB]
+2026-05-03T20:40:18.4971194Z Get:26 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libegl1 amd64 1.4.0-1 [28.6 kB]
+2026-05-03T20:40:18.5052371Z Get:27 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libglx-dev amd64 1.4.0-1 [14.1 kB]
+2026-05-03T20:40:18.5128203Z Get:28 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libgl-dev amd64 1.4.0-1 [101 kB]
+2026-05-03T20:40:18.5215474Z Get:29 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libegl-dev amd64 1.4.0-1 [18.0 kB]
+2026-05-03T20:40:18.5289467Z Get:30 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libglvnd-core-dev amd64 1.4.0-1 [12.7 kB]
+2026-05-03T20:40:18.5362390Z Get:31 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libgles1 amd64 1.4.0-1 [11.5 kB]
+2026-05-03T20:40:18.5436121Z Get:32 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libgles2 amd64 1.4.0-1 [18.0 kB]
+2026-05-03T20:40:18.5507826Z Get:33 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libgles-dev amd64 1.4.0-1 [49.4 kB]
+2026-05-03T20:40:18.5587099Z Get:34 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libopengl0 amd64 1.4.0-1 [36.5 kB]
+2026-05-03T20:40:18.5659802Z Get:35 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libopengl-dev amd64 1.4.0-1 [3400 B]
+2026-05-03T20:40:18.5729795Z Get:36 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libglvnd-dev amd64 1.4.0-1 [3162 B]
+2026-05-03T20:40:18.5820036Z Get:37 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libegl1-mesa-dev amd64 23.2.1-1ubuntu3.1~22.04.3 [11.1 kB]
+2026-05-03T20:40:18.5891357Z Get:38 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libepoxy-dev amd64 1.5.10-1 [132 kB]
+2026-05-03T20:40:18.6438099Z Get:39 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libfribidi-dev amd64 1.0.8-2ubuntu3.1 [64.8 kB]
+2026-05-03T20:40:18.6518432Z Get:40 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libgraphite2-dev amd64 1.3.14-1build2 [14.7 kB]
+2026-05-03T20:40:18.6591903Z Get:41 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libharfbuzz-icu0 amd64 2.7.4-1ubuntu3.2 [5890 B]
+2026-05-03T20:40:18.6662012Z Get:42 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libharfbuzz-gobject0 amd64 2.7.4-1ubuntu3.2 [26.0 kB]
+2026-05-03T20:40:18.6773026Z Get:43 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libharfbuzz-dev amd64 2.7.4-1ubuntu3.2 [554 kB]
+2026-05-03T20:40:18.6882573Z Get:44 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libthai-dev amd64 0.1.29-1build1 [26.4 kB]
+2026-05-03T20:40:18.6958811Z Get:45 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxft-dev amd64 2.3.4-1 [52.4 kB]
+2026-05-03T20:40:18.7036813Z Get:46 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 pango1.0-tools amd64 1.50.6+ds-2ubuntu1 [45.8 kB]
+2026-05-03T20:40:18.7111526Z Get:47 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpango1.0-dev amd64 1.50.6+ds-2ubuntu1 [154 kB]
+2026-05-03T20:40:18.7199270Z Get:48 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libwayland-bin amd64 1.20.0-1ubuntu0.1 [20.4 kB]
+2026-05-03T20:40:18.7274244Z Get:49 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libwayland-dev amd64 1.20.0-1ubuntu0.1 [69.5 kB]
+2026-05-03T20:40:18.7364215Z Get:50 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcomposite-dev amd64 1:0.4.5-1build2 [9326 B]
+2026-05-03T20:40:18.7438837Z Get:51 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcursor-dev amd64 1:1.2.0-2build4 [28.2 kB]
+2026-05-03T20:40:18.7530785Z Get:52 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxdamage-dev amd64 1:1.1.5-2build2 [5264 B]
+2026-05-03T20:40:18.7604575Z Get:53 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxinerama-dev amd64 2:1.1.4-3 [8104 B]
+2026-05-03T20:40:18.7678757Z Get:54 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxkbcommon-dev amd64 1.4.0-1 [54.9 kB]
+2026-05-03T20:40:18.7756183Z Get:55 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxrandr-dev amd64 2:1.5.2-1build1 [26.7 kB]
+2026-05-03T20:40:18.7833841Z Get:56 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 wayland-protocols all 1.25-1 [70.6 kB]
+2026-05-03T20:40:18.7917107Z Get:57 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgtk-3-dev amd64 3.24.33-1ubuntu2.2 [1082 kB]
+2026-05-03T20:40:18.8601798Z Get:58 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 llvm-runtime amd64 1:14.0-55~exp2 [3204 B]
+2026-05-03T20:40:18.8675416Z Get:59 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 llvm amd64 1:14.0-55~exp2 [3758 B]
+2026-05-03T20:40:18.8748471Z Get:60 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 llvm-dev amd64 1:14.0-55~exp2 [1656 B]
+2026-05-03T20:40:18.8822064Z Get:61 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 nasm amd64 2.15.05-1 [375 kB]
+2026-05-03T20:40:18.9040918Z Get:62 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 ninja-build amd64 1.10.1-1 [111 kB]
+2026-05-03T20:40:19.3428732Z Fetched 36.8 MB in 1s (32.9 MB/s)
+2026-05-03T20:40:19.3977101Z (Reading database ... 
+2026-05-03T20:40:19.3977486Z (Reading database ... 5%
+2026-05-03T20:40:19.3977820Z (Reading database ... 10%
+2026-05-03T20:40:19.3978150Z (Reading database ... 15%
+2026-05-03T20:40:19.3978466Z (Reading database ... 20%
+2026-05-03T20:40:19.3978782Z (Reading database ... 25%
+2026-05-03T20:40:19.3979084Z (Reading database ... 30%
+2026-05-03T20:40:19.3979398Z (Reading database ... 35%
+2026-05-03T20:40:19.3979711Z (Reading database ... 40%
+2026-05-03T20:40:19.3980019Z (Reading database ... 45%
+2026-05-03T20:40:19.3980332Z (Reading database ... 50%
+2026-05-03T20:40:19.5172362Z (Reading database ... 55%
+2026-05-03T20:40:19.5840251Z (Reading database ... 60%
+2026-05-03T20:40:19.6412818Z (Reading database ... 65%
+2026-05-03T20:40:19.8187329Z (Reading database ... 70%
+2026-05-03T20:40:20.0760284Z (Reading database ... 75%
+2026-05-03T20:40:20.3205817Z (Reading database ... 80%
+2026-05-03T20:40:20.5111842Z (Reading database ... 85%
+2026-05-03T20:40:20.7652467Z (Reading database ... 90%
+2026-05-03T20:40:21.0182769Z (Reading database ... 95%
+2026-05-03T20:40:21.0183198Z (Reading database ... 100%
+2026-05-03T20:40:21.0183780Z (Reading database ... 286900 files and directories currently installed.)
+2026-05-03T20:40:21.0241522Z Removing r-base-dev (4.5.3-1.2204.0) ...
+2026-05-03T20:40:21.0775768Z dpkg: pkgconf: dependency problems, but removing anyway as you requested:
+2026-05-03T20:40:21.0776446Z  php8.1-dev depends on pkg-config; however:
+2026-05-03T20:40:21.0776878Z   Package pkg-config is not installed.
+2026-05-03T20:40:21.0777405Z   Package pkgconf which provides pkg-config is to be removed.
+2026-05-03T20:40:21.0777956Z  mono-devel depends on pkg-config; however:
+2026-05-03T20:40:21.0778437Z   Package pkg-config is not installed.
+2026-05-03T20:40:21.0779197Z   Package pkgconf which provides pkg-config is to be removed.
+2026-05-03T20:40:21.0779882Z  libmagickwand-6.q16-dev:amd64 depends on pkg-config; however:
+2026-05-03T20:40:21.0780458Z   Package pkg-config is not installed.
+2026-05-03T20:40:21.0780933Z   Package pkgconf which provides pkg-config is to be removed.
+2026-05-03T20:40:21.0781497Z  libmagickcore-6.q16-dev:amd64 depends on pkg-config; however:
+2026-05-03T20:40:21.0781985Z   Package pkg-config is not installed.
+2026-05-03T20:40:21.0782452Z   Package pkgconf which provides pkg-config is to be removed.
+2026-05-03T20:40:21.0782960Z  libglib2.0-dev:amd64 depends on pkg-config; however:
+2026-05-03T20:40:21.0783387Z   Package pkg-config is not installed.
+2026-05-03T20:40:21.0783831Z   Package pkgconf which provides pkg-config is to be removed.
+2026-05-03T20:40:21.0784362Z  libfontconfig-dev:amd64 depends on pkg-config; however:
+2026-05-03T20:40:21.0785214Z   Package pkg-config is not installed.
+2026-05-03T20:40:21.0785679Z   Package pkgconf which provides pkg-config is to be removed.
+2026-05-03T20:40:21.0786023Z 
+2026-05-03T20:40:21.0842947Z Removing pkgconf (1.8.0-1) ...
+2026-05-03T20:40:21.1507418Z Removing 'diversion of /usr/bin/pkg-config to /usr/bin/pkg-config.real by pkgconf'
+2026-05-03T20:40:21.1632605Z Removing 'diversion of /usr/share/aclocal/pkg.m4 to /usr/share/aclocal/pkg.real.m4 by pkgconf'
+2026-05-03T20:40:21.1754079Z Removing 'diversion of /usr/share/man/man1/pkg-config.1.gz to /usr/share/man/man1/pkg-config.real.1.gz by pkgconf'
+2026-05-03T20:40:21.1878156Z Removing 'diversion of /usr/share/pkg-config-crosswrapper to /usr/share/pkg-config-crosswrapper.real by pkgconf'
+2026-05-03T20:40:21.2382179Z Selecting previously unselected package pkg-config.
+2026-05-03T20:40:21.2447919Z (Reading database ... 
+2026-05-03T20:40:21.2448332Z (Reading database ... 5%
+2026-05-03T20:40:21.2448679Z (Reading database ... 10%
+2026-05-03T20:40:21.2449054Z (Reading database ... 15%
+2026-05-03T20:40:21.2449358Z (Reading database ... 20%
+2026-05-03T20:40:21.2449589Z (Reading database ... 25%
+2026-05-03T20:40:21.2449806Z (Reading database ... 30%
+2026-05-03T20:40:21.2450014Z (Reading database ... 35%
+2026-05-03T20:40:21.2450228Z (Reading database ... 40%
+2026-05-03T20:40:21.2450433Z (Reading database ... 45%
+2026-05-03T20:40:21.2450648Z (Reading database ... 50%
+2026-05-03T20:40:21.2481450Z (Reading database ... 55%
+2026-05-03T20:40:21.2509834Z (Reading database ... 60%
+2026-05-03T20:40:21.2535364Z (Reading database ... 65%
+2026-05-03T20:40:21.2622242Z (Reading database ... 70%
+2026-05-03T20:40:21.2650313Z (Reading database ... 75%
+2026-05-03T20:40:21.2707568Z (Reading database ... 80%
+2026-05-03T20:40:21.3059455Z (Reading database ... 85%
+2026-05-03T20:40:21.3075045Z (Reading database ... 90%
+2026-05-03T20:40:21.3415983Z (Reading database ... 95%
+2026-05-03T20:40:21.3416381Z (Reading database ... 100%
+2026-05-03T20:40:21.3416892Z (Reading database ... 286878 files and directories currently installed.)
+2026-05-03T20:40:21.3471376Z Preparing to unpack .../00-pkg-config_0.29.2-1ubuntu3_amd64.deb ...
+2026-05-03T20:40:21.3482946Z Unpacking pkg-config (0.29.2-1ubuntu3) ...
+2026-05-03T20:40:21.3763978Z Selecting previously unselected package clang.
+2026-05-03T20:40:21.3932234Z Preparing to unpack .../01-clang_1%3a14.0-55~exp2_amd64.deb ...
+2026-05-03T20:40:21.3943421Z Unpacking clang (1:14.0-55~exp2) ...
+2026-05-03T20:40:21.4179938Z Selecting previously unselected package libjsoncpp25:amd64.
+2026-05-03T20:40:21.4349219Z Preparing to unpack .../02-libjsoncpp25_1.9.5-3_amd64.deb ...
+2026-05-03T20:40:21.4372609Z Unpacking libjsoncpp25:amd64 (1.9.5-3) ...
+2026-05-03T20:40:21.4619561Z Selecting previously unselected package librhash0:amd64.
+2026-05-03T20:40:21.4789993Z Preparing to unpack .../03-librhash0_1.4.2-1ubuntu1_amd64.deb ...
+2026-05-03T20:40:21.4802498Z Unpacking librhash0:amd64 (1.4.2-1ubuntu1) ...
+2026-05-03T20:40:21.5028882Z Selecting previously unselected package dh-elpa-helper.
+2026-05-03T20:40:21.5198371Z Preparing to unpack .../04-dh-elpa-helper_2.0.9ubuntu1_all.deb ...
+2026-05-03T20:40:21.5209330Z Unpacking dh-elpa-helper (2.0.9ubuntu1) ...
+2026-05-03T20:40:21.5441381Z Selecting previously unselected package cmake-data.
+2026-05-03T20:40:21.5611499Z Preparing to unpack .../05-cmake-data_3.22.1-1ubuntu1.22.04.2_all.deb ...
+2026-05-03T20:40:21.5901188Z Unpacking cmake-data (3.22.1-1ubuntu1.22.04.2) ...
+2026-05-03T20:40:22.1581987Z Selecting previously unselected package cmake.
+2026-05-03T20:40:22.1775137Z Preparing to unpack .../06-cmake_3.22.1-1ubuntu1.22.04.2_amd64.deb ...
+2026-05-03T20:40:22.1785603Z Unpacking cmake (3.22.1-1ubuntu1.22.04.2) ...
+2026-05-03T20:40:22.2750485Z Selecting previously unselected package gir1.2-atk-1.0:amd64.
+2026-05-03T20:40:22.2930899Z Preparing to unpack .../07-gir1.2-atk-1.0_2.36.0-3build1_amd64.deb ...
+2026-05-03T20:40:22.2941531Z Unpacking gir1.2-atk-1.0:amd64 (2.36.0-3build1) ...
+2026-05-03T20:40:22.3159256Z Selecting previously unselected package gir1.2-atspi-2.0:amd64.
+2026-05-03T20:40:22.3344105Z Preparing to unpack .../08-gir1.2-atspi-2.0_2.44.0-3_amd64.deb ...
+2026-05-03T20:40:22.3354068Z Unpacking gir1.2-atspi-2.0:amd64 (2.44.0-3) ...
+2026-05-03T20:40:22.3567862Z Selecting previously unselected package gir1.2-harfbuzz-0.0:amd64.
+2026-05-03T20:40:22.3747315Z Preparing to unpack .../09-gir1.2-harfbuzz-0.0_2.7.4-1ubuntu3.2_amd64.deb ...
+2026-05-03T20:40:22.3758919Z Unpacking gir1.2-harfbuzz-0.0:amd64 (2.7.4-1ubuntu3.2) ...
+2026-05-03T20:40:22.3988259Z Selecting previously unselected package libpangoxft-1.0-0:amd64.
+2026-05-03T20:40:22.4164341Z Preparing to unpack .../10-libpangoxft-1.0-0_1.50.6+ds-2ubuntu1_amd64.deb ...
+2026-05-03T20:40:22.4175340Z Unpacking libpangoxft-1.0-0:amd64 (1.50.6+ds-2ubuntu1) ...
+2026-05-03T20:40:22.4388991Z Selecting previously unselected package gir1.2-pango-1.0:amd64.
+2026-05-03T20:40:22.4562120Z Preparing to unpack .../11-gir1.2-pango-1.0_1.50.6+ds-2ubuntu1_amd64.deb ...
+2026-05-03T20:40:22.4573335Z Unpacking gir1.2-pango-1.0:amd64 (1.50.6+ds-2ubuntu1) ...
+2026-05-03T20:40:22.4809248Z Selecting previously unselected package gir1.2-gtk-3.0:amd64.
+2026-05-03T20:40:22.4981699Z Preparing to unpack .../12-gir1.2-gtk-3.0_3.24.33-1ubuntu2.2_amd64.deb ...
+2026-05-03T20:40:22.4992813Z Unpacking gir1.2-gtk-3.0:amd64 (3.24.33-1ubuntu2.2) ...
+2026-05-03T20:40:22.5239793Z Selecting previously unselected package libatk1.0-dev:amd64.
+2026-05-03T20:40:22.5413966Z Preparing to unpack .../13-libatk1.0-dev_2.36.0-3build1_amd64.deb ...
+2026-05-03T20:40:22.5424313Z Unpacking libatk1.0-dev:amd64 (2.36.0-3build1) ...
+2026-05-03T20:40:22.5768918Z Selecting previously unselected package libdbus-1-dev:amd64.
+2026-05-03T20:40:22.5947558Z Preparing to unpack .../14-libdbus-1-dev_1.12.20-2ubuntu4.1_amd64.deb ...
+2026-05-03T20:40:22.5959265Z Unpacking libdbus-1-dev:amd64 (1.12.20-2ubuntu4.1) ...
+2026-05-03T20:40:22.6261962Z Selecting previously unselected package libxfixes-dev:amd64.
+2026-05-03T20:40:22.6437547Z Preparing to unpack .../15-libxfixes-dev_1%3a6.0.0-1_amd64.deb ...
+2026-05-03T20:40:22.6447987Z Unpacking libxfixes-dev:amd64 (1:6.0.0-1) ...
+2026-05-03T20:40:22.6678677Z Selecting previously unselected package libxi-dev:amd64.
+2026-05-03T20:40:22.6852778Z Preparing to unpack .../16-libxi-dev_2%3a1.8-1build1_amd64.deb ...
+2026-05-03T20:40:22.6863652Z Unpacking libxi-dev:amd64 (2:1.8-1build1) ...
+2026-05-03T20:40:22.7229494Z Selecting previously unselected package libxtst-dev:amd64.
+2026-05-03T20:40:22.7405048Z Preparing to unpack .../17-libxtst-dev_2%3a1.2.3-1build4_amd64.deb ...
+2026-05-03T20:40:22.7412800Z Unpacking libxtst-dev:amd64 (2:1.2.3-1build4) ...
+2026-05-03T20:40:22.7627447Z Selecting previously unselected package libatspi2.0-dev:amd64.
+2026-05-03T20:40:22.7801216Z Preparing to unpack .../18-libatspi2.0-dev_2.44.0-3_amd64.deb ...
+2026-05-03T20:40:22.7809088Z Unpacking libatspi2.0-dev:amd64 (2.44.0-3) ...
+2026-05-03T20:40:22.8086594Z Selecting previously unselected package libatk-bridge2.0-dev:amd64.
+2026-05-03T20:40:22.8259439Z Preparing to unpack .../19-libatk-bridge2.0-dev_2.38.0-3_amd64.deb ...
+2026-05-03T20:40:22.8266988Z Unpacking libatk-bridge2.0-dev:amd64 (2.38.0-3) ...
+2026-05-03T20:40:22.8468117Z Selecting previously unselected package libclang-14-dev.
+2026-05-03T20:40:22.8640979Z Preparing to unpack .../20-libclang-14-dev_1%3a14.0.0-1ubuntu1.1_amd64.deb ...
+2026-05-03T20:40:22.8650788Z Unpacking libclang-14-dev (1:14.0.0-1ubuntu1.1) ...
+2026-05-03T20:40:23.7343822Z Selecting previously unselected package libclang-dev.
+2026-05-03T20:40:23.7531701Z Preparing to unpack .../21-libclang-dev_1%3a14.0-55~exp2_amd64.deb ...
+2026-05-03T20:40:23.7539334Z Unpacking libclang-dev (1:14.0-55~exp2) ...
+2026-05-03T20:40:23.7735769Z Selecting previously unselected package libdatrie-dev:amd64.
+2026-05-03T20:40:23.7915584Z Preparing to unpack .../22-libdatrie-dev_0.2.13-2_amd64.deb ...
+2026-05-03T20:40:23.7925475Z Unpacking libdatrie-dev:amd64 (0.2.13-2) ...
+2026-05-03T20:40:23.8145459Z Selecting previously unselected package libegl-mesa0:amd64.
+2026-05-03T20:40:23.8319541Z Preparing to unpack .../23-libegl-mesa0_23.2.1-1ubuntu3.1~22.04.3_amd64.deb ...
+2026-05-03T20:40:23.8327739Z Unpacking libegl-mesa0:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+2026-05-03T20:40:23.8562398Z Selecting previously unselected package libegl1:amd64.
+2026-05-03T20:40:23.8738220Z Preparing to unpack .../24-libegl1_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:23.8746673Z Unpacking libegl1:amd64 (1.4.0-1) ...
+2026-05-03T20:40:23.8957511Z Selecting previously unselected package libglx-dev:amd64.
+2026-05-03T20:40:23.9134065Z Preparing to unpack .../25-libglx-dev_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:23.9142196Z Unpacking libglx-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:23.9353192Z Selecting previously unselected package libgl-dev:amd64.
+2026-05-03T20:40:23.9528229Z Preparing to unpack .../26-libgl-dev_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:23.9536562Z Unpacking libgl-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:23.9783662Z Selecting previously unselected package libegl-dev:amd64.
+2026-05-03T20:40:23.9959634Z Preparing to unpack .../27-libegl-dev_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:23.9967033Z Unpacking libegl-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:24.0178699Z Selecting previously unselected package libglvnd-core-dev:amd64.
+2026-05-03T20:40:24.0352081Z Preparing to unpack .../28-libglvnd-core-dev_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:24.0359937Z Unpacking libglvnd-core-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:24.0577477Z Selecting previously unselected package libgles1:amd64.
+2026-05-03T20:40:24.0753920Z Preparing to unpack .../29-libgles1_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:24.0766769Z Unpacking libgles1:amd64 (1.4.0-1) ...
+2026-05-03T20:40:24.0988508Z Selecting previously unselected package libgles2:amd64.
+2026-05-03T20:40:24.1165376Z Preparing to unpack .../30-libgles2_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:24.1173685Z Unpacking libgles2:amd64 (1.4.0-1) ...
+2026-05-03T20:40:24.1377926Z Selecting previously unselected package libgles-dev:amd64.
+2026-05-03T20:40:24.1554450Z Preparing to unpack .../31-libgles-dev_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:24.1563109Z Unpacking libgles-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:24.1821825Z Selecting previously unselected package libopengl0:amd64.
+2026-05-03T20:40:24.1998885Z Preparing to unpack .../32-libopengl0_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:24.2007530Z Unpacking libopengl0:amd64 (1.4.0-1) ...
+2026-05-03T20:40:24.2218196Z Selecting previously unselected package libopengl-dev:amd64.
+2026-05-03T20:40:24.2396460Z Preparing to unpack .../33-libopengl-dev_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:24.2405909Z Unpacking libopengl-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:24.2613481Z Selecting previously unselected package libglvnd-dev:amd64.
+2026-05-03T20:40:24.2788825Z Preparing to unpack .../34-libglvnd-dev_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:24.2797357Z Unpacking libglvnd-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:24.2997944Z Selecting previously unselected package libegl1-mesa-dev:amd64.
+2026-05-03T20:40:24.3175095Z Preparing to unpack .../35-libegl1-mesa-dev_23.2.1-1ubuntu3.1~22.04.3_amd64.deb ...
+2026-05-03T20:40:24.3183887Z Unpacking libegl1-mesa-dev:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+2026-05-03T20:40:24.3420384Z Selecting previously unselected package libepoxy-dev:amd64.
+2026-05-03T20:40:24.3633954Z Preparing to unpack .../36-libepoxy-dev_1.5.10-1_amd64.deb ...
+2026-05-03T20:40:24.3642575Z Unpacking libepoxy-dev:amd64 (1.5.10-1) ...
+2026-05-03T20:40:24.3904613Z Selecting previously unselected package libfribidi-dev:amd64.
+2026-05-03T20:40:24.4081612Z Preparing to unpack .../37-libfribidi-dev_1.0.8-2ubuntu3.1_amd64.deb ...
+2026-05-03T20:40:24.4089500Z Unpacking libfribidi-dev:amd64 (1.0.8-2ubuntu3.1) ...
+2026-05-03T20:40:24.4389166Z Selecting previously unselected package libgraphite2-dev:amd64.
+2026-05-03T20:40:24.4568023Z Preparing to unpack .../38-libgraphite2-dev_1.3.14-1build2_amd64.deb ...
+2026-05-03T20:40:24.4575214Z Unpacking libgraphite2-dev:amd64 (1.3.14-1build2) ...
+2026-05-03T20:40:24.4788301Z Selecting previously unselected package libharfbuzz-icu0:amd64.
+2026-05-03T20:40:24.4964468Z Preparing to unpack .../39-libharfbuzz-icu0_2.7.4-1ubuntu3.2_amd64.deb ...
+2026-05-03T20:40:24.4972754Z Unpacking libharfbuzz-icu0:amd64 (2.7.4-1ubuntu3.2) ...
+2026-05-03T20:40:24.5185286Z Selecting previously unselected package libharfbuzz-gobject0:amd64.
+2026-05-03T20:40:24.5358750Z Preparing to unpack .../40-libharfbuzz-gobject0_2.7.4-1ubuntu3.2_amd64.deb ...
+2026-05-03T20:40:24.5367599Z Unpacking libharfbuzz-gobject0:amd64 (2.7.4-1ubuntu3.2) ...
+2026-05-03T20:40:24.5567418Z Selecting previously unselected package libharfbuzz-dev:amd64.
+2026-05-03T20:40:24.5740345Z Preparing to unpack .../41-libharfbuzz-dev_2.7.4-1ubuntu3.2_amd64.deb ...
+2026-05-03T20:40:24.5748661Z Unpacking libharfbuzz-dev:amd64 (2.7.4-1ubuntu3.2) ...
+2026-05-03T20:40:24.6149082Z Selecting previously unselected package libthai-dev:amd64.
+2026-05-03T20:40:24.6330189Z Preparing to unpack .../42-libthai-dev_0.1.29-1build1_amd64.deb ...
+2026-05-03T20:40:24.6338161Z Unpacking libthai-dev:amd64 (0.1.29-1build1) ...
+2026-05-03T20:40:24.6569424Z Selecting previously unselected package libxft-dev:amd64.
+2026-05-03T20:40:24.6744641Z Preparing to unpack .../43-libxft-dev_2.3.4-1_amd64.deb ...
+2026-05-03T20:40:24.6752463Z Unpacking libxft-dev:amd64 (2.3.4-1) ...
+2026-05-03T20:40:24.6969410Z Selecting previously unselected package pango1.0-tools.
+2026-05-03T20:40:24.7143360Z Preparing to unpack .../44-pango1.0-tools_1.50.6+ds-2ubuntu1_amd64.deb ...
+2026-05-03T20:40:24.7152413Z Unpacking pango1.0-tools (1.50.6+ds-2ubuntu1) ...
+2026-05-03T20:40:24.7368135Z Selecting previously unselected package libpango1.0-dev:amd64.
+2026-05-03T20:40:24.7543741Z Preparing to unpack .../45-libpango1.0-dev_1.50.6+ds-2ubuntu1_amd64.deb ...
+2026-05-03T20:40:24.7551702Z Unpacking libpango1.0-dev:amd64 (1.50.6+ds-2ubuntu1) ...
+2026-05-03T20:40:24.7879825Z Selecting previously unselected package libwayland-bin.
+2026-05-03T20:40:24.8056006Z Preparing to unpack .../46-libwayland-bin_1.20.0-1ubuntu0.1_amd64.deb ...
+2026-05-03T20:40:24.8064172Z Unpacking libwayland-bin (1.20.0-1ubuntu0.1) ...
+2026-05-03T20:40:24.8267460Z Selecting previously unselected package libwayland-dev:amd64.
+2026-05-03T20:40:24.8444279Z Preparing to unpack .../47-libwayland-dev_1.20.0-1ubuntu0.1_amd64.deb ...
+2026-05-03T20:40:24.8453068Z Unpacking libwayland-dev:amd64 (1.20.0-1ubuntu0.1) ...
+2026-05-03T20:40:24.8705417Z Selecting previously unselected package libxcomposite-dev:amd64.
+2026-05-03T20:40:24.8885588Z Preparing to unpack .../48-libxcomposite-dev_1%3a0.4.5-1build2_amd64.deb ...
+2026-05-03T20:40:24.8893699Z Unpacking libxcomposite-dev:amd64 (1:0.4.5-1build2) ...
+2026-05-03T20:40:24.9122907Z Selecting previously unselected package libxcursor-dev:amd64.
+2026-05-03T20:40:24.9299232Z Preparing to unpack .../49-libxcursor-dev_1%3a1.2.0-2build4_amd64.deb ...
+2026-05-03T20:40:24.9309725Z Unpacking libxcursor-dev:amd64 (1:1.2.0-2build4) ...
+2026-05-03T20:40:24.9548060Z Selecting previously unselected package libxdamage-dev:amd64.
+2026-05-03T20:40:24.9723795Z Preparing to unpack .../50-libxdamage-dev_1%3a1.1.5-2build2_amd64.deb ...
+2026-05-03T20:40:24.9733052Z Unpacking libxdamage-dev:amd64 (1:1.1.5-2build2) ...
+2026-05-03T20:40:24.9935548Z Selecting previously unselected package libxinerama-dev:amd64.
+2026-05-03T20:40:25.0112067Z Preparing to unpack .../51-libxinerama-dev_2%3a1.1.4-3_amd64.deb ...
+2026-05-03T20:40:25.0121767Z Unpacking libxinerama-dev:amd64 (2:1.1.4-3) ...
+2026-05-03T20:40:25.0328700Z Selecting previously unselected package libxkbcommon-dev:amd64.
+2026-05-03T20:40:25.0504654Z Preparing to unpack .../52-libxkbcommon-dev_1.4.0-1_amd64.deb ...
+2026-05-03T20:40:25.0513346Z Unpacking libxkbcommon-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.0749280Z Selecting previously unselected package libxrandr-dev:amd64.
+2026-05-03T20:40:25.0926861Z Preparing to unpack .../53-libxrandr-dev_2%3a1.5.2-1build1_amd64.deb ...
+2026-05-03T20:40:25.0936021Z Unpacking libxrandr-dev:amd64 (2:1.5.2-1build1) ...
+2026-05-03T20:40:25.1160567Z Selecting previously unselected package wayland-protocols.
+2026-05-03T20:40:25.1337192Z Preparing to unpack .../54-wayland-protocols_1.25-1_all.deb ...
+2026-05-03T20:40:25.1344521Z Unpacking wayland-protocols (1.25-1) ...
+2026-05-03T20:40:25.1629152Z Selecting previously unselected package libgtk-3-dev:amd64.
+2026-05-03T20:40:25.1806596Z Preparing to unpack .../55-libgtk-3-dev_3.24.33-1ubuntu2.2_amd64.deb ...
+2026-05-03T20:40:25.1815141Z Unpacking libgtk-3-dev:amd64 (3.24.33-1ubuntu2.2) ...
+2026-05-03T20:40:25.3181546Z Selecting previously unselected package llvm-runtime:amd64.
+2026-05-03T20:40:25.3369268Z Preparing to unpack .../56-llvm-runtime_1%3a14.0-55~exp2_amd64.deb ...
+2026-05-03T20:40:25.3377486Z Unpacking llvm-runtime:amd64 (1:14.0-55~exp2) ...
+2026-05-03T20:40:25.3598719Z Selecting previously unselected package llvm.
+2026-05-03T20:40:25.3780979Z Preparing to unpack .../57-llvm_1%3a14.0-55~exp2_amd64.deb ...
+2026-05-03T20:40:25.3811723Z Unpacking llvm (1:14.0-55~exp2) ...
+2026-05-03T20:40:25.4111748Z Selecting previously unselected package llvm-dev.
+2026-05-03T20:40:25.4293333Z Preparing to unpack .../58-llvm-dev_1%3a14.0-55~exp2_amd64.deb ...
+2026-05-03T20:40:25.4322304Z Unpacking llvm-dev (1:14.0-55~exp2) ...
+2026-05-03T20:40:25.4529890Z Selecting previously unselected package nasm.
+2026-05-03T20:40:25.4710134Z Preparing to unpack .../59-nasm_2.15.05-1_amd64.deb ...
+2026-05-03T20:40:25.4718319Z Unpacking nasm (2.15.05-1) ...
+2026-05-03T20:40:25.5399042Z Selecting previously unselected package ninja-build.
+2026-05-03T20:40:25.5579495Z Preparing to unpack .../60-ninja-build_1.10.1-1_amd64.deb ...
+2026-05-03T20:40:25.5587576Z Unpacking ninja-build (1.10.1-1) ...
+2026-05-03T20:40:25.6188977Z Setting up libharfbuzz-icu0:amd64 (2.7.4-1ubuntu3.2) ...
+2026-05-03T20:40:25.6211495Z Setting up libpangoxft-1.0-0:amd64 (1.50.6+ds-2ubuntu1) ...
+2026-05-03T20:40:25.6231193Z Setting up libglvnd-core-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.6251238Z Setting up gir1.2-atk-1.0:amd64 (2.36.0-3build1) ...
+2026-05-03T20:40:25.6270973Z Setting up libfribidi-dev:amd64 (1.0.8-2ubuntu3.1) ...
+2026-05-03T20:40:25.6290979Z Setting up libxkbcommon-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.6313431Z Setting up pango1.0-tools (1.50.6+ds-2ubuntu1) ...
+2026-05-03T20:40:25.6334213Z Setting up libharfbuzz-gobject0:amd64 (2.7.4-1ubuntu3.2) ...
+2026-05-03T20:40:25.6354068Z Setting up gir1.2-atspi-2.0:amd64 (2.44.0-3) ...
+2026-05-03T20:40:25.6377313Z Setting up gir1.2-harfbuzz-0.0:amd64 (2.7.4-1ubuntu3.2) ...
+2026-05-03T20:40:25.6399933Z Setting up libopengl0:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.6421064Z Setting up ninja-build (1.10.1-1) ...
+2026-05-03T20:40:25.6443080Z Setting up libxfixes-dev:amd64 (1:6.0.0-1) ...
+2026-05-03T20:40:25.6464249Z Setting up libwayland-bin (1.20.0-1ubuntu0.1) ...
+2026-05-03T20:40:25.6485070Z Setting up libgraphite2-dev:amd64 (1.3.14-1build2) ...
+2026-05-03T20:40:25.6504225Z Setting up gir1.2-pango-1.0:amd64 (1.50.6+ds-2ubuntu1) ...
+2026-05-03T20:40:25.6523848Z Setting up libxrandr-dev:amd64 (2:1.5.2-1build1) ...
+2026-05-03T20:40:25.6545857Z Setting up libegl-mesa0:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+2026-05-03T20:40:25.6570280Z Setting up libgles2:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.6592213Z Setting up dh-elpa-helper (2.0.9ubuntu1) ...
+2026-05-03T20:40:25.6612677Z Setting up clang (1:14.0-55~exp2) ...
+2026-05-03T20:40:25.6892266Z Setting up libgles1:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.6920453Z Setting up llvm-runtime:amd64 (1:14.0-55~exp2) ...
+2026-05-03T20:40:25.6941635Z Setting up libjsoncpp25:amd64 (1.9.5-3) ...
+2026-05-03T20:40:25.6990465Z Setting up pkg-config (0.29.2-1ubuntu3) ...
+2026-05-03T20:40:25.7325370Z Setting up llvm (1:14.0-55~exp2) ...
+2026-05-03T20:40:25.7347323Z Setting up libxinerama-dev:amd64 (2:1.1.4-3) ...
+2026-05-03T20:40:25.7369071Z Setting up nasm (2.15.05-1) ...
+2026-05-03T20:40:25.7389677Z Setting up wayland-protocols (1.25-1) ...
+2026-05-03T20:40:25.7409712Z Setting up libdatrie-dev:amd64 (0.2.13-2) ...
+2026-05-03T20:40:25.7429611Z Setting up librhash0:amd64 (1.4.2-1ubuntu1) ...
+2026-05-03T20:40:25.7451270Z Setting up libegl1:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.7473356Z Setting up libclang-14-dev (1:14.0.0-1ubuntu1.1) ...
+2026-05-03T20:40:25.7495602Z Setting up libglx-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.7519319Z Setting up cmake-data (3.22.1-1ubuntu1.22.04.2) ...
+2026-05-03T20:40:25.8235158Z Setting up libopengl-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.8255840Z Setting up libxi-dev:amd64 (2:1.8-1build1) ...
+2026-05-03T20:40:25.8277375Z Setting up libgl-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.8298356Z Setting up libatk1.0-dev:amd64 (2.36.0-3build1) ...
+2026-05-03T20:40:25.8319751Z Setting up libxft-dev:amd64 (2.3.4-1) ...
+2026-05-03T20:40:25.8341811Z Setting up libxtst-dev:amd64 (2:1.2.3-1build4) ...
+2026-05-03T20:40:25.8363760Z Setting up libxdamage-dev:amd64 (1:1.1.5-2build2) ...
+2026-05-03T20:40:25.8388702Z Setting up llvm-dev (1:14.0-55~exp2) ...
+2026-05-03T20:40:25.8416111Z Setting up libharfbuzz-dev:amd64 (2.7.4-1ubuntu3.2) ...
+2026-05-03T20:40:25.8443235Z Setting up libclang-dev (1:14.0-55~exp2) ...
+2026-05-03T20:40:25.8467971Z Setting up libegl-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.8488702Z Setting up libxcomposite-dev:amd64 (1:0.4.5-1build2) ...
+2026-05-03T20:40:25.8513526Z Setting up libxcursor-dev:amd64 (1:1.2.0-2build4) ...
+2026-05-03T20:40:25.8534299Z Setting up libepoxy-dev:amd64 (1.5.10-1) ...
+2026-05-03T20:40:25.8559476Z Setting up gir1.2-gtk-3.0:amd64 (3.24.33-1ubuntu2.2) ...
+2026-05-03T20:40:25.8583988Z Setting up libwayland-dev:amd64 (1.20.0-1ubuntu0.1) ...
+2026-05-03T20:40:25.8610243Z Setting up libdbus-1-dev:amd64 (1.12.20-2ubuntu4.1) ...
+2026-05-03T20:40:25.8634129Z Setting up libthai-dev:amd64 (0.1.29-1build1) ...
+2026-05-03T20:40:25.8660528Z Setting up cmake (3.22.1-1ubuntu1.22.04.2) ...
+2026-05-03T20:40:25.8684955Z Setting up libgles-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.8706469Z Setting up libatspi2.0-dev:amd64 (2.44.0-3) ...
+2026-05-03T20:40:25.8727447Z Setting up libglvnd-dev:amd64 (1.4.0-1) ...
+2026-05-03T20:40:25.8750212Z Setting up libatk-bridge2.0-dev:amd64 (2.38.0-3) ...
+2026-05-03T20:40:25.8771456Z Setting up libpango1.0-dev:amd64 (1.50.6+ds-2ubuntu1) ...
+2026-05-03T20:40:25.8795333Z Setting up libegl1-mesa-dev:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+2026-05-03T20:40:25.8820646Z Setting up libgtk-3-dev:amd64 (3.24.33-1ubuntu2.2) ...
+2026-05-03T20:40:25.8849169Z Processing triggers for man-db (2.10.2-1) ...
+2026-05-03T20:40:25.8870917Z Not building database; man-db/auto-update is not 'true'.
+2026-05-03T20:40:25.8888445Z Processing triggers for libc-bin (2.35-0ubuntu3.13) ...
+2026-05-03T20:40:26.6163773Z 
+2026-05-03T20:40:26.6164437Z Running kernel seems to be up-to-date.
+2026-05-03T20:40:26.6164992Z 
+2026-05-03T20:40:26.6165169Z No services need to be restarted.
+2026-05-03T20:40:26.6165490Z 
+2026-05-03T20:40:26.6165652Z No containers need to be restarted.
+2026-05-03T20:40:26.6165948Z 
+2026-05-03T20:40:26.6166140Z No user sessions are running outdated binaries.
+2026-05-03T20:40:26.6166506Z 
+2026-05-03T20:40:26.6166782Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-05-03T20:40:28.1675739Z ##[group]Run dtolnay/rust-toolchain@v1
+2026-05-03T20:40:28.1676039Z with:
+2026-05-03T20:40:28.1676207Z   toolchain: 1.75
+2026-05-03T20:40:28.1676411Z   targets: x86_64-unknown-linux-gnu
+2026-05-03T20:40:28.1676646Z   components: rustfmt
+2026-05-03T20:40:28.1676831Z env:
+2026-05-03T20:40:28.1677021Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:28.1677288Z ##[endgroup]
+2026-05-03T20:40:28.1777972Z ##[group]Run : parse toolchain version
+2026-05-03T20:40:28.1778305Z [36;1m: parse toolchain version[0m
+2026-05-03T20:40:28.1778557Z [36;1mif [[ -z $toolchain ]]; then[0m
+2026-05-03T20:40:28.1779070Z [36;1m  # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070[0m
+2026-05-03T20:40:28.1779635Z [36;1m  echo "'toolchain' is a required input" >&2[0m
+2026-05-03T20:40:28.1779926Z [36;1m  exit 1[0m
+2026-05-03T20:40:28.1780248Z [36;1melif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+2026-05-03T20:40:28.1780871Z [36;1m  if [[ Linux == macOS ]]; then[0m
+2026-05-03T20:40:28.1781381Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:40:28.1781876Z [36;1m  else[0m
+2026-05-03T20:40:28.1782252Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:40:28.1782679Z [36;1m  fi[0m
+2026-05-03T20:40:28.1782951Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+2026-05-03T20:40:28.1783455Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:40:28.1783896Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+2026-05-03T20:40:28.1784399Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:40:28.1785032Z [36;1melse[0m
+2026-05-03T20:40:28.1785266Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:40:28.1785534Z [36;1mfi[0m
+2026-05-03T20:40:28.1846559Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:28.1846883Z env:
+2026-05-03T20:40:28.1847089Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:28.1847355Z   toolchain: 1.75
+2026-05-03T20:40:28.1847530Z ##[endgroup]
+2026-05-03T20:40:28.1995462Z ##[group]Run : construct rustup command line
+2026-05-03T20:40:28.1995776Z [36;1m: construct rustup command line[0m
+2026-05-03T20:40:28.1996214Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:40:28.1996834Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:40:28.1997309Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:40:28.2051529Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:28.2051857Z env:
+2026-05-03T20:40:28.2052068Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:28.2052346Z   targets: x86_64-unknown-linux-gnu
+2026-05-03T20:40:28.2052585Z   components: rustfmt
+2026-05-03T20:40:28.2052767Z ##[endgroup]
+2026-05-03T20:40:28.2154194Z ##[group]Run : set $CARGO_HOME
+2026-05-03T20:40:28.2154437Z [36;1m: set $CARGO_HOME[0m
+2026-05-03T20:40:28.2154738Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV[0m
+2026-05-03T20:40:28.2207826Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:28.2208147Z env:
+2026-05-03T20:40:28.2208350Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:28.2208612Z ##[endgroup]
+2026-05-03T20:40:28.2305452Z ##[group]Run : install rustup if needed
+2026-05-03T20:40:28.2305765Z [36;1m: install rustup if needed[0m
+2026-05-03T20:40:28.2306057Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+2026-05-03T20:40:28.2307168Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y[0m
+2026-05-03T20:40:28.2308031Z [36;1m  echo "$CARGO_HOME/bin" >> $GITHUB_PATH[0m
+2026-05-03T20:40:28.2308298Z [36;1mfi[0m
+2026-05-03T20:40:28.2360326Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:28.2360640Z env:
+2026-05-03T20:40:28.2360843Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:28.2361123Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:28.2361347Z ##[endgroup]
+2026-05-03T20:40:28.2457830Z ##[group]Run rustup toolchain install 1.75 --target x86_64-unknown-linux-gnu --component rustfmt --profile minimal --no-self-update
+2026-05-03T20:40:28.2458737Z [36;1mrustup toolchain install 1.75 --target x86_64-unknown-linux-gnu --component rustfmt --profile minimal --no-self-update[0m
+2026-05-03T20:40:28.2511294Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:28.2511817Z env:
+2026-05-03T20:40:28.2512199Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:28.2512545Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:28.2512768Z ##[endgroup]
+2026-05-03T20:40:28.3911894Z info: syncing channel updates for 1.75-x86_64-unknown-linux-gnu
+2026-05-03T20:40:28.7721446Z info: latest update on 2023-12-28 for version 1.75.0 (82e1608df 2023-12-21)
+2026-05-03T20:40:28.7722083Z info: downloading 4 components
+2026-05-03T20:40:35.0729567Z 
+2026-05-03T20:40:35.0832115Z   1.75-x86_64-unknown-linux-gnu installed - rustc 1.75.0 (82e1608df 2023-12-21)
+2026-05-03T20:40:35.0832672Z 
+2026-05-03T20:40:35.0907353Z ##[group]Run rustup default 1.75
+2026-05-03T20:40:35.0907773Z [36;1mrustup default 1.75[0m
+2026-05-03T20:40:35.0970059Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:35.0970375Z env:
+2026-05-03T20:40:35.0970576Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:35.0970858Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:35.0971083Z ##[endgroup]
+2026-05-03T20:40:35.1096546Z info: using existing install for 1.75-x86_64-unknown-linux-gnu
+2026-05-03T20:40:35.1102239Z info: default toolchain set to 1.75-x86_64-unknown-linux-gnu
+2026-05-03T20:40:35.1102670Z 
+2026-05-03T20:40:35.1202154Z   1.75-x86_64-unknown-linux-gnu unchanged - rustc 1.75.0 (82e1608df 2023-12-21)
+2026-05-03T20:40:35.1202556Z 
+2026-05-03T20:40:35.1236560Z ##[group]Run : create cachekey
+2026-05-03T20:40:35.1236877Z [36;1m: create cachekey[0m
+2026-05-03T20:40:35.1237398Z [36;1mDATE=$(rustc +1.75 --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+2026-05-03T20:40:35.1238041Z [36;1mHASH=$(rustc +1.75 --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+2026-05-03T20:40:35.1238623Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:40:35.1297083Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:35.1297399Z env:
+2026-05-03T20:40:35.1297595Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:35.1297898Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:35.1298113Z ##[endgroup]
+2026-05-03T20:40:35.1730602Z ##[group]Run : disable incremental compilation
+2026-05-03T20:40:35.1730935Z [36;1m: disable incremental compilation[0m
+2026-05-03T20:40:35.1731216Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+2026-05-03T20:40:35.1731507Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+2026-05-03T20:40:35.1731753Z [36;1mfi[0m
+2026-05-03T20:40:35.1789988Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:35.1790295Z env:
+2026-05-03T20:40:35.1790489Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:35.1790768Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:35.1790983Z ##[endgroup]
+2026-05-03T20:40:35.1881057Z ##[group]Run : enable colors in Cargo output
+2026-05-03T20:40:35.1881352Z [36;1m: enable colors in Cargo output[0m
+2026-05-03T20:40:35.1881659Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+2026-05-03T20:40:35.1882149Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+2026-05-03T20:40:35.1882412Z [36;1mfi[0m
+2026-05-03T20:40:35.1940617Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:35.1941161Z env:
+2026-05-03T20:40:35.1941489Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:35.1941951Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:35.1942339Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:40:35.1942634Z ##[endgroup]
+2026-05-03T20:40:35.2068678Z ##[group]Run : enable Cargo sparse registry
+2026-05-03T20:40:35.2068979Z [36;1m: enable Cargo sparse registry[0m
+2026-05-03T20:40:35.2069324Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+2026-05-03T20:40:35.2069993Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+2026-05-03T20:40:35.2070675Z [36;1m  if rustc +1.75 --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+2026-05-03T20:40:35.2071387Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2026-05-03T20:40:35.2071883Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+2026-05-03T20:40:35.2072332Z [36;1m  elif rustc +1.75 --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+2026-05-03T20:40:35.2072845Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2026-05-03T20:40:35.2073333Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+2026-05-03T20:40:35.2073647Z [36;1m  fi[0m
+2026-05-03T20:40:35.2073802Z [36;1mfi[0m
+2026-05-03T20:40:35.2124386Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:35.2124685Z env:
+2026-05-03T20:40:35.2125134Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:35.2125414Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:35.2125631Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:40:35.2125834Z   CARGO_TERM_COLOR: always
+2026-05-03T20:40:35.2126027Z ##[endgroup]
+2026-05-03T20:40:35.2604219Z ##[group]Run : work around spurious network errors in curl 8.0
+2026-05-03T20:40:35.2604613Z [36;1m: work around spurious network errors in curl 8.0[0m
+2026-05-03T20:40:35.2605492Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+2026-05-03T20:40:35.2606060Z [36;1mif rustc +1.75 --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+2026-05-03T20:40:35.2606463Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+2026-05-03T20:40:35.2606740Z [36;1mfi[0m
+2026-05-03T20:40:35.2664709Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:35.2665227Z env:
+2026-05-03T20:40:35.2665436Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:35.2665707Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:35.2665927Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:40:35.2666109Z   CARGO_TERM_COLOR: always
+2026-05-03T20:40:35.2666316Z ##[endgroup]
+2026-05-03T20:40:35.2913413Z ##[group]Run rustc +1.75 --version --verbose
+2026-05-03T20:40:35.2913709Z [36;1mrustc +1.75 --version --verbose[0m
+2026-05-03T20:40:35.2967573Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:35.2967889Z env:
+2026-05-03T20:40:35.2968087Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:35.2968364Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:35.2968578Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:40:35.2968770Z   CARGO_TERM_COLOR: always
+2026-05-03T20:40:35.2968971Z ##[endgroup]
+2026-05-03T20:40:35.3172810Z rustc 1.75.0 (82e1608df 2023-12-21)
+2026-05-03T20:40:35.3173237Z binary: rustc
+2026-05-03T20:40:35.3173795Z commit-hash: 82e1608dfa6e0b5569232559e3d385fea5a93112
+2026-05-03T20:40:35.3174269Z commit-date: 2023-12-21
+2026-05-03T20:40:35.3174604Z host: x86_64-unknown-linux-gnu
+2026-05-03T20:40:35.3175089Z release: 1.75.0
+2026-05-03T20:40:35.3175378Z LLVM version: 17.0.6
+2026-05-03T20:40:35.3273249Z ##[group]Run Swatinem/rust-cache@v2
+2026-05-03T20:40:35.3273520Z with:
+2026-05-03T20:40:35.3273697Z   prefix-key: bridge-ubuntu-22.04
+2026-05-03T20:40:35.3273929Z   add-job-id-key: true
+2026-05-03T20:40:35.3274137Z   add-rust-environment-hash-key: true
+2026-05-03T20:40:35.3274366Z   cache-targets: true
+2026-05-03T20:40:35.3274556Z   cache-all-crates: false
+2026-05-03T20:40:35.3274960Z   cache-workspace-crates: false
+2026-05-03T20:40:35.3275249Z   save-if: true
+2026-05-03T20:40:35.3275422Z   cache-provider: github
+2026-05-03T20:40:35.3275616Z   cache-bin: true
+2026-05-03T20:40:35.3275783Z   lookup-only: false
+2026-05-03T20:40:35.3275958Z   cmd-format: {0}
+2026-05-03T20:40:35.3276111Z env:
+2026-05-03T20:40:35.3276298Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:35.3276562Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:35.3276774Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:40:35.3276965Z   CARGO_TERM_COLOR: always
+2026-05-03T20:40:35.3277151Z ##[endgroup]
+2026-05-03T20:40:35.6021068Z (node:3630) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-05-03T20:40:35.6023706Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-05-03T20:40:35.9460729Z ##[warning]Error parsing Cargo.toml manifest, fallback to caching entire file: Error: Invalid TOML document: only letter, numbers, dashes and underscores are allowed in keys
+
+1:  ﻿[package]
+    ^
+2:  name = "rustdesk"
+
+2026-05-03T20:40:35.9752936Z ##[group]Cache Configuration
+2026-05-03T20:40:35.9753477Z Cache Provider:
+2026-05-03T20:40:35.9753862Z     github
+2026-05-03T20:40:35.9754198Z Workspaces:
+2026-05-03T20:40:35.9754650Z     /home/runner/work/RustDesk1.4.5/RustDesk1.4.5
+2026-05-03T20:40:35.9755502Z Cache Paths:
+2026-05-03T20:40:35.9755900Z     /home/runner/.cargo/bin
+2026-05-03T20:40:35.9756404Z     /home/runner/.cargo/.crates.toml
+2026-05-03T20:40:35.9756956Z     /home/runner/.cargo/.crates2.json
+2026-05-03T20:40:35.9757556Z     /home/runner/.cargo/registry
+2026-05-03T20:40:35.9758060Z     /home/runner/.cargo/git
+2026-05-03T20:40:35.9758638Z     /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/target
+2026-05-03T20:40:35.9759169Z Restore Key:
+2026-05-03T20:40:35.9759629Z     bridge-ubuntu-22.04-generate-bridge-Linux-x64-8c4acb2b
+2026-05-03T20:40:35.9760196Z Cache Key:
+2026-05-03T20:40:35.9760705Z     bridge-ubuntu-22.04-generate-bridge-Linux-x64-8c4acb2b-f3863942
+2026-05-03T20:40:35.9761296Z .. Prefix:
+2026-05-03T20:40:35.9761702Z   - bridge-ubuntu-22.04-generate-bridge-Linux-x64
+2026-05-03T20:40:35.9762240Z .. Environment considered:
+2026-05-03T20:40:35.9762620Z   - Rust Versions:
+2026-05-03T20:40:35.9763171Z     - 1.75.0 x86_64-unknown-linux-gnu 82e1608dfa6e0b5569232559e3d385fea5a93112
+2026-05-03T20:40:35.9764002Z     - 1.94.1 x86_64-unknown-linux-gnu e408947bfd200af42db322daf0fadfe7e26d3bd1
+2026-05-03T20:40:35.9765067Z     - 1.75.0 x86_64-unknown-linux-gnu 82e1608dfa6e0b5569232559e3d385fea5a93112
+2026-05-03T20:40:35.9765747Z   - CARGO_HOME
+2026-05-03T20:40:35.9766068Z   - CARGO_INCREMENTAL
+2026-05-03T20:40:35.9766434Z   - CARGO_TERM_COLOR
+2026-05-03T20:40:35.9766778Z .. Lockfiles considered:
+2026-05-03T20:40:35.9767296Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/.cargo/config.toml
+2026-05-03T20:40:35.9768013Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/Cargo.lock
+2026-05-03T20:40:35.9768669Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/Cargo.toml
+2026-05-03T20:40:35.9769413Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/clipboard/Cargo.toml
+2026-05-03T20:40:35.9770219Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/enigo/Cargo.toml
+2026-05-03T20:40:35.9771036Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/hbb_common/Cargo.toml
+2026-05-03T20:40:35.9771879Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/portable/Cargo.toml
+2026-05-03T20:40:35.9772764Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/remote_printer/Cargo.toml
+2026-05-03T20:40:35.9774015Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/scrap/Cargo.toml
+2026-05-03T20:40:35.9775148Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/virtual_display/Cargo.toml
+2026-05-03T20:40:35.9776142Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/virtual_display/dylib/Cargo.toml
+2026-05-03T20:40:35.9777183Z ##[endgroup]
+2026-05-03T20:40:35.9777396Z 
+2026-05-03T20:40:35.9777534Z ... Restoring cache ...
+2026-05-03T20:40:36.0206897Z No cache found.
+2026-05-03T20:40:36.0384125Z ##[group]Run subosito/flutter-action@v2.12.0
+2026-05-03T20:40:36.0384408Z with:
+2026-05-03T20:40:36.0384570Z   channel: stable
+2026-05-03T20:40:36.0384745Z   flutter-version: 3.24.5
+2026-05-03T20:40:36.0385376Z   cache: true
+2026-05-03T20:40:36.0385622Z   cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:
+2026-05-03T20:40:36.0386024Z   cache-path: /opt/hostedtoolcache/flutter/:channel:-:version:-:arch:
+2026-05-03T20:40:36.0386367Z   architecture: X64
+2026-05-03T20:40:36.0386532Z env:
+2026-05-03T20:40:36.0386848Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:36.0387109Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:36.0390870Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:40:36.0391066Z   CARGO_TERM_COLOR: always
+2026-05-03T20:40:36.0391263Z   CACHE_ON_FAILURE: false
+2026-05-03T20:40:36.0391451Z ##[endgroup]
+2026-05-03T20:40:36.0407336Z ##[group]Run chmod +x $GITHUB_ACTION_PATH/setup.sh
+2026-05-03T20:40:36.0407714Z [36;1mchmod +x $GITHUB_ACTION_PATH/setup.sh[0m
+2026-05-03T20:40:36.0465989Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:36.0466297Z env:
+2026-05-03T20:40:36.0466497Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:36.0466764Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:36.0466982Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:40:36.0467165Z   CARGO_TERM_COLOR: always
+2026-05-03T20:40:36.0467362Z   CACHE_ON_FAILURE: false
+2026-05-03T20:40:36.0467547Z ##[endgroup]
+2026-05-03T20:40:36.0571361Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -p -c '/opt/hostedtoolcache/flutter/:channel:-:version:-:arch:' -k 'flutter-:os:-:channel:-:version:-:arch:-:hash:' -n '3.24.5' -a 'X64' stable
+2026-05-03T20:40:36.0572543Z [36;1m$GITHUB_ACTION_PATH/setup.sh -p -c '/opt/hostedtoolcache/flutter/:channel:-:version:-:arch:' -k 'flutter-:os:-:channel:-:version:-:arch:-:hash:' -n '3.24.5' -a 'X64' stable[0m
+2026-05-03T20:40:36.0626471Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:36.0626777Z env:
+2026-05-03T20:40:36.0626989Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:36.0627251Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:36.0627472Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:40:36.0627657Z   CARGO_TERM_COLOR: always
+2026-05-03T20:40:36.0627854Z   CACHE_ON_FAILURE: false
+2026-05-03T20:40:36.0628040Z ##[endgroup]
+2026-05-03T20:40:36.7667197Z ##[group]Run actions/cache@v3
+2026-05-03T20:40:36.7667451Z with:
+2026-05-03T20:40:36.7667711Z   path: /opt/hostedtoolcache/flutter/stable-3.24.5-x64
+2026-05-03T20:40:36.7668614Z   key: flutter-linux-stable-3.24.5-x64-dec2ee5c1f98f8e84a7d5380c05eb8a3d0a81668-1d2f3093586f11841bf6d3da14fd5d22c1d2ed0dcd92b1d7cdc4551de6d484ee
+2026-05-03T20:40:36.7670421Z   restore-keys: flutter-linux-stable-3.24.5-x64-dec2ee5c1f98f8e84a7d5380c05eb8a3d0a81668-1d2f3093586f11841bf6d3da14fd5d22c1d2ed0dcd92b1d7cdc4551de6d484ee
+flutter-linux-stable-3.24.5-x64-dec2ee5c1f98f8e84a7d5380c05eb8a3d0a81668
+
+2026-05-03T20:40:36.7671695Z   enableCrossOsArchive: false
+2026-05-03T20:40:36.7671965Z   fail-on-cache-miss: false
+2026-05-03T20:40:36.7672210Z   lookup-only: false
+2026-05-03T20:40:36.7672415Z env:
+2026-05-03T20:40:36.7672630Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:36.7672949Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:36.7673206Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:40:36.7673430Z   CARGO_TERM_COLOR: always
+2026-05-03T20:40:36.7673663Z   CACHE_ON_FAILURE: false
+2026-05-03T20:40:36.7673889Z ##[endgroup]
+2026-05-03T20:40:36.9711118Z Cache not found for input keys: flutter-linux-stable-3.24.5-x64-dec2ee5c1f98f8e84a7d5380c05eb8a3d0a81668-1d2f3093586f11841bf6d3da14fd5d22c1d2ed0dcd92b1d7cdc4551de6d484ee, flutter-linux-stable-3.24.5-x64-dec2ee5c1f98f8e84a7d5380c05eb8a3d0a81668-1d2f3093586f11841bf6d3da14fd5d22c1d2ed0dcd92b1d7cdc4551de6d484ee, flutter-linux-stable-3.24.5-x64-dec2ee5c1f98f8e84a7d5380c05eb8a3d0a81668
+2026-05-03T20:40:36.9777523Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -c '/opt/hostedtoolcache/flutter/stable-3.24.5-x64' -n '3.24.5' -a 'x64' stable
+2026-05-03T20:40:36.9778439Z [36;1m$GITHUB_ACTION_PATH/setup.sh -c '/opt/hostedtoolcache/flutter/stable-3.24.5-x64' -n '3.24.5' -a 'x64' stable[0m
+2026-05-03T20:40:36.9838422Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:40:36.9838738Z env:
+2026-05-03T20:40:36.9838933Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:40:36.9839210Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:40:36.9839438Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:40:36.9839628Z   CARGO_TERM_COLOR: always
+2026-05-03T20:40:36.9839833Z   CACHE_ON_FAILURE: false
+2026-05-03T20:40:36.9840019Z ##[endgroup]
+2026-05-03T20:40:37.3129944Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-05-03T20:40:37.3130674Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-05-03T20:40:37.3131065Z 
+2026-05-03T20:40:38.2353684Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-05-03T20:40:39.2291895Z  28  661M   28  191M    0     0   207M      0  0:00:03 --:--:--  0:00:03  207M
+2026-05-03T20:40:40.2296345Z  59  661M   59  396M    0     0   206M      0  0:00:03  0:00:01  0:00:02  206M
+2026-05-03T20:40:40.3419252Z  96  661M   96  637M    0     0   218M      0  0:00:03  0:00:02  0:00:01  218M
+2026-05-03T20:40:40.3419956Z 100  661M  100  661M    0     0   218M      0  0:00:03  0:00:03 --:--:--  218M
+2026-05-03T20:41:06.3454063Z ##[group]Run FLUTTER_DIR=$(dirname $(dirname $(which flutter)))
+2026-05-03T20:41:06.3454511Z [36;1mFLUTTER_DIR=$(dirname $(dirname $(which flutter)))[0m
+2026-05-03T20:41:06.3455243Z [36;1mcp .github/patches/flutter_3.24.4_dropdown_menu_enableFilter.diff $FLUTTER_DIR[0m
+2026-05-03T20:41:06.3455673Z [36;1mcd $FLUTTER_DIR[0m
+2026-05-03T20:41:06.3456115Z [36;1m[[ "3.24.5" == 3.24.5 ]] && git apply flutter_3.24.4_dropdown_menu_enableFilter.diff || echo "Patch apply attempted"[0m
+2026-05-03T20:41:06.3516965Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:41:06.3517281Z env:
+2026-05-03T20:41:06.3517477Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:41:06.3517751Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:41:06.3517971Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:41:06.3518160Z   CARGO_TERM_COLOR: always
+2026-05-03T20:41:06.3518351Z   CACHE_ON_FAILURE: false
+2026-05-03T20:41:06.3518656Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.24.5-x64
+2026-05-03T20:41:06.3519079Z   PUB_CACHE: /opt/hostedtoolcache/flutter/stable-3.24.5-x64/.pub-cache
+2026-05-03T20:41:06.3519424Z ##[endgroup]
+2026-05-03T20:41:06.3967059Z ##[group]Run set -e
+2026-05-03T20:41:06.3967302Z [36;1mset -e[0m
+2026-05-03T20:41:06.3967599Z [36;1mcargo install cargo-expand --version 1.0.95 --locked || true[0m
+2026-05-03T20:41:06.3968103Z [36;1mcargo install flutter_rust_bridge_codegen --version 1.80.1 --features 'uuid' --locked[0m
+2026-05-03T20:41:06.3968513Z [36;1mcd flutter[0m
+2026-05-03T20:41:06.3968840Z [36;1msed -i -e 's/extended_text: 14.0.0/extended_text: 13.0.0/g' pubspec.yaml[0m
+2026-05-03T20:41:06.3969221Z [36;1mflutter pub get[0m
+2026-05-03T20:41:06.4023622Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:41:06.4023926Z env:
+2026-05-03T20:41:06.4024123Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:41:06.4024393Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:41:06.4024614Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:41:06.4025050Z   CARGO_TERM_COLOR: always
+2026-05-03T20:41:06.4025256Z   CACHE_ON_FAILURE: false
+2026-05-03T20:41:06.4025561Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.24.5-x64
+2026-05-03T20:41:06.4025978Z   PUB_CACHE: /opt/hostedtoolcache/flutter/stable-3.24.5-x64/.pub-cache
+2026-05-03T20:41:06.4026313Z ##[endgroup]
+2026-05-03T20:41:06.4352386Z [1m[32m    Updating[0m crates.io index
+2026-05-03T20:41:06.8031626Z [1m[32m Downloading[0m crates ...
+2026-05-03T20:41:06.8937291Z [1m[32m  Downloaded[0m cargo-expand v1.0.95
+2026-05-03T20:41:06.9610573Z [1m[32m  Installing[0m cargo-expand v1.0.95
+2026-05-03T20:41:06.9632288Z [1m[32m    Updating[0m crates.io index
+2026-05-03T20:41:07.8441652Z [1m[32m    Updating[0m crates.io index
+2026-05-03T20:41:07.9396274Z [1m[32m Downloading[0m crates ...
+2026-05-03T20:41:08.0636278Z [1m[32m  Downloaded[0m anstream v0.6.18
+2026-05-03T20:41:08.0665262Z [1m[32m  Downloaded[0m autocfg v1.4.0
+2026-05-03T20:41:08.0689408Z [1m[32m  Downloaded[0m aho-corasick v1.1.3
+2026-05-03T20:41:08.0755042Z [1m[32m  Downloaded[0m anstyle-parse v0.2.6
+2026-05-03T20:41:08.0774484Z [1m[32m  Downloaded[0m anstyle v1.0.10
+2026-05-03T20:41:08.0790987Z [1m[32m  Downloaded[0m ansi_colours v1.2.3
+2026-05-03T20:41:08.0809133Z [1m[32m  Downloaded[0m adler2 v2.0.0
+2026-05-03T20:41:08.0824469Z [1m[32m  Downloaded[0m anstyle-query v1.1.2
+2026-05-03T20:41:08.0879565Z [1m[32m  Downloaded[0m serde_spanned v0.6.8
+2026-05-03T20:41:08.0895585Z [1m[32m  Downloaded[0m ryu v1.0.18
+2026-05-03T20:41:08.0932965Z [1m[32m  Downloaded[0m once_cell v1.20.2
+2026-05-03T20:41:08.0963415Z [1m[32m  Downloaded[0m path_abs v0.5.1
+2026-05-03T20:41:08.0992715Z [1m[32m  Downloaded[0m std_prelude v0.2.12
+2026-05-03T20:41:08.1004551Z [1m[32m  Downloaded[0m miniz_oxide v0.8.0
+2026-05-03T20:41:08.1034144Z [1m[32m  Downloaded[0m termcolor v1.4.1
+2026-05-03T20:41:08.1055420Z [1m[32m  Downloaded[0m unsafe-libyaml v0.2.11
+2026-05-03T20:41:08.1099880Z [1m[32m  Downloaded[0m syn-select v0.3.0
+2026-05-03T20:41:08.1113273Z [1m[32m  Downloaded[0m utf8parse v0.2.2
+2026-05-03T20:41:08.1126033Z [1m[32m  Downloaded[0m unicode-width v0.1.14
+2026-05-03T20:41:08.1199424Z [1m[32m  Downloaded[0m strsim v0.11.1
+2026-05-03T20:41:08.1221049Z [1m[32m  Downloaded[0m winnow v0.6.20
+2026-05-03T20:41:08.1329429Z [1m[32m  Downloaded[0m lazy_static v1.5.0
+2026-05-03T20:41:08.1356235Z [1m[32m  Downloaded[0m tempfile v3.13.0
+2026-05-03T20:41:08.1392432Z [1m[32m  Downloaded[0m same-file v1.0.6
+2026-05-03T20:41:08.1413329Z [1m[32m  Downloaded[0m serde_derive v1.0.214
+2026-05-03T20:41:08.1461584Z [1m[32m  Downloaded[0m unicode-ident v1.0.13
+2026-05-03T20:41:08.1499228Z [1m[32m  Downloaded[0m toml_datetime v0.6.8
+2026-05-03T20:41:08.1511018Z [1m[32m  Downloaded[0m thiserror-impl v1.0.68
+2026-05-03T20:41:08.1529093Z [1m[32m  Downloaded[0m bit-vec v0.6.3
+2026-05-03T20:41:08.1547012Z [1m[32m  Downloaded[0m bytemuck v1.19.0
+2026-05-03T20:41:08.1586897Z [1m[32m  Downloaded[0m rustix v0.38.39
+2026-05-03T20:41:08.1875975Z [1m[32m  Downloaded[0m regex-syntax v0.8.5
+2026-05-03T20:41:08.1982161Z [1m[32m  Downloaded[0m syn v2.0.87
+2026-05-03T20:41:08.2115272Z [1m[32m  Downloaded[0m indexmap v2.6.0
+2026-05-03T20:41:08.2169130Z [1m[32m  Downloaded[0m bitflags v2.6.0
+2026-05-03T20:41:08.2218136Z [1m[32m  Downloaded[0m libc v0.2.161
+2026-05-03T20:41:08.2580506Z [1m[32m  Downloaded[0m syntect v5.2.0
+2026-05-03T20:41:08.2703533Z [1m[32m  Downloaded[0m linux-raw-sys v0.4.14
+2026-05-03T20:41:08.3209765Z [1m[32m  Downloaded[0m bat v0.24.0
+2026-05-03T20:41:08.4051213Z [1m[32m  Downloaded[0m encoding_rs v0.8.35
+2026-05-03T20:41:08.4288536Z [1m[32m  Downloaded[0m regex-automata v0.4.8
+2026-05-03T20:41:08.4478053Z [1m[32m  Downloaded[0m bitflags v1.3.2
+2026-05-03T20:41:08.4511554Z [1m[32m  Downloaded[0m quote v1.0.37
+2026-05-03T20:41:08.4539148Z [1m[32m  Downloaded[0m itoa v1.0.11
+2026-05-03T20:41:08.4552600Z [1m[32m  Downloaded[0m console v0.15.8
+2026-05-03T20:41:08.4583798Z [1m[32m  Downloaded[0m clap_lex v0.7.2
+2026-05-03T20:41:08.4595189Z [1m[32m  Downloaded[0m bstr v1.10.0
+2026-05-03T20:41:08.4705930Z [1m[32m  Downloaded[0m semver v1.0.23
+2026-05-03T20:41:08.4731375Z [1m[32m  Downloaded[0m rgb v0.8.50
+2026-05-03T20:41:08.4757388Z [1m[32m  Downloaded[0m log v0.4.22
+2026-05-03T20:41:08.4781896Z [1m[32m  Downloaded[0m etcetera v0.8.0
+2026-05-03T20:41:08.4799045Z [1m[32m  Downloaded[0m content_inspector v0.2.4
+2026-05-03T20:41:08.4815186Z [1m[32m  Downloaded[0m clap_builder v4.5.20
+2026-05-03T20:41:08.4888543Z [1m[32m  Downloaded[0m walkdir v2.5.0
+2026-05-03T20:41:08.4908014Z [1m[32m  Downloaded[0m toml_edit v0.22.22
+2026-05-03T20:41:08.5183571Z [1m[32m  Downloaded[0m shell-words v1.1.0
+2026-05-03T20:41:08.5193088Z [1m[32m  Downloaded[0m serde_json v1.0.132
+2026-05-03T20:41:08.5278634Z [1m[32m  Downloaded[0m nu-ansi-term v0.49.0
+2026-05-03T20:41:08.5304128Z [1m[32m  Downloaded[0m clap_derive v4.5.18
+2026-05-03T20:41:08.5327366Z [1m[32m  Downloaded[0m thiserror v1.0.68
+2026-05-03T20:41:08.5383396Z [1m[32m  Downloaded[0m toolchain_find v0.4.0
+2026-05-03T20:41:08.5395415Z [1m[32m  Downloaded[0m toml v0.8.19
+2026-05-03T20:41:08.5430939Z [1m[32m  Downloaded[0m clap-cargo v0.14.1
+2026-05-03T20:41:08.5445520Z [1m[32m  Downloaded[0m memchr v2.7.4
+2026-05-03T20:41:08.5506069Z [1m[32m  Downloaded[0m clap v4.5.20
+2026-05-03T20:41:08.5605373Z [1m[32m  Downloaded[0m cargo-subcommand-metadata v0.1.0
+2026-05-03T20:41:08.5611249Z [1m[32m  Downloaded[0m bincode v1.3.3
+2026-05-03T20:41:08.5635316Z [1m[32m  Downloaded[0m proc-macro2 v1.0.89
+2026-05-03T20:41:08.5663797Z [1m[32m  Downloaded[0m hashbrown v0.15.1
+2026-05-03T20:41:08.5718135Z [1m[32m  Downloaded[0m fancy-regex v0.11.0
+2026-05-03T20:41:08.5755745Z [1m[32m  Downloaded[0m equivalent v1.0.1
+2026-05-03T20:41:08.5763910Z [1m[32m  Downloaded[0m clircle v0.4.0
+2026-05-03T20:41:08.5778362Z [1m[32m  Downloaded[0m shlex v1.3.0
+2026-05-03T20:41:08.5791698Z [1m[32m  Downloaded[0m serde_yaml v0.9.34+deprecated
+2026-05-03T20:41:08.5829808Z [1m[32m  Downloaded[0m serde v1.0.214
+2026-05-03T20:41:08.5864705Z [1m[32m  Downloaded[0m regex v1.11.1
+2026-05-03T20:41:08.6015993Z [1m[32m  Downloaded[0m is_terminal_polyfill v1.70.1
+2026-05-03T20:41:08.6025365Z [1m[32m  Downloaded[0m home v0.5.9
+2026-05-03T20:41:08.6035114Z [1m[32m  Downloaded[0m flate2 v1.0.34
+2026-05-03T20:41:08.6095538Z [1m[32m  Downloaded[0m fastrand v2.1.1
+2026-05-03T20:41:08.6109549Z [1m[32m  Downloaded[0m colorchoice v1.0.3
+2026-05-03T20:41:08.6119397Z [1m[32m  Downloaded[0m prettyplease v0.2.25
+2026-05-03T20:41:08.6154914Z [1m[32m  Downloaded[0m grep-cli v0.1.11
+2026-05-03T20:41:08.6169043Z [1m[32m  Downloaded[0m fs-err v3.0.0
+2026-05-03T20:41:08.6188609Z [1m[32m  Downloaded[0m fnv v1.0.7
+2026-05-03T20:41:08.6197771Z [1m[32m  Downloaded[0m bytesize v1.3.0
+2026-05-03T20:41:08.6209032Z [1m[32m  Downloaded[0m bit-set v0.5.3
+2026-05-03T20:41:08.6220000Z [1m[32m  Downloaded[0m globset v0.4.15
+2026-05-03T20:41:08.6235447Z [1m[32m  Downloaded[0m cfg-if v1.0.0
+2026-05-03T20:41:08.6247149Z [1m[32m  Downloaded[0m heck v0.5.0
+2026-05-03T20:41:08.6259987Z [1m[32m  Downloaded[0m errno v0.3.9
+2026-05-03T20:41:08.6274280Z [1m[32m  Downloaded[0m crc32fast v1.4.2
+2026-05-03T20:41:08.6528890Z [1m[32m   Compiling[0m proc-macro2 v1.0.89
+2026-05-03T20:41:08.6529575Z [1m[32m   Compiling[0m unicode-ident v1.0.13
+2026-05-03T20:41:08.6530162Z [1m[32m   Compiling[0m memchr v2.7.4
+2026-05-03T20:41:08.6530684Z [1m[32m   Compiling[0m serde v1.0.214
+2026-05-03T20:41:08.7106995Z [1m[32m   Compiling[0m regex-syntax v0.8.5
+2026-05-03T20:41:08.9325468Z [1m[32m   Compiling[0m cfg-if v1.0.0
+2026-05-03T20:41:08.9580463Z [1m[32m   Compiling[0m libc v0.2.161
+2026-05-03T20:41:09.3168938Z [1m[32m   Compiling[0m quote v1.0.37
+2026-05-03T20:41:09.6126063Z [1m[32m   Compiling[0m syn v2.0.87
+2026-05-03T20:41:09.6707120Z [1m[32m   Compiling[0m aho-corasick v1.1.3
+2026-05-03T20:41:10.3031735Z [1m[32m   Compiling[0m hashbrown v0.15.1
+2026-05-03T20:41:10.9637598Z [1m[32m   Compiling[0m regex-automata v0.4.8
+2026-05-03T20:41:14.3589499Z [1m[32m   Compiling[0m serde_derive v1.0.214
+2026-05-03T20:41:17.9014659Z [1m[32m   Compiling[0m equivalent v1.0.1
+2026-05-03T20:41:17.9315128Z [1m[32m   Compiling[0m utf8parse v0.2.2
+2026-05-03T20:41:18.1491682Z [1m[32m   Compiling[0m anstyle-parse v0.2.6
+2026-05-03T20:41:18.2977043Z [1m[32m   Compiling[0m indexmap v2.6.0
+2026-05-03T20:41:19.0191665Z [1m[32m   Compiling[0m regex v1.11.1
+2026-05-03T20:41:20.8450732Z [1m[32m   Compiling[0m serde_json v1.0.132
+2026-05-03T20:41:21.0191281Z [1m[32m   Compiling[0m itoa v1.0.11
+2026-05-03T20:41:21.1038822Z [1m[32m   Compiling[0m anstyle-query v1.1.2
+2026-05-03T20:41:21.1455775Z [1m[32m   Compiling[0m is_terminal_polyfill v1.70.1
+2026-05-03T20:41:21.1802538Z [1m[32m   Compiling[0m colorchoice v1.0.3
+2026-05-03T20:41:21.2263320Z [1m[32m   Compiling[0m semver v1.0.23
+2026-05-03T20:41:21.3805664Z [1m[32m   Compiling[0m same-file v1.0.6
+2026-05-03T20:41:21.3821452Z [1m[32m   Compiling[0m thiserror v1.0.68
+2026-05-03T20:41:21.4597055Z [1m[32m   Compiling[0m once_cell v1.20.2
+2026-05-03T20:41:21.4691815Z [1m[32m   Compiling[0m ryu v1.0.18
+2026-05-03T20:41:21.6308491Z [1m[32m   Compiling[0m adler2 v2.0.0
+2026-05-03T20:41:21.6403521Z [1m[32m   Compiling[0m bit-vec v0.6.3
+2026-05-03T20:41:21.7245517Z [1m[32m   Compiling[0m anstyle v1.0.10
+2026-05-03T20:41:21.7312359Z [1m[32m   Compiling[0m miniz_oxide v0.8.0
+2026-05-03T20:41:21.8361906Z [1m[32m   Compiling[0m bit-set v0.5.3
+2026-05-03T20:41:21.9372232Z [1m[32m   Compiling[0m anstream v0.6.18
+2026-05-03T20:41:21.9957964Z [1m[32m   Compiling[0m walkdir v2.5.0
+2026-05-03T20:41:22.8708418Z [1m[32m   Compiling[0m thiserror-impl v1.0.68
+2026-05-03T20:41:23.4285726Z [1m[32m   Compiling[0m bstr v1.10.0
+2026-05-03T20:41:23.5028537Z [1m[32m   Compiling[0m crc32fast v1.4.2
+2026-05-03T20:41:23.7185761Z [1m[32m   Compiling[0m strsim v0.11.1
+2026-05-03T20:41:24.4758914Z [1m[32m   Compiling[0m rustix v0.38.39
+2026-05-03T20:41:24.7735917Z [1m[32m   Compiling[0m prettyplease v0.2.25
+2026-05-03T20:41:24.7823762Z [1m[32m   Compiling[0m clap_lex v0.7.2
+2026-05-03T20:41:24.9589125Z [1m[32m   Compiling[0m heck v0.5.0
+2026-05-03T20:41:25.1010691Z [1m[32m   Compiling[0m log v0.4.22
+2026-05-03T20:41:25.1252460Z [1m[32m   Compiling[0m bytemuck v1.19.0
+2026-05-03T20:41:25.2840296Z [1m[32m   Compiling[0m autocfg v1.4.0
+2026-05-03T20:41:25.2912854Z [1m[32m   Compiling[0m rgb v0.8.50
+2026-05-03T20:41:25.4803260Z [1m[32m   Compiling[0m globset v0.4.15
+2026-05-03T20:41:25.6305048Z [1m[32m   Compiling[0m clap_derive v4.5.18
+2026-05-03T20:41:25.6673869Z [1m[32m   Compiling[0m fs-err v3.0.0
+2026-05-03T20:41:25.8579568Z [1m[32m   Compiling[0m clap_builder v4.5.20
+2026-05-03T20:41:28.2142515Z [1m[32m   Compiling[0m flate2 v1.0.34
+2026-05-03T20:41:32.6752819Z [1m[32m   Compiling[0m fancy-regex v0.11.0
+2026-05-03T20:41:34.1652644Z [1m[32m   Compiling[0m toml_datetime v0.6.8
+2026-05-03T20:41:34.4700670Z [1m[32m   Compiling[0m serde_spanned v0.6.8
+2026-05-03T20:41:34.5545478Z [1m[32m   Compiling[0m bincode v1.3.3
+2026-05-03T20:41:35.0253119Z [1m[32m   Compiling[0m home v0.5.9
+2026-05-03T20:41:35.1296102Z [1m[32m   Compiling[0m unicode-width v0.1.14
+2026-05-03T20:41:35.3390147Z [1m[32m   Compiling[0m lazy_static v1.5.0
+2026-05-03T20:41:35.3819152Z [1m[32m   Compiling[0m std_prelude v0.2.12
+2026-05-03T20:41:35.4251003Z [1m[32m   Compiling[0m bitflags v1.3.2
+2026-05-03T20:41:35.4757817Z [1m[32m   Compiling[0m linux-raw-sys v0.4.14
+2026-05-03T20:41:35.8656602Z [1m[32m   Compiling[0m winnow v0.6.20
+2026-05-03T20:41:37.3283268Z [1m[32m   Compiling[0m termcolor v1.4.1
+2026-05-03T20:41:37.7811709Z [1m[32m   Compiling[0m bitflags v2.6.0
+2026-05-03T20:41:37.9305659Z [1m[32m   Compiling[0m unsafe-libyaml v0.2.11
+2026-05-03T20:41:38.0143805Z [1m[32m   Compiling[0m fnv v1.0.7
+2026-05-03T20:41:38.0528490Z [1m[32m   Compiling[0m bat v0.24.0
+2026-05-03T20:41:38.2245968Z [1m[32m   Compiling[0m syntect v5.2.0
+2026-05-03T20:41:40.9385202Z [1m[32m   Compiling[0m serde_yaml v0.9.34+deprecated
+2026-05-03T20:41:44.9218661Z [1m[32m   Compiling[0m toml_edit v0.22.22
+2026-05-03T20:41:45.6032150Z [1m[32m   Compiling[0m grep-cli v0.1.11
+2026-05-03T20:41:47.3379732Z [1m[32m   Compiling[0m path_abs v0.5.1
+2026-05-03T20:41:47.8341103Z [1m[32m   Compiling[0m console v0.15.8
+2026-05-03T20:41:48.4465264Z [1m[32m   Compiling[0m clap v4.5.20
+2026-05-03T20:41:48.5198552Z [1m[32m   Compiling[0m ansi_colours v1.2.3
+2026-05-03T20:41:48.5756373Z [1m[32m   Compiling[0m clircle v0.4.0
+2026-05-03T20:41:48.7030098Z [1m[32m   Compiling[0m content_inspector v0.2.4
+2026-05-03T20:41:48.7861120Z [1m[32m   Compiling[0m encoding_rs v0.8.35
+2026-05-03T20:41:49.4649112Z [1m[32m   Compiling[0m cargo-expand v1.0.95
+2026-05-03T20:41:49.6793399Z [1m[32m   Compiling[0m fastrand v2.1.1
+2026-05-03T20:41:49.9353470Z [1m[32m   Compiling[0m shell-words v1.1.0
+2026-05-03T20:41:50.1148930Z [1m[32m   Compiling[0m bytesize v1.3.0
+2026-05-03T20:41:50.3340533Z [1m[32m   Compiling[0m nu-ansi-term v0.49.0
+2026-05-03T20:41:55.1218751Z [1m[32m   Compiling[0m tempfile v3.13.0
+2026-05-03T20:41:56.5665314Z [1m[32m   Compiling[0m clap-cargo v0.14.1
+2026-05-03T20:41:58.3916871Z [1m[32m   Compiling[0m toml v0.8.19
+2026-05-03T20:41:58.6714485Z [1m[32m   Compiling[0m toolchain_find v0.4.0
+2026-05-03T20:41:59.9611573Z [1m[32m   Compiling[0m etcetera v0.8.0
+2026-05-03T20:41:59.9805904Z [1m[32m   Compiling[0m syn-select v0.3.0
+2026-05-03T20:42:02.5101199Z [1m[32m   Compiling[0m shlex v1.3.0
+2026-05-03T20:42:02.5160756Z [1m[32m   Compiling[0m cargo-subcommand-metadata v0.1.0
+2026-05-03T20:42:13.6909944Z [1m[32m    Finished[0m release [optimized] target(s) in 1m 07s
+2026-05-03T20:42:13.6988145Z [1m[32m  Installing[0m /home/runner/.cargo/bin/cargo-expand
+2026-05-03T20:42:13.6990009Z [1m[32m   Installed[0m package `cargo-expand v1.0.95` (executable `cargo-expand`)
+2026-05-03T20:42:13.8005854Z [1m[32m    Updating[0m crates.io index
+2026-05-03T20:42:13.9283746Z [1m[32m Downloading[0m crates ...
+2026-05-03T20:42:14.0306293Z [1m[32m  Downloaded[0m flutter_rust_bridge_codegen v1.80.1
+2026-05-03T20:42:14.0703660Z [1m[32m  Installing[0m flutter_rust_bridge_codegen v1.80.1
+2026-05-03T20:42:14.0725054Z [1m[32m    Updating[0m crates.io index
+2026-05-03T20:42:14.3088691Z [1m[33mwarning[0m[1m:[0m package `hermit-abi v0.3.1` in Cargo.lock is yanked in registry `crates-io`, consider running without --locked
+2026-05-03T20:42:14.3352970Z [1m[32m    Updating[0m crates.io index
+2026-05-03T20:42:14.4361194Z [1m[32m Downloading[0m crates ...
+2026-05-03T20:42:14.4805489Z [1m[32m  Downloaded[0m delegate v0.8.0
+2026-05-03T20:42:14.4855639Z [1m[32m  Downloaded[0m linked-hash-map v0.5.6
+2026-05-03T20:42:14.5199932Z [1m[32m  Downloaded[0m clap_derive v4.1.8
+2026-05-03T20:42:14.5220933Z [1m[32m  Downloaded[0m addr2line v0.19.0
+2026-05-03T20:42:14.5254334Z [1m[32m  Downloaded[0m thiserror-impl v1.0.38
+2026-05-03T20:42:14.5633624Z [1m[32m  Downloaded[0m adler v1.0.2
+2026-05-03T20:42:14.5857130Z [1m[32m  Downloaded[0m cargo_metadata v0.14.2
+2026-05-03T20:42:14.5910864Z [1m[32m  Downloaded[0m colored v1.9.3
+2026-05-03T20:42:14.5984118Z [1m[32m  Downloaded[0m topological-sort v0.2.2
+2026-05-03T20:42:14.6035963Z [1m[32m  Downloaded[0m unicode-ident v1.0.6
+2026-05-03T20:42:14.6066489Z [1m[32m  Downloaded[0m proc-macro2 v1.0.66
+2026-05-03T20:42:14.6094735Z [1m[32m  Downloaded[0m thiserror v1.0.38
+2026-05-03T20:42:14.6139498Z [1m[32m  Downloaded[0m either v1.8.1
+2026-05-03T20:42:14.6154453Z [1m[32m  Downloaded[0m strsim v0.10.0
+2026-05-03T20:42:14.6173931Z [1m[32m  Downloaded[0m num-integer v0.1.45
+2026-05-03T20:42:14.6193040Z [1m[32m  Downloaded[0m remove_dir_all v0.5.3
+2026-05-03T20:42:14.6213622Z [1m[32m  Downloaded[0m clap_lex v0.3.2
+2026-05-03T20:42:14.6519679Z [1m[32m  Downloaded[0m atty v0.2.14
+2026-05-03T20:42:14.6547276Z [1m[32m  Downloaded[0m camino v1.1.3
+2026-05-03T20:42:14.6573342Z [1m[32m  Downloaded[0m tempfile v3.3.0
+2026-05-03T20:42:14.6597503Z [1m[32m  Downloaded[0m chrono v0.4.23
+2026-05-03T20:42:14.6676982Z [1m[32m  Downloaded[0m toml v0.5.11
+2026-05-03T20:42:14.6703784Z [1m[32m  Downloaded[0m serde_json v1.0.93
+2026-05-03T20:42:14.6791053Z [1m[32m  Downloaded[0m termcolor v1.2.0
+2026-05-03T20:42:14.6807870Z [1m[32m  Downloaded[0m log v0.4.17
+2026-05-03T20:42:14.6833644Z [1m[32m  Downloaded[0m serde_derive v1.0.152
+2026-05-03T20:42:14.6863488Z [1m[32m  Downloaded[0m quote v1.0.31
+2026-05-03T20:42:14.6896884Z [1m[32m  Downloaded[0m serde v1.0.152
+2026-05-03T20:42:14.6937654Z [1m[32m  Downloaded[0m aho-corasick v0.7.20
+2026-05-03T20:42:14.6992177Z [1m[32m  Downloaded[0m strum_macros v0.24.3
+2026-05-03T20:42:14.7022603Z [1m[32m  Downloaded[0m rustix v0.36.8
+2026-05-03T20:42:14.7262474Z [1m[32m  Downloaded[0m rustc-demangle v0.1.21
+2026-05-03T20:42:14.7290699Z [1m[32m  Downloaded[0m syn v1.0.109
+2026-05-03T20:42:14.7419698Z [1m[32m  Downloaded[0m rustversion v1.0.11
+2026-05-03T20:42:14.7450348Z [1m[32m  Downloaded[0m once_cell v1.17.1
+2026-05-03T20:42:14.7479263Z [1m[32m  Downloaded[0m fern v0.6.1
+2026-05-03T20:42:14.7528276Z [1m[32m  Downloaded[0m version_check v0.9.4
+2026-05-03T20:42:14.7542238Z [1m[32m  Downloaded[0m linux-raw-sys v0.1.4
+2026-05-03T20:42:14.7768142Z [1m[32m  Downloaded[0m hashbrown v0.12.3
+2026-05-03T20:42:14.7819481Z [1m[32m  Downloaded[0m yaml-rust v0.4.5
+2026-05-03T20:42:14.7852292Z [1m[32m  Downloaded[0m os_str_bytes v6.4.1
+2026-05-03T20:42:14.7877832Z [1m[32m  Downloaded[0m memchr v2.5.0
+2026-05-03T20:42:14.7928652Z [1m[32m  Downloaded[0m lazy_static v1.4.0
+2026-05-03T20:42:14.7940696Z [1m[32m  Downloaded[0m libc v0.2.139
+2026-05-03T20:42:14.8249983Z [1m[32m  Downloaded[0m time v0.1.45
+2026-05-03T20:42:14.8265538Z [1m[32m  Downloaded[0m object v0.30.3
+2026-05-03T20:42:14.8373830Z [1m[32m  Downloaded[0m gimli v0.27.2
+2026-05-03T20:42:14.8545427Z [1m[32m  Downloaded[0m convert_case v0.5.0
+2026-05-03T20:42:14.8558571Z [1m[32m  Downloaded[0m clap_lex v0.2.4
+2026-05-03T20:42:14.8568038Z [1m[32m  Downloaded[0m fastrand v1.9.0
+2026-05-03T20:42:14.8580874Z [1m[32m  Downloaded[0m autocfg v1.1.0
+2026-05-03T20:42:14.8595843Z [1m[32m  Downloaded[0m textwrap v0.16.0
+2026-05-03T20:42:14.8619720Z [1m[32m  Downloaded[0m syn v2.0.26
+2026-05-03T20:42:14.8731178Z [1m[32m  Downloaded[0m ryu v1.0.12
+2026-05-03T20:42:14.8764711Z [1m[32m  Downloaded[0m serde_yaml v0.8.26
+2026-05-03T20:42:14.8791468Z [1m[32m  Downloaded[0m semver v1.0.16
+2026-05-03T20:42:14.8816999Z [1m[32m  Downloaded[0m cbindgen v0.24.3
+2026-05-03T20:42:14.9557487Z [1m[32m  Downloaded[0m cargo-platform v0.1.2
+2026-05-03T20:42:14.9569649Z [1m[32m  Downloaded[0m enum_dispatch v0.3.11
+2026-05-03T20:42:14.9586171Z [1m[32m  Downloaded[0m enum-iterator v1.4.0
+2026-05-03T20:42:14.9594541Z [1m[32m  Downloaded[0m regex-syntax v0.6.28
+2026-05-03T20:42:14.9673191Z [1m[32m  Downloaded[0m proc-macro-error-attr v1.0.4
+2026-05-03T20:42:14.9683055Z [1m[32m  Downloaded[0m proc-macro-error v1.0.4
+2026-05-03T20:42:14.9718254Z [1m[32m  Downloaded[0m pathdiff v0.2.1
+2026-05-03T20:42:14.9728022Z [1m[32m  Downloaded[0m num-traits v0.2.15
+2026-05-03T20:42:14.9755678Z [1m[32m  Downloaded[0m itoa v1.0.5
+2026-05-03T20:42:14.9770312Z [1m[32m  Downloaded[0m enum-iterator-derive v1.2.0
+2026-05-03T20:42:14.9778056Z [1m[32m  Downloaded[0m backtrace v0.3.67
+2026-05-03T20:42:14.9848109Z [1m[32m  Downloaded[0m itertools v0.10.5
+2026-05-03T20:42:14.9917406Z [1m[32m  Downloaded[0m clap v4.1.8
+2026-05-03T20:42:15.0066504Z [1m[32m  Downloaded[0m clap v3.2.23
+2026-05-03T20:42:15.0208958Z [1m[32m  Downloaded[0m cc v1.0.79
+2026-05-03T20:42:15.0235654Z [1m[32m  Downloaded[0m regex v1.7.1
+2026-05-03T20:42:15.0325423Z [1m[32m  Downloaded[0m miniz_oxide v0.6.2
+2026-05-03T20:42:15.0349464Z [1m[32m  Downloaded[0m io-lifetimes v1.0.5
+2026-05-03T20:42:15.0373144Z [1m[32m  Downloaded[0m heck v0.4.1
+2026-05-03T20:42:15.0386441Z [1m[32m  Downloaded[0m anyhow v1.0.69
+2026-05-03T20:42:15.0426236Z [1m[32m  Downloaded[0m is-terminal v0.4.4
+2026-05-03T20:42:15.0435339Z [1m[32m  Downloaded[0m indexmap v1.9.2
+2026-05-03T20:42:15.0470552Z [1m[32m  Downloaded[0m iana-time-zone v0.1.53
+2026-05-03T20:42:15.0754175Z [1m[32m   Compiling[0m proc-macro2 v1.0.66
+2026-05-03T20:42:15.0755130Z [1m[32m   Compiling[0m syn v1.0.109
+2026-05-03T20:42:15.0755835Z [1m[32m   Compiling[0m unicode-ident v1.0.6
+2026-05-03T20:42:15.0756516Z [1m[32m   Compiling[0m libc v0.2.139
+2026-05-03T20:42:15.1330574Z [1m[32m   Compiling[0m autocfg v1.1.0
+2026-05-03T20:42:15.3519066Z [1m[32m   Compiling[0m serde_derive v1.0.152
+2026-05-03T20:42:15.4134676Z [1m[32m   Compiling[0m serde v1.0.152
+2026-05-03T20:42:15.6078700Z [1m[32m   Compiling[0m version_check v0.9.4
+2026-05-03T20:42:15.6666488Z [1m[32m   Compiling[0m memchr v2.5.0
+2026-05-03T20:42:15.8654398Z [1m[32m   Compiling[0m quote v1.0.31
+2026-05-03T20:42:15.9035791Z [1m[32m   Compiling[0m cfg-if v1.0.0
+2026-05-03T20:42:16.0987328Z [1m[32m   Compiling[0m proc-macro-error-attr v1.0.4
+2026-05-03T20:42:16.2766535Z [1m[32m   Compiling[0m num-traits v0.2.15
+2026-05-03T20:42:16.4598347Z [1m[32m   Compiling[0m indexmap v1.9.2
+2026-05-03T20:42:16.6539117Z [1m[32m   Compiling[0m io-lifetimes v1.0.5
+2026-05-03T20:42:16.7752900Z [1m[32m   Compiling[0m bitflags v1.3.2
+2026-05-03T20:42:16.8750422Z [1m[32m   Compiling[0m os_str_bytes v6.4.1
+2026-05-03T20:42:17.2174268Z [1m[32m   Compiling[0m atty v0.2.14
+2026-05-03T20:42:17.2791856Z [1m[32m   Compiling[0m proc-macro-error v1.0.4
+2026-05-03T20:42:17.3108332Z [1m[32m   Compiling[0m num-integer v0.1.45
+2026-05-03T20:42:17.4603402Z [1m[32m   Compiling[0m ryu v1.0.12
+2026-05-03T20:42:17.4982372Z [1m[32m   Compiling[0m hashbrown v0.12.3
+2026-05-03T20:42:17.7372567Z [1m[32m   Compiling[0m serde_json v1.0.93
+2026-05-03T20:42:17.9726540Z [1m[32m   Compiling[0m rustix v0.36.8
+2026-05-03T20:42:18.0707987Z [1m[32m   Compiling[0m cc v1.0.79
+2026-05-03T20:42:18.2596613Z [1m[32m   Compiling[0m log v0.4.17
+2026-05-03T20:42:19.1317683Z [1m[32m   Compiling[0m backtrace v0.3.67
+2026-05-03T20:42:20.1768329Z [1m[32m   Compiling[0m adler v1.0.2
+2026-05-03T20:42:20.1899032Z [1m[32m   Compiling[0m gimli v0.27.2
+2026-05-03T20:42:20.2809739Z [1m[32m   Compiling[0m semver v1.0.16
+2026-05-03T20:42:20.4700178Z [1m[32m   Compiling[0m heck v0.4.1
+2026-05-03T20:42:20.5025988Z [1m[32m   Compiling[0m strsim v0.10.0
+2026-05-03T20:42:20.6283488Z [1m[32m   Compiling[0m itoa v1.0.5
+2026-05-03T20:42:20.7103475Z [1m[32m   Compiling[0m rustversion v1.0.11
+2026-05-03T20:42:21.0057490Z [1m[32m   Compiling[0m linux-raw-sys v0.1.4
+2026-05-03T20:42:21.5786802Z [1m[32m   Compiling[0m termcolor v1.2.0
+2026-05-03T20:42:21.5795512Z [1m[32m   Compiling[0m camino v1.1.3
+2026-05-03T20:42:22.2750874Z [1m[32m   Compiling[0m miniz_oxide v0.6.2
+2026-05-03T20:42:22.9769267Z [1m[32m   Compiling[0m addr2line v0.19.0
+2026-05-03T20:42:23.3317896Z [1m[32m   Compiling[0m clap_lex v0.2.4
+2026-05-03T20:42:23.4840300Z [1m[32m   Compiling[0m time v0.1.45
+2026-05-03T20:42:23.6040363Z [1m[32m   Compiling[0m object v0.30.3
+2026-05-03T20:42:23.7731728Z [1m[32m   Compiling[0m linked-hash-map v0.5.6
+2026-05-03T20:42:23.9167669Z [1m[32m   Compiling[0m cbindgen v0.24.3
+2026-05-03T20:42:24.1778131Z [1m[32m   Compiling[0m thiserror v1.0.38
+2026-05-03T20:42:24.3839278Z [1m[32m   Compiling[0m iana-time-zone v0.1.53
+2026-05-03T20:42:24.4053096Z [1m[32m   Compiling[0m textwrap v0.16.0
+2026-05-03T20:42:24.6470756Z [1m[32m   Compiling[0m lazy_static v1.4.0
+2026-05-03T20:42:24.6880569Z [1m[32m   Compiling[0m remove_dir_all v0.5.3
+2026-05-03T20:42:24.7189105Z [1m[32m   Compiling[0m rustc-demangle v0.1.21
+2026-05-03T20:42:25.7915844Z [1m[32m   Compiling[0m anyhow v1.0.69
+2026-05-03T20:42:26.0227731Z [1m[32m   Compiling[0m fastrand v1.9.0
+2026-05-03T20:42:26.1030121Z [1m[32m   Compiling[0m colored v1.9.3
+2026-05-03T20:42:26.2766406Z [1m[32m   Compiling[0m tempfile v3.3.0
+2026-05-03T20:42:26.9270512Z [1m[32m   Compiling[0m clap v3.2.23
+2026-05-03T20:42:27.0545103Z [1m[32m   Compiling[0m chrono v0.4.23
+2026-05-03T20:42:30.9266031Z [1m[32m   Compiling[0m toml v0.5.11
+2026-05-03T20:42:32.8201984Z [1m[32m   Compiling[0m cargo-platform v0.1.2
+2026-05-03T20:42:33.1979370Z [1m[32m   Compiling[0m yaml-rust v0.4.5
+2026-05-03T20:42:36.1650115Z [1m[32m   Compiling[0m is-terminal v0.4.4
+2026-05-03T20:42:36.1984322Z [1m[32m   Compiling[0m clap_derive v4.1.8
+2026-05-03T20:42:37.2542534Z [1m[32m   Compiling[0m thiserror-impl v1.0.38
+2026-05-03T20:42:38.7306073Z [1m[32m   Compiling[0m enum-iterator-derive v1.2.0
+2026-05-03T20:42:39.4581369Z [1m[32m   Compiling[0m clap_lex v0.3.2
+2026-05-03T20:42:39.7644269Z [1m[32m   Compiling[0m aho-corasick v0.7.20
+2026-05-03T20:42:39.8293912Z [1m[32m   Compiling[0m either v1.8.1
+2026-05-03T20:42:40.5534149Z [1m[32m   Compiling[0m once_cell v1.17.1
+2026-05-03T20:42:40.8862488Z [1m[32m   Compiling[0m regex-syntax v0.6.28
+2026-05-03T20:42:42.8112259Z [1m[32m   Compiling[0m regex v1.7.1
+2026-05-03T20:42:43.2368706Z [1m[32m   Compiling[0m clap v4.1.8
+2026-05-03T20:42:48.9833936Z [1m[32m   Compiling[0m enum_dispatch v0.3.11
+2026-05-03T20:42:55.2459173Z [1m[32m   Compiling[0m itertools v0.10.5
+2026-05-03T20:42:56.7190400Z [1m[32m   Compiling[0m enum-iterator v1.4.0
+2026-05-03T20:42:57.9694361Z [1m[32m   Compiling[0m strum_macros v0.24.3
+2026-05-03T20:42:58.5011655Z [1m[32m   Compiling[0m serde_yaml v0.8.26
+2026-05-03T20:42:59.9038360Z [1m[32m   Compiling[0m cargo_metadata v0.14.2
+2026-05-03T20:43:04.0772612Z [1m[32m   Compiling[0m fern v0.6.1
+2026-05-03T20:43:06.3768168Z [1m[32m   Compiling[0m delegate v0.8.0
+2026-05-03T20:43:07.1721857Z [1m[32m   Compiling[0m syn v2.0.26
+2026-05-03T20:43:07.3523570Z [1m[32m   Compiling[0m pathdiff v0.2.1
+2026-05-03T20:43:07.3970543Z [1m[32m   Compiling[0m topological-sort v0.2.2
+2026-05-03T20:43:07.4851958Z [1m[32m   Compiling[0m convert_case v0.5.0
+2026-05-03T20:43:13.3912325Z [1m[32m   Compiling[0m flutter_rust_bridge_codegen v1.80.1
+2026-05-03T20:43:33.2073337Z [1m[32m    Finished[0m release [optimized] target(s) in 1m 19s
+2026-05-03T20:43:33.2116310Z [1m[32m  Installing[0m /home/runner/.cargo/bin/flutter_rust_bridge_codegen
+2026-05-03T20:43:33.2118618Z [1m[32m   Installed[0m package `flutter_rust_bridge_codegen v1.80.1` (executable `flutter_rust_bridge_codegen`)
+2026-05-03T20:43:33.8479479Z 
+2026-05-03T20:43:33.8493277Z   ╔════════════════════════════════════════════════════════════════════════════╗
+2026-05-03T20:43:33.8497895Z   ║                 Welcome to Flutter! - https://flutter.dev                  ║
+2026-05-03T20:43:33.8498720Z   ║                                                                            ║
+2026-05-03T20:43:33.8499944Z   ║ The Flutter tool uses Google Analytics to anonymously report feature usage ║
+2026-05-03T20:43:33.8500919Z   ║ statistics and basic crash reports. This data is used to help improve      ║
+2026-05-03T20:43:33.8501760Z   ║ Flutter tools over time.                                                   ║
+2026-05-03T20:43:33.8502469Z   ║                                                                            ║
+2026-05-03T20:43:33.8503228Z   ║ Flutter tool analytics are not sent on the very first run. To disable      ║
+2026-05-03T20:43:33.8504221Z   ║ reporting, type 'flutter config --no-analytics'. To display the current    ║
+2026-05-03T20:43:33.8505473Z   ║ setting, type 'flutter config'. If you opt out of analytics, an opt-out    ║
+2026-05-03T20:43:33.8506413Z   ║ event will be sent, and then no further information will be sent by the    ║
+2026-05-03T20:43:33.8507216Z   ║ Flutter tool.                                                              ║
+2026-05-03T20:43:33.8507880Z   ║                                                                            ║
+2026-05-03T20:43:33.8508651Z   ║ By downloading the Flutter SDK, you agree to the Google Terms of Service.  ║
+2026-05-03T20:43:33.8509588Z   ║ The Google Privacy Policy describes how data is handled in this service.   ║
+2026-05-03T20:43:33.8510366Z   ║                                                                            ║
+2026-05-03T20:43:33.8511134Z   ║ Moreover, Flutter includes the Dart SDK, which may send usage metrics and  ║
+2026-05-03T20:43:33.8511974Z   ║ crash reports to Google.                                                   ║
+2026-05-03T20:43:33.8512643Z   ║                                                                            ║
+2026-05-03T20:43:33.8513415Z   ║ Read about data we send with crash reports:                                ║
+2026-05-03T20:43:33.8514386Z   ║ https://flutter.dev/to/crash-reporting                                     ║
+2026-05-03T20:43:33.8515454Z   ║                                                                            ║
+2026-05-03T20:43:33.8516283Z   ║ See Google's privacy policy:                                               ║
+2026-05-03T20:43:33.8517056Z   ║ https://policies.google.com/privacy                                        ║
+2026-05-03T20:43:33.8517777Z   ║                                                                            ║
+2026-05-03T20:43:33.8518201Z   ║ To disable animations in this tool, use                                    ║
+2026-05-03T20:43:33.8518683Z   ║ 'flutter config --no-cli-animations'.                                      ║
+2026-05-03T20:43:33.8519159Z   ╚════════════════════════════════════════════════════════════════════════════╝
+2026-05-03T20:43:33.8519382Z 
+2026-05-03T20:43:39.0341347Z Resolving dependencies...
+2026-05-03T20:43:42.2063590Z Downloading packages...
+2026-05-03T20:43:58.6504002Z Failed to decode advisories for archive from https://pub.dev.
+2026-05-03T20:43:58.6504727Z FormatException: advisoriesUpdated must be a String
+2026-05-03T20:43:58.6505966Z package:pub/src/source/hosted.dart 640:7             HostedSource._extractAdvisoryDetailsForPackage
+2026-05-03T20:43:58.6507553Z package:pub/src/source/hosted.dart 594:16            HostedSource._fetchAdvisories
+2026-05-03T20:43:58.6508550Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6509475Z package:pub/src/source/hosted.dart 797:9             HostedSource._getAdvisories
+2026-05-03T20:43:58.6510429Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6511405Z package:pub/src/source/hosted.dart 1084:24           HostedSource.getAdvisoriesForPackageVersion
+2026-05-03T20:43:58.6512421Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6513118Z package:pub/src/solver/report.dart 416:26            SolveReport._reportPackage
+2026-05-03T20:43:58.6513834Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6514527Z package:pub/src/solver/report.dart 220:18            SolveReport._reportChanges
+2026-05-03T20:43:58.6515381Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6516278Z package:pub/src/solver/report.dart 75:21             SolveReport.show
+2026-05-03T20:43:58.6516898Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6517582Z package:pub/src/entrypoint.dart 580:5                Entrypoint.acquireDependencies
+2026-05-03T20:43:58.6518261Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6518897Z package:pub/src/command/get.dart 76:5                GetCommand.runProtected
+2026-05-03T20:43:58.6519559Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6520170Z dart:async/future_impl.dart 41:3                     _AsyncCompleter.complete
+2026-05-03T20:43:58.6520805Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6521376Z package:pub/src/command.dart 196:7                   PubCommand.run
+2026-05-03T20:43:58.6521980Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6522618Z package:args/command_runner.dart 212:13              CommandRunner.runCommand
+2026-05-03T20:43:58.6523283Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6523908Z package:dartdev/dartdev.dart 236:18                  DartdevRunner.runCommand
+2026-05-03T20:43:58.6524559Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6525298Z package:dartdev/dartdev.dart 47:16                   runDartdev
+2026-05-03T20:43:58.6525853Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6526393Z /b/s/w/ir/x/w/sdk/pkg/dartdev/bin/dartdev.dart 13:5  main
+2026-05-03T20:43:58.6624363Z Failed to decode advisories for http from https://pub.dev.
+2026-05-03T20:43:58.6625237Z FormatException: advisoriesUpdated must be a String
+2026-05-03T20:43:58.6626130Z package:pub/src/source/hosted.dart 640:7             HostedSource._extractAdvisoryDetailsForPackage
+2026-05-03T20:43:58.6627184Z package:pub/src/source/hosted.dart 594:16            HostedSource._fetchAdvisories
+2026-05-03T20:43:58.6627928Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6628623Z package:pub/src/source/hosted.dart 797:9             HostedSource._getAdvisories
+2026-05-03T20:43:58.6629340Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6630507Z package:pub/src/source/hosted.dart 1084:24           HostedSource.getAdvisoriesForPackageVersion
+2026-05-03T20:43:58.6631345Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6632037Z package:pub/src/solver/report.dart 416:26            SolveReport._reportPackage
+2026-05-03T20:43:58.6632746Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6633434Z package:pub/src/solver/report.dart 220:18            SolveReport._reportChanges
+2026-05-03T20:43:58.6634223Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6635037Z package:pub/src/solver/report.dart 75:21             SolveReport.show
+2026-05-03T20:43:58.6635697Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6636414Z package:pub/src/entrypoint.dart 580:5                Entrypoint.acquireDependencies
+2026-05-03T20:43:58.6637288Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6638078Z package:pub/src/command/get.dart 76:5                GetCommand.runProtected
+2026-05-03T20:43:58.6639117Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6651210Z dart:async/future_impl.dart 41:3                     _AsyncCompleter.complete
+2026-05-03T20:43:58.6651911Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6652531Z package:pub/src/command.dart 196:7                   PubCommand.run
+2026-05-03T20:43:58.6653170Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6653837Z package:args/command_runner.dart 212:13              CommandRunner.runCommand
+2026-05-03T20:43:58.6654528Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6655396Z package:dartdev/dartdev.dart 236:18                  DartdevRunner.runCommand
+2026-05-03T20:43:58.6656095Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6656942Z package:dartdev/dartdev.dart 47:16                   runDartdev
+2026-05-03T20:43:58.6657552Z ===== asynchronous gap ===========================
+2026-05-03T20:43:58.6658138Z /b/s/w/ir/x/w/sdk/pkg/dartdev/bin/dartdev.dart 13:5  main
+2026-05-03T20:43:58.6678056Z   _fe_analyzer_shared 72.0.0 (100.0.0 available)
+2026-05-03T20:43:58.6678542Z   analyzer 6.7.0 (13.0.0 available)
+2026-05-03T20:43:58.6678932Z   animations 2.0.11 (2.2.0 available)
+2026-05-03T20:43:58.6679346Z   archive 3.6.1 (4.0.9 available)
+2026-05-03T20:43:58.6679724Z   async 2.13.0 (2.13.1 available)
+2026-05-03T20:43:58.6680128Z   auto_size_text_field 2.2.4 (2.3.0 available)
+2026-05-03T20:43:58.6680636Z   back_button_interceptor 6.0.2 (8.0.4 available)
+2026-05-03T20:43:58.6681098Z   build 2.4.1 (4.0.6 available)
+2026-05-03T20:43:58.6681706Z   build_cli_annotations 2.1.0 (2.1.1 available)
+2026-05-03T20:43:58.6682827Z   build_config 1.1.1 (1.3.0 available)
+2026-05-03T20:43:58.6683935Z   build_daemon 4.0.2 (4.1.1 available)
+2026-05-03T20:43:58.6685197Z   build_resolvers 2.4.2 (3.0.4 available)
+2026-05-03T20:43:58.6685644Z   build_runner 2.4.13 (2.15.0 available)
+2026-05-03T20:43:58.6686094Z   build_runner_core 7.3.2 (9.3.2 available)
+2026-05-03T20:43:58.6686522Z   built_value 8.10.1 (8.12.6 available)
+2026-05-03T20:43:58.6686962Z   cached_network_image 3.3.1 (3.4.1 available)
+2026-05-03T20:43:58.6687527Z   cached_network_image_platform_interface 4.0.0 (4.1.1 available)
+2026-05-03T20:43:58.6688135Z   cached_network_image_web 1.2.0 (1.3.1 available)
+2026-05-03T20:43:58.6688605Z   characters 1.3.0 (1.4.1 available)
+2026-05-03T20:43:58.6689007Z   checked_yaml 2.0.3 (2.0.4 available)
+2026-05-03T20:43:58.6689409Z   cli_util 0.4.2 (0.5.0 available)
+2026-05-03T20:43:58.6689809Z   clock 1.1.1 (1.1.2 available)
+2026-05-03T20:43:58.6690188Z   code_builder 4.10.1 (4.11.1 available)
+2026-05-03T20:43:58.6690607Z   collection 1.18.0 (1.19.1 available)
+2026-05-03T20:43:58.6691016Z   cross_file 0.3.4+2 (0.3.5+2 available)
+2026-05-03T20:43:58.6691438Z   crypto 3.0.6 (3.0.7 available)
+2026-05-03T20:43:58.6691811Z   dart_style 2.3.7 (3.1.9 available)
+2026-05-03T20:43:58.6692500Z   dbus 0.7.11 (0.7.12 available)
+2026-05-03T20:43:58.6692902Z   desktop_drop 0.4.4 (0.7.1 available)
+2026-05-03T20:43:58.6693385Z   device_info_plus 9.1.2 (13.1.0 available)
+2026-05-03T20:43:58.6693964Z   device_info_plus_platform_interface 7.0.2 (8.1.0 available)
+2026-05-03T20:43:58.6694535Z   dropdown_button2 2.3.9 (3.1.0 available)
+2026-05-03T20:43:58.6695131Z   equatable 2.0.7 (2.0.8 available)
+2026-05-03T20:43:58.6695599Z < extended_text 13.0.0 (was 14.0.0) (15.0.2 available)
+2026-05-03T20:43:58.6696080Z   external_path 1.0.3 (2.2.0 available)
+2026-05-03T20:43:58.6696492Z   ffi 2.1.3 (2.2.0 available)
+2026-05-03T20:43:58.6696871Z   ffigen 8.0.2 (20.1.1 available)
+2026-05-03T20:43:58.6697265Z   file 6.1.4 (7.0.1 available)
+2026-05-03T20:43:58.6697672Z   file_picker 5.5.0 (11.0.2 available)
+2026-05-03T20:43:58.6698151Z   file_selector_linux 0.9.3+2 (0.9.4 available)
+2026-05-03T20:43:58.6698647Z   file_selector_macos 0.9.4+2 (0.9.5 available)
+2026-05-03T20:43:58.6699176Z   file_selector_platform_interface 2.6.2 (2.7.0 available)
+2026-05-03T20:43:58.6699760Z   file_selector_windows 0.9.3+4 (0.9.3+5 available)
+2026-05-03T20:43:58.6700283Z   flex_color_picker 3.6.0 (3.8.0 available)
+2026-05-03T20:43:58.6700706Z   flex_seed_scheme 3.4.1 (4.0.1 available)
+2026-05-03T20:43:58.6701159Z   flutter_cache_manager 3.3.1 (3.4.1 available)
+2026-05-03T20:43:58.6701657Z   flutter_keyboard_visibility 5.4.1 (6.0.0 available)
+2026-05-03T20:43:58.6702206Z   flutter_launcher_icons 0.13.1 (0.14.4 available)
+2026-05-03T20:43:58.6702671Z   flutter_lints 2.0.3 (6.0.0 available)
+2026-05-03T20:43:58.6703250Z ! flutter_plugin_android_lifecycle 2.0.17 (overridden) (2.0.34 available)
+2026-05-03T20:43:58.6703874Z   flutter_rust_bridge 1.80.1 (2.12.0 available)
+2026-05-03T20:43:58.6704321Z   flutter_svg 2.1.0 (2.2.4 available)
+2026-05-03T20:43:58.6704738Z   freezed 2.5.7 (3.2.5 available)
+2026-05-03T20:43:58.6705588Z   freezed_annotation 2.4.4 (3.1.0 available)
+2026-05-03T20:43:58.6706065Z   get 4.7.2 (4.7.3 available)
+2026-05-03T20:43:58.6706484Z   google_fonts 6.2.1 (8.1.0 available)
+2026-05-03T20:43:58.6706902Z   http 1.4.0 (1.6.0 available)
+2026-05-03T20:43:58.6707286Z   http_parser 4.0.2 (4.1.2 available)
+2026-05-03T20:43:58.6707723Z   icons_launcher 2.1.7 (3.1.0 available)
+2026-05-03T20:43:58.6708138Z   image 4.3.0 (4.8.0 available)
+2026-05-03T20:43:58.6708534Z   image_picker 1.1.2 (1.2.2 available)
+2026-05-03T20:43:58.6709027Z   image_picker_android 0.8.12+21 (0.8.13+17 available)
+2026-05-03T20:43:58.6709551Z   image_picker_for_web 3.0.6 (3.1.1 available)
+2026-05-03T20:43:58.6710042Z   image_picker_ios 0.8.12+2 (0.8.13+6 available)
+2026-05-03T20:43:58.6710532Z   image_picker_linux 0.2.1+2 (0.2.2 available)
+2026-05-03T20:43:58.6711008Z   image_picker_macos 0.2.1+2 (0.2.2+1 available)
+2026-05-03T20:43:58.6711541Z   image_picker_platform_interface 2.10.1 (2.11.1 available)
+2026-05-03T20:43:58.6712129Z   image_picker_windows 0.2.1+1 (0.2.2 available)
+2026-05-03T20:43:58.6712626Z ! intl 0.19.0 (overridden) (0.20.2 available)
+2026-05-03T20:43:58.6713153Z   js 0.6.7 (0.7.2 available)
+2026-05-03T20:43:58.6713547Z   json_annotation 4.9.0 (4.11.0 available)
+2026-05-03T20:43:58.6713985Z   lints 2.1.1 (6.1.0 available)
+2026-05-03T20:43:58.6714399Z   macros 0.1.2-main.4 (0.1.3-main.0 available)
+2026-05-03T20:43:58.6715071Z   matcher 0.12.17 (0.12.20 available)
+2026-05-03T20:43:58.6715539Z   material_color_utilities 0.11.1 (0.13.0 available)
+2026-05-03T20:43:58.6716005Z   meta 1.15.0 (1.18.2 available)
+2026-05-03T20:43:58.6716459Z   package_info_plus 4.2.0 (10.1.0 available)
+2026-05-03T20:43:58.6717026Z   package_info_plus_platform_interface 2.0.1 (4.1.0 available)
+2026-05-03T20:43:58.6717559Z   path 1.9.0 (1.9.1 available)
+2026-05-03T20:43:58.6717955Z   path_provider_android 2.2.15 (2.3.1 available)
+2026-05-03T20:43:58.6718456Z   path_provider_foundation 2.4.1 (2.6.0 available)
+2026-05-03T20:43:58.6718937Z   petitparser 6.0.2 (7.0.2 available)
+2026-05-03T20:43:58.6719347Z   pool 1.5.1 (1.5.2 available)
+2026-05-03T20:43:58.6719697Z   provider 6.1.5 (6.1.5+1 available)
+2026-05-03T20:43:58.6720339Z   pubspec_parse 1.4.0 (1.5.0 available)
+2026-05-03T20:43:58.6720761Z   pull_down_button 0.9.4 (0.10.2 available)
+2026-05-03T20:43:58.6721204Z   puppeteer 3.16.0 (3.22.0 available)
+2026-05-03T20:43:58.6721601Z   rxdart 0.27.7 (0.28.0 available)
+2026-05-03T20:43:58.6721979Z   screen_retriever 0.1.9 (0.2.0 available)
+2026-05-03T20:43:58.6722385Z   scroll_pos 0.4.0 (0.5.0 available)
+2026-05-03T20:43:58.6722763Z   settings_ui 2.0.2 (3.0.1 available)
+2026-05-03T20:43:58.6723131Z   shelf 1.4.1 (1.4.2 available)
+2026-05-03T20:43:58.6723496Z   shelf_web_socket 1.0.4 (3.0.0 available)
+2026-05-03T20:43:58.6723908Z   source_gen 1.5.0 (4.2.3 available)
+2026-05-03T20:43:58.6724294Z   source_span 1.10.1 (1.10.2 available)
+2026-05-03T20:43:58.6724684Z   sqflite 2.2.0 (2.4.2+1 available)
+2026-05-03T20:43:58.6725266Z   sqflite_common 2.5.4+6 (2.5.6+1 available)
+2026-05-03T20:43:58.6725713Z   synchronized 3.3.0+3 (3.4.0+1 available)
+2026-05-03T20:43:58.6726148Z   test_api 0.7.6 (0.7.12 available)
+2026-05-03T20:43:58.6726573Z   uni_links_desktop 0.1.7 (0.2.0 available)
+2026-05-03T20:43:58.6727037Z   universal_io 2.2.2 (2.3.1 available)
+2026-05-03T20:43:58.6727471Z   url_launcher 6.3.1 (6.3.2 available)
+2026-05-03T20:43:58.6727942Z   url_launcher_android 6.3.14 (6.3.29 available)
+2026-05-03T20:43:58.6728425Z   url_launcher_ios 6.3.3 (6.4.1 available)
+2026-05-03T20:43:58.6728892Z   url_launcher_linux 3.2.1 (3.2.2 available)
+2026-05-03T20:43:58.6729344Z   url_launcher_macos 3.2.2 (3.2.5 available)
+2026-05-03T20:43:58.6729818Z   url_launcher_web 2.3.3 (2.4.2 available)
+2026-05-03T20:43:58.6730293Z   url_launcher_windows 3.1.4 (3.1.5 available)
+2026-05-03T20:43:58.6730746Z   uuid 3.0.7 (4.5.3 available)
+2026-05-03T20:43:58.6731134Z   vector_graphics 1.1.18 (1.2.0 available)
+2026-05-03T20:43:58.6731570Z   vector_graphics_compiler 1.1.16 (1.2.0 available)
+2026-05-03T20:43:58.6732514Z   vector_math 2.1.4 (from transitive dependency to direct dependency) (2.3.0 available)
+2026-05-03T20:43:58.6733171Z   video_player 2.9.5 (2.11.1 available)
+2026-05-03T20:43:58.6733575Z   video_player_android 2.7.16 (2.9.5 available)
+2026-05-03T20:43:58.6734028Z   video_player_avfoundation 2.7.1 (2.9.4 available)
+2026-05-03T20:43:58.6734547Z   video_player_platform_interface 6.3.0 (6.7.0 available)
+2026-05-03T20:43:58.6735300Z   video_player_web 2.3.5 (2.4.0 available)
+2026-05-03T20:43:58.6735691Z   wakelock_plus 1.2.1 (1.6.0 available)
+2026-05-03T20:43:58.6736165Z   wakelock_plus_platform_interface 1.2.3 (1.5.0 available)
+2026-05-03T20:43:58.6736646Z   watcher 1.1.2 (1.2.1 available)
+2026-05-03T20:43:58.6737002Z   web 0.5.1 (1.1.1 available)
+2026-05-03T20:43:58.6737344Z   web_socket_channel 2.4.5 (3.0.3 available)
+2026-05-03T20:43:58.6737741Z   win32 5.10.1 (6.1.0 available)
+2026-05-03T20:43:58.6738137Z   win32_registry 1.1.5 (3.0.3 available)
+2026-05-03T20:43:58.6738565Z   xml 6.5.0 (7.0.1 available)
+2026-05-03T20:43:58.6738955Z   yaml_edit 2.2.2 (2.2.4 available)
+2026-05-03T20:43:58.6739361Z Changed 2 dependencies!
+2026-05-03T20:43:58.6740197Z 126 packages have newer versions incompatible with dependency constraints.
+2026-05-03T20:43:58.6740905Z Try `flutter pub outdated` for more information.
+2026-05-03T20:43:59.2392246Z ##[group]Run ~/.cargo/bin/flutter_rust_bridge_codegen --rust-input ./src/flutter_ffi.rs --dart-output ./flutter/lib/generated_bridge.dart --c-output ./flutter/macos/Runner/bridge_generated.h
+2026-05-03T20:43:59.2393556Z [36;1m~/.cargo/bin/flutter_rust_bridge_codegen --rust-input ./src/flutter_ffi.rs --dart-output ./flutter/lib/generated_bridge.dart --c-output ./flutter/macos/Runner/bridge_generated.h[0m
+2026-05-03T20:43:59.2394436Z [36;1mcp ./flutter/macos/Runner/bridge_generated.h ./flutter/ios/Runner/bridge_generated.h[0m
+2026-05-03T20:43:59.2453019Z shell: /usr/bin/bash -e {0}
+2026-05-03T20:43:59.2453243Z env:
+2026-05-03T20:43:59.2453447Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:43:59.2453728Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:43:59.2453945Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:43:59.2454310Z   CARGO_TERM_COLOR: always
+2026-05-03T20:43:59.2454506Z   CACHE_ON_FAILURE: false
+2026-05-03T20:43:59.2455091Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.24.5-x64
+2026-05-03T20:43:59.2455820Z   PUB_CACHE: /opt/hostedtoolcache/flutter/stable-3.24.5-x64/.pub-cache
+2026-05-03T20:43:59.2456376Z ##[endgroup]
+2026-05-03T20:44:54.0492724Z 2026/05/03 20:44:54 [WARN] Skipping unresolvable module inline (tried /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/inline.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/inline/mod.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/ui/inline.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/ui/inline/mod.rs, )
+2026-05-03T20:44:54.0546580Z 2026/05/03 20:44:54 [WARN] Skipping unresolvable module version (tried /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/version.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/version/mod.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/lib/version.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/lib/version/mod.rs, )
+2026-05-03T20:44:54.0549709Z 2026/05/03 20:44:54 [WARN] Skipping unresolvable module bridge_generated (tried /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/bridge_generated.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/bridge_generated/mod.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/lib/bridge_generated.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/lib/bridge_generated/mod.rs, )
+2026-05-03T20:44:54.2533204Z 2026/05/03 20:44:54 [INFO] Phase: Validate config(s)
+2026-05-03T20:44:54.2540704Z 2026/05/03 20:44:54 [INFO] Picked config: Opts { rust_input_path: "/home/runner/work/RustDesk1.4.5/RustDesk1.4.5/./src/flutter_ffi.rs", dart_output_path: "/home/runner/work/RustDesk1.4.5/RustDesk1.4.5/./flutter/lib/generated_bridge.dart", dart_decl_output_path: None, c_output_path: ["/home/runner/work/RustDesk1.4.5/RustDesk1.4.5/./flutter/macos/Runner/bridge_generated.h"], rust_crate_dir: "/home/runner/work/RustDesk1.4.5/RustDesk1.4.5", rust_output_path: "/home/runner/work/RustDesk1.4.5/RustDesk1.4.5/./src/bridge_generated.rs", class_name: "Rustdesk", dart_format_line_length: 80, dart_enums_style: false, skip_add_mod_to_lib: false, llvm_path: ["/opt/homebrew/opt/llvm", "/usr/local/opt/llvm", "/usr/lib/llvm-9", "/usr/lib/llvm-10", "/usr/lib/llvm-11", "/usr/lib/llvm-12", "/usr/lib/llvm-13", "/usr/lib/llvm-14", "/usr/lib/", "/usr/lib64/", "C:/Program Files/llvm", "C:/msys64/mingw64"], llvm_compiler_opts: "", manifest_path: "/home/runner/work/RustDesk1.4.5/RustDesk1.4.5/Cargo.toml", dart_root: Some("/home/runner/work/RustDesk1.4.5/RustDesk1.4.5/./flutter"), build_runner: true, block_index: BlockIndex(0), skip_deps_check: false, wasm_enabled: false, inline_rust: false, bridge_in_method: true, extra_headers: "", dart3: true, keep_going: false }
+2026-05-03T20:44:54.2548347Z 2026/05/03 20:44:54 [INFO] Phase: Parse source code to AST, then to IR
+2026-05-03T20:44:55.0162338Z 2026/05/03 20:44:55 [WARN] Skipping unresolvable module inline (tried /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/inline.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/inline/mod.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/ui/inline.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/ui/inline/mod.rs, )
+2026-05-03T20:44:55.0207929Z 2026/05/03 20:44:55 [WARN] Skipping unresolvable module version (tried /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/version.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/version/mod.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/lib/version.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/lib/version/mod.rs, )
+2026-05-03T20:44:55.0212017Z 2026/05/03 20:44:55 [WARN] Skipping unresolvable module bridge_generated (tried /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/bridge_generated.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/bridge_generated/mod.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/lib/bridge_generated.rs, /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/src/lib/bridge_generated/mod.rs, )
+2026-05-03T20:44:55.1960113Z 2026/05/03 20:44:55 [INFO] Phase: Transform IR
+2026-05-03T20:44:55.1960847Z 2026/05/03 20:44:55 [INFO] Phase: Generate Rust code
+2026-05-03T20:44:55.2569279Z 2026/05/03 20:44:55 [INFO] Phase: Generate Dart code
+2026-05-03T20:44:55.3451083Z Flutter 3.24.5 • channel stable • https://github.com/flutter/flutter.git
+2026-05-03T20:44:55.3452101Z Framework • revision dec2ee5c1f (1 year, 6 months ago) • 2024-11-13 11:13:06 -0800
+2026-05-03T20:44:55.3452821Z Engine • revision a18df97ca5
+2026-05-03T20:44:55.3453253Z Tools • Dart 3.5.4 • DevTools 2.37.3
+2026-05-03T20:44:55.3530460Z 2026/05/03 20:44:55 [INFO] Phase: Generating Dart bindings for Rust
+2026-05-03T20:44:57.6597465Z Running in Directory: '/home/runner/work/RustDesk1.4.5/RustDesk1.4.5/flutter'
+2026-05-03T20:44:58.3605645Z Input Headers: [/tmp/.tmpO2Quaq.h]
+2026-05-03T20:45:01.6425906Z [WARNING]: No definition found for declaration - (Cursor) spelling: _Dart_Handle, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct _Dart_Handle, usr: c:@S@_Dart_Handle
+2026-05-03T20:45:01.6472209Z [WARNING]: No definition found for declaration - (Cursor) spelling: _Dart_Handle, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct _Dart_Handle, usr: c:@S@_Dart_Handle
+2026-05-03T20:45:01.6511355Z [WARNING]: No definition found for declaration - (Cursor) spelling: DartCObject, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct DartCObject, usr: c:@S@DartCObject
+2026-05-03T20:45:01.6520904Z [WARNING]: No definition found for declaration - (Cursor) spelling: DartCObject, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct DartCObject, usr: c:@S@DartCObject
+2026-05-03T20:45:01.6522838Z [WARNING]: No definition found for declaration - (Cursor) spelling: Display, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct Display, usr: c:@S@Display
+2026-05-03T20:45:01.6524669Z [WARNING]: No definition found for declaration - (Cursor) spelling: Display, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct Display, usr: c:@S@Display
+2026-05-03T20:45:01.6704307Z [WARNING]: No definition found for declaration - (Cursor) spelling: _Dart_Handle, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct _Dart_Handle, usr: c:@S@_Dart_Handle
+2026-05-03T20:45:01.6707109Z [WARNING]: No definition found for declaration - (Cursor) spelling: _Dart_Handle, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct _Dart_Handle, usr: c:@S@_Dart_Handle
+2026-05-03T20:45:01.6713029Z [WARNING]: No definition found for declaration - (Cursor) spelling: _Dart_Handle, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct _Dart_Handle, usr: c:@S@_Dart_Handle
+2026-05-03T20:45:01.6715429Z [WARNING]: No definition found for declaration - (Cursor) spelling: _Dart_Handle, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct _Dart_Handle, usr: c:@S@_Dart_Handle
+2026-05-03T20:45:01.6720424Z [WARNING]: No definition found for declaration - (Cursor) spelling: DartCObject, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct DartCObject, usr: c:@S@DartCObject
+2026-05-03T20:45:01.6929663Z [WARNING]: No definition found for declaration - (Cursor) spelling: Display, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct Display, usr: c:@S@Display
+2026-05-03T20:45:01.6931618Z [WARNING]: No definition found for declaration - (Cursor) spelling: Display, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct Display, usr: c:@S@Display
+2026-05-03T20:45:01.6933573Z [WARNING]: No definition found for declaration - (Cursor) spelling: Display, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct Display, usr: c:@S@Display
+2026-05-03T20:45:01.6935259Z [WARNING]: No definition found for declaration - (Cursor) spelling: Display, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct Display, usr: c:@S@Display
+2026-05-03T20:45:01.6936714Z [WARNING]: No definition found for declaration - (Cursor) spelling: Display, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct Display, usr: c:@S@Display
+2026-05-03T20:45:01.6938358Z [WARNING]: No definition found for declaration - (Cursor) spelling: Display, kind: 2, kindSpelling: StructDecl, type: 105, typeSpelling: struct Display, usr: c:@S@Display
+2026-05-03T20:45:02.0106644Z [WARNING]: Generated declaration '_Dart_Handle' start's with '_' and therefore will be private.
+2026-05-03T20:45:02.6839316Z Finished, Bindings generated in /tmp/.tmpset9xI
+2026-05-03T20:45:02.7666273Z the path is "/home/runner/work/RustDesk1.4.5/RustDesk1.4.5/./flutter/macos/Runner/bridge_generated.h"
+2026-05-03T20:45:02.7720105Z 2026/05/03 20:45:02 [INFO] Phase: Running build_runner
+2026-05-03T20:45:02.7720823Z 2026/05/03 20:45:02 [INFO] Running build_runner at /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/./flutter
+2026-05-03T20:45:08.0671060Z [INFO] Generating build script...
+2026-05-03T20:45:08.4233932Z [INFO] Generating build script completed, took 368ms
+2026-05-03T20:45:08.4234268Z 
+2026-05-03T20:45:08.4637550Z [INFO] Precompiling build script......
+2026-05-03T20:45:12.9690820Z [INFO] Precompiling build script... completed, took 4.5s
+2026-05-03T20:45:12.9691278Z 
+2026-05-03T20:45:13.6039705Z [INFO] Initializing inputs
+2026-05-03T20:45:14.1712231Z [INFO] Building new asset graph...
+2026-05-03T20:45:15.8139001Z [INFO] Building new asset graph completed, took 1.6s
+2026-05-03T20:45:15.8139525Z 
+2026-05-03T20:45:15.8139794Z [INFO] Checking for unexpected pre-existing outputs....
+2026-05-03T20:45:15.8153620Z [INFO] Checking for unexpected pre-existing outputs. completed, took 1ms
+2026-05-03T20:45:15.8154168Z 
+2026-05-03T20:45:15.8237804Z [INFO] Running build...
+2026-05-03T20:45:15.8609364Z [INFO] Generating SDK summary...
+2026-05-03T20:45:17.9932511Z [INFO] 2.2s elapsed, 0/16 actions completed.
+2026-05-03T20:45:19.6724134Z [INFO] 3.9s elapsed, 0/16 actions completed.
+2026-05-03T20:45:20.5861294Z [INFO] Generating SDK summary completed, took 4.7s
+2026-05-03T20:45:20.5861722Z 
+2026-05-03T20:45:22.1090472Z [INFO] 6.3s elapsed, 55/71 actions completed.
+2026-05-03T20:45:23.1781324Z [INFO] 7.4s elapsed, 55/71 actions completed.
+2026-05-03T20:45:24.2240718Z [INFO] 8.4s elapsed, 105/121 actions completed.
+2026-05-03T20:45:24.4400992Z [INFO] Running build completed, took 8.6s
+2026-05-03T20:45:24.4401470Z 
+2026-05-03T20:45:24.4401669Z [INFO] Caching finalized dependency graph...
+2026-05-03T20:45:24.5543283Z [INFO] Caching finalized dependency graph completed, took 114ms
+2026-05-03T20:45:24.5543931Z 
+2026-05-03T20:45:24.5574627Z [INFO] Succeeded after 8.7s with 10 outputs (140 actions)
+2026-05-03T20:45:24.5575250Z 
+2026-05-03T20:45:24.6613678Z 2026/05/03 20:45:24 [INFO] Phase: Formatting Dart code
+2026-05-03T20:45:25.5503269Z Formatted /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/./flutter/lib/generated_bridge.dart
+2026-05-03T20:45:25.5940306Z Formatted 2 files (1 changed) in 0.86 seconds.
+2026-05-03T20:45:25.6275973Z 2026/05/03 20:45:25 [INFO] Success!
+2026-05-03T20:45:25.6276453Z 2026/05/03 20:45:25 [INFO] Now go and use it :)
+2026-05-03T20:45:25.6440493Z ##[group]Run actions/upload-artifact@v4
+2026-05-03T20:45:25.6440766Z with:
+2026-05-03T20:45:25.6440930Z   name: bridge-artifact
+2026-05-03T20:45:25.6441789Z   path: ./src/bridge_generated.rs
+./src/bridge_generated.io.rs
+./flutter/lib/generated_bridge.dart
+./flutter/lib/generated_bridge.freezed.dart
+./flutter/macos/Runner/bridge_generated.h
+./flutter/ios/Runner/bridge_generated.h
+
+2026-05-03T20:45:25.6442687Z   if-no-files-found: warn
+2026-05-03T20:45:25.6442891Z   compression-level: 6
+2026-05-03T20:45:25.6443072Z   overwrite: false
+2026-05-03T20:45:25.6443253Z   include-hidden-files: false
+2026-05-03T20:45:25.6443447Z env:
+2026-05-03T20:45:25.6443631Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:45:25.6443889Z   CARGO_HOME: /home/runner/.cargo
+2026-05-03T20:45:25.6444104Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:45:25.6444284Z   CARGO_TERM_COLOR: always
+2026-05-03T20:45:25.6444479Z   CACHE_ON_FAILURE: false
+2026-05-03T20:45:25.6445081Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.24.5-x64
+2026-05-03T20:45:25.6445774Z   PUB_CACHE: /opt/hostedtoolcache/flutter/stable-3.24.5-x64/.pub-cache
+2026-05-03T20:45:25.6446111Z ##[endgroup]
+2026-05-03T20:45:25.8695006Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-05-03T20:45:25.8701401Z The least common ancestor is /home/runner/work/RustDesk1.4.5/RustDesk1.4.5. This will be the root directory of the artifact
+2026-05-03T20:45:25.8702509Z With the provided path, there will be 6 files uploaded
+2026-05-03T20:45:25.8707200Z Artifact name is valid!
+2026-05-03T20:45:25.8708406Z Root directory input is valid!
+2026-05-03T20:45:25.9887800Z Beginning upload of artifact content to blob storage
+2026-05-03T20:45:26.0865717Z Uploaded bytes 77139
+2026-05-03T20:45:26.1020720Z Finished uploading artifact content to blob storage!
+2026-05-03T20:45:26.1023999Z SHA256 digest of uploaded artifact zip is 392d55499040aa0992f56d251593946d3bde3570138f5273d80bf445026edaf3
+2026-05-03T20:45:26.1025993Z Finalizing artifact upload
+2026-05-03T20:45:26.2029660Z Artifact bridge-artifact.zip successfully finalized. Artifact ID 6773640540
+2026-05-03T20:45:26.2030715Z Artifact bridge-artifact has been successfully uploaded! Final size is 77139 bytes. Artifact ID is 6773640540
+2026-05-03T20:45:26.2036769Z Artifact download URL: https://github.com/luoda2024/RustDesk1.4.5/actions/runs/25290221774/artifacts/6773640540
+2026-05-03T20:45:26.2186463Z Post job cleanup.
+2026-05-03T20:45:26.5662073Z Post job cleanup.
+2026-05-03T20:45:26.7114248Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/RustDesk1.4.5/RustDesk1.4.5 --files-from manifest.txt --use-compress-program zstdmt
+2026-05-03T20:45:34.1725200Z Sent 0 of 1031748429 (0.0%), 0.0 MBs/sec
+2026-05-03T20:45:35.1738674Z Sent 696204109 of 1031748429 (67.5%), 331.6 MBs/sec
+2026-05-03T20:45:35.3183973Z Sent 1031748429 of 1031748429 (100.0%), 458.3 MBs/sec
+2026-05-03T20:45:35.5929318Z Cache saved with key: flutter-linux-stable-3.24.5-x64-dec2ee5c1f98f8e84a7d5380c05eb8a3d0a81668-1d2f3093586f11841bf6d3da14fd5d22c1d2ed0dcd92b1d7cdc4551de6d484ee
+2026-05-03T20:45:35.6086237Z Post job cleanup.
+2026-05-03T20:45:35.8831511Z ##[group]Cache Configuration
+2026-05-03T20:45:35.8832972Z Cache Provider:
+2026-05-03T20:45:35.8833336Z     github
+2026-05-03T20:45:35.8833661Z Workspaces:
+2026-05-03T20:45:35.8834052Z     /home/runner/work/RustDesk1.4.5/RustDesk1.4.5
+2026-05-03T20:45:35.8834563Z Cache Paths:
+2026-05-03T20:45:35.8835094Z     /home/runner/.cargo/bin
+2026-05-03T20:45:35.8835506Z     /home/runner/.cargo/.crates.toml
+2026-05-03T20:45:35.8835981Z     /home/runner/.cargo/.crates2.json
+2026-05-03T20:45:35.8836430Z     /home/runner/.cargo/registry
+2026-05-03T20:45:35.8836875Z     /home/runner/.cargo/git
+2026-05-03T20:45:35.8837368Z     /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/target
+2026-05-03T20:45:35.8837901Z Restore Key:
+2026-05-03T20:45:35.8838358Z     bridge-ubuntu-22.04-generate-bridge-Linux-x64-8c4acb2b
+2026-05-03T20:45:35.8838939Z Cache Key:
+2026-05-03T20:45:35.8839494Z     bridge-ubuntu-22.04-generate-bridge-Linux-x64-8c4acb2b-f3863942
+2026-05-03T20:45:35.8840154Z .. Prefix:
+2026-05-03T20:45:35.8840554Z   - bridge-ubuntu-22.04-generate-bridge-Linux-x64
+2026-05-03T20:45:35.8841084Z .. Environment considered:
+2026-05-03T20:45:35.8841458Z   - Rust Versions:
+2026-05-03T20:45:35.8841982Z     - 1.75.0 x86_64-unknown-linux-gnu 82e1608dfa6e0b5569232559e3d385fea5a93112
+2026-05-03T20:45:35.8842786Z     - 1.94.1 x86_64-unknown-linux-gnu e408947bfd200af42db322daf0fadfe7e26d3bd1
+2026-05-03T20:45:35.8843578Z     - 1.75.0 x86_64-unknown-linux-gnu 82e1608dfa6e0b5569232559e3d385fea5a93112
+2026-05-03T20:45:35.8844165Z   - CARGO_HOME
+2026-05-03T20:45:35.8844468Z   - CARGO_INCREMENTAL
+2026-05-03T20:45:35.8844999Z   - CARGO_TERM_COLOR
+2026-05-03T20:45:35.8845359Z .. Lockfiles considered:
+2026-05-03T20:45:35.8845907Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/.cargo/config.toml
+2026-05-03T20:45:35.8846648Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/Cargo.lock
+2026-05-03T20:45:35.8847754Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/Cargo.toml
+2026-05-03T20:45:35.8848550Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/clipboard/Cargo.toml
+2026-05-03T20:45:35.8849419Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/enigo/Cargo.toml
+2026-05-03T20:45:35.8850293Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/hbb_common/Cargo.toml
+2026-05-03T20:45:35.8851208Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/portable/Cargo.toml
+2026-05-03T20:45:35.8852111Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/remote_printer/Cargo.toml
+2026-05-03T20:45:35.8853003Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/scrap/Cargo.toml
+2026-05-03T20:45:35.8853869Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/virtual_display/Cargo.toml
+2026-05-03T20:45:35.8855054Z   - /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/libs/virtual_display/dylib/Cargo.toml
+2026-05-03T20:45:35.8856052Z ##[endgroup]
+2026-05-03T20:45:35.8856247Z 
+2026-05-03T20:45:35.8862204Z (node:8913) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-05-03T20:45:35.8863403Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-05-03T20:45:36.6687848Z ... Cleaning /home/runner/work/RustDesk1.4.5/RustDesk1.4.5/target ...
+2026-05-03T20:45:36.6692343Z ... Cleaning cargo registry (cache-all-crates: false) ...
+2026-05-03T20:45:39.3678564Z ... Cleaning cargo/bin ...
+2026-05-03T20:45:39.3720577Z ... Cleaning cargo git cache ...
+2026-05-03T20:45:39.3798641Z ... Saving cache ...
+2026-05-03T20:45:39.3973500Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/RustDesk1.4.5/RustDesk1.4.5 --files-from manifest.txt --use-compress-program zstdmt
+2026-05-03T20:45:43.7800351Z Sent 0 of 963922173 (0.0%), 0.0 MBs/sec
+2026-05-03T20:45:44.7797233Z Sent 695486717 of 963922173 (72.2%), 331.6 MBs/sec
+2026-05-03T20:45:44.9098451Z Sent 963922173 of 963922173 (100.0%), 431.6 MBs/sec
+2026-05-03T20:45:45.2202867Z Post job cleanup.
+2026-05-03T20:45:45.3181837Z [command]/usr/bin/git version
+2026-05-03T20:45:45.3216842Z git version 2.53.0
+2026-05-03T20:45:45.3269989Z Temporarily overriding HOME='/home/runner/work/_temp/52267e8e-dd5e-452a-ade0-a61124f943f6' before making global git config changes
+2026-05-03T20:45:45.3271354Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-03T20:45:45.3276318Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/RustDesk1.4.5/RustDesk1.4.5
+2026-05-03T20:45:45.3312434Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-03T20:45:45.3347859Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-03T20:45:45.3592258Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-03T20:45:45.3612696Z http.https://github.com/.extraheader
+2026-05-03T20:45:45.3625280Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-05-03T20:45:45.3655119Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-03T20:45:45.3885053Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-03T20:45:45.3914644Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-03T20:45:45.4243986Z Cleaning up orphan processes
+2026-05-03T20:45:45.4557681Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/cache@v3, actions/checkout@v4, actions/upload-artifact@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

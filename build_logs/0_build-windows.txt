@@ -1,0 +1,846 @@
+﻿2026-05-03T20:45:50.7663424Z Current runner version: '2.334.0'
+2026-05-03T20:45:50.7685804Z ##[group]Runner Image Provisioner
+2026-05-03T20:45:50.7686558Z Hosted Compute Agent
+2026-05-03T20:45:50.7687077Z Version: 20260213.493
+2026-05-03T20:45:50.7687623Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-03T20:45:50.7688224Z Build Date: 2026-02-13T00:28:41Z
+2026-05-03T20:45:50.7688805Z Worker ID: {58a8c2c6-6dc9-4523-a9be-1f90c15600de}
+2026-05-03T20:45:50.7689441Z Azure Region: westcentralus
+2026-05-03T20:45:50.7690052Z ##[endgroup]
+2026-05-03T20:45:50.7691345Z ##[group]Operating System
+2026-05-03T20:45:50.7691910Z Microsoft Windows Server 2022
+2026-05-03T20:45:50.7692409Z 10.0.20348
+2026-05-03T20:45:50.7692779Z Datacenter
+2026-05-03T20:45:50.7693255Z ##[endgroup]
+2026-05-03T20:45:50.7693680Z ##[group]Runner Image
+2026-05-03T20:45:50.7694155Z Image: windows-2022
+2026-05-03T20:45:50.7694690Z Version: 20260413.111.1
+2026-05-03T20:45:50.7695902Z Included Software: https://github.com/actions/runner-images/blob/win22/20260413.111/images/windows/Windows2022-Readme.md
+2026-05-03T20:45:50.7697245Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20260413.111
+2026-05-03T20:45:50.7698051Z ##[endgroup]
+2026-05-03T20:45:50.7699083Z ##[group]GITHUB_TOKEN Permissions
+2026-05-03T20:45:50.7700796Z Contents: read
+2026-05-03T20:45:50.7701268Z Metadata: read
+2026-05-03T20:45:50.7701756Z Packages: read
+2026-05-03T20:45:50.7702204Z ##[endgroup]
+2026-05-03T20:45:50.7704115Z Secret source: Actions
+2026-05-03T20:45:50.7704961Z Prepare workflow directory
+2026-05-03T20:45:50.8152072Z Prepare all required actions
+2026-05-03T20:45:50.8188178Z Getting action download info
+2026-05-03T20:45:51.3995488Z Download action repository 'actions/github-script@v6' (SHA:d7906e4ad0b1822421a7e6a35d5ca353c962f410)
+2026-05-03T20:45:51.8862012Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-05-03T20:45:51.9659449Z Download action repository 'actions/download-artifact@master' (SHA:484a0b528fb4d7bd804637ccb632e47a0e638317)
+2026-05-03T20:45:52.6004223Z Download action repository 'KyleMayes/install-llvm-action@v1' (SHA:1a3da29f56261a1e1f937ec88f0856a9b8321d7e)
+2026-05-03T20:45:53.1490141Z Download action repository 'subosito/flutter-action@v2.12.0' (SHA:2783a3f08e1baf891508463f8c6653c258246225)
+2026-05-03T20:45:53.5726650Z Download action repository 'dtolnay/rust-toolchain@v1' (SHA:e97e2d8cc328f1b50210efc529dca0028893a2d9)
+2026-05-03T20:45:53.8116861Z Download action repository 'lukka/run-vcpkg@v11' (SHA:b1a0dd252f06b9e25b3c022a9a03bd7a427fb6a2)
+2026-05-03T20:45:54.4076479Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-05-03T20:45:54.7056528Z Getting action download info
+2026-05-03T20:45:54.8730038Z Download action repository 'actions/cache@v3' (SHA:6f8efc29b200d32929f49075959781ed54ec270c)
+2026-05-03T20:45:55.0307767Z Complete job name: build-windows
+2026-05-03T20:45:55.1775291Z ##[group]Run actions/github-script@v6
+2026-05-03T20:45:55.1776003Z with:
+2026-05-03T20:45:55.1776651Z   script: core.exportVariable('ACTIONS_CACHE_URL', process.env.ACTIONS_CACHE_URL || '');
+core.exportVariable('ACTIONS_RUNTIME_TOKEN', process.env.ACTIONS_RUNTIME_TOKEN || '');
+
+2026-05-03T20:45:55.1777536Z   github-token: ***
+2026-05-03T20:45:55.1777724Z   debug: false
+2026-05-03T20:45:55.1777896Z   user-agent: actions/github-script
+2026-05-03T20:45:55.1778125Z   result-encoding: json
+2026-05-03T20:45:55.1778293Z   retries: 0
+2026-05-03T20:45:55.1778479Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-05-03T20:45:55.1778916Z env:
+2026-05-03T20:45:55.1779108Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:45:55.1779349Z ##[endgroup]
+2026-05-03T20:45:55.3290497Z ##[group]Run actions/checkout@v4
+2026-05-03T20:45:55.3290817Z with:
+2026-05-03T20:45:55.3290981Z   submodules: recursive
+2026-05-03T20:45:55.3291194Z   repository: luoda2024/RustDesk1.4.5
+2026-05-03T20:45:55.3291575Z   token: ***
+2026-05-03T20:45:55.3293141Z   ssh-strict: true
+2026-05-03T20:45:55.3293333Z   ssh-user: git
+2026-05-03T20:45:55.3293529Z   persist-credentials: true
+2026-05-03T20:45:55.3293733Z   clean: true
+2026-05-03T20:45:55.3293904Z   sparse-checkout-cone-mode: true
+2026-05-03T20:45:55.3294123Z   fetch-depth: 1
+2026-05-03T20:45:55.3294281Z   fetch-tags: false
+2026-05-03T20:45:55.3294452Z   show-progress: true
+2026-05-03T20:45:55.3294618Z   lfs: false
+2026-05-03T20:45:55.3294776Z   set-safe-directory: true
+2026-05-03T20:45:55.3294959Z env:
+2026-05-03T20:45:55.3295130Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:45:55.3295749Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:45:55.3342411Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:45:55.3342669Z ##[endgroup]
+2026-05-03T20:45:55.4732363Z Syncing repository: luoda2024/RustDesk1.4.5
+2026-05-03T20:45:55.4734004Z ##[group]Getting Git version info
+2026-05-03T20:45:55.4734428Z Working directory is 'D:\a\RustDesk1.4.5\RustDesk1.4.5'
+2026-05-03T20:45:55.5757015Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-03T20:45:55.8929808Z git version 2.53.0.windows.2
+2026-05-03T20:45:55.8985820Z ##[endgroup]
+2026-05-03T20:45:55.9006453Z Temporarily overriding HOME='D:\a\_temp\48ab584e-2e75-4869-a485-5ab8073df22e' before making global git config changes
+2026-05-03T20:45:55.9007199Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-03T20:45:55.9017561Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\RustDesk1.4.5\RustDesk1.4.5
+2026-05-03T20:45:55.9515829Z Deleting the contents of 'D:\a\RustDesk1.4.5\RustDesk1.4.5'
+2026-05-03T20:45:55.9521416Z ##[group]Initializing the repository
+2026-05-03T20:45:55.9531625Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\RustDesk1.4.5\RustDesk1.4.5
+2026-05-03T20:45:56.0199925Z Initialized empty Git repository in D:/a/RustDesk1.4.5/RustDesk1.4.5/.git/
+2026-05-03T20:45:56.0243839Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/luoda2024/RustDesk1.4.5
+2026-05-03T20:45:56.0687431Z ##[endgroup]
+2026-05-03T20:45:56.0687902Z ##[group]Disabling automatic garbage collection
+2026-05-03T20:45:56.0696693Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-05-03T20:45:56.0915297Z ##[endgroup]
+2026-05-03T20:45:56.0915637Z ##[group]Setting up auth
+2026-05-03T20:45:56.0927860Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-03T20:45:56.1149147Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-03T20:45:57.3260778Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-03T20:45:57.3483177Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-03T20:45:57.8112518Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-03T20:45:57.8335888Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-03T20:45:58.2637343Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-05-03T20:45:58.2862915Z ##[endgroup]
+2026-05-03T20:45:58.2863417Z ##[group]Fetching the repository
+2026-05-03T20:45:58.2873850Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +54a74bfe655d3d6902b6be7e3ededda88004d3eb:refs/tags/v1.4.5-luoda15
+2026-05-03T20:45:59.8297116Z From https://github.com/luoda2024/RustDesk1.4.5
+2026-05-03T20:45:59.8298078Z  * [new ref]         54a74bfe655d3d6902b6be7e3ededda88004d3eb -> v1.4.5-luoda15
+2026-05-03T20:45:59.8540712Z ##[endgroup]
+2026-05-03T20:45:59.8541088Z ##[group]Determining the checkout info
+2026-05-03T20:45:59.8543962Z ##[endgroup]
+2026-05-03T20:45:59.8553901Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-05-03T20:45:59.8887768Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-05-03T20:45:59.9096448Z ##[group]Checking out the ref
+2026-05-03T20:45:59.9105235Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/tags/v1.4.5-luoda15
+2026-05-03T20:46:00.1839015Z Note: switching to 'refs/tags/v1.4.5-luoda15'.
+2026-05-03T20:46:00.1839356Z 
+2026-05-03T20:46:00.1839597Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-03T20:46:00.1840245Z changes and commit them, and you can discard any commits you make in this
+2026-05-03T20:46:00.1841179Z state without impacting any branches by switching back to a branch.
+2026-05-03T20:46:00.1841703Z 
+2026-05-03T20:46:00.1841888Z If you want to create a new branch to retain commits you create, you may
+2026-05-03T20:46:00.1842327Z do so (now or later) by using -c with the switch command. Example:
+2026-05-03T20:46:00.1842558Z 
+2026-05-03T20:46:00.1842668Z   git switch -c <new-branch-name>
+2026-05-03T20:46:00.1842831Z 
+2026-05-03T20:46:00.1842912Z Or undo this operation with:
+2026-05-03T20:46:00.1843075Z 
+2026-05-03T20:46:00.1843166Z   git switch -
+2026-05-03T20:46:00.1843267Z 
+2026-05-03T20:46:00.1843467Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-03T20:46:00.1843749Z 
+2026-05-03T20:46:00.1844293Z HEAD is now at 54a74bf fix: 添加tag触发器到workflow，确保tag push能触发构建
+2026-05-03T20:46:00.1899218Z ##[endgroup]
+2026-05-03T20:46:00.1899556Z ##[group]Setting up auth for fetching submodules
+2026-05-03T20:46:00.1910277Z [command]"C:\Program Files\Git\bin\git.exe" config --global http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-05-03T20:46:00.2137798Z [command]"C:\Program Files\Git\bin\git.exe" config --global --unset-all url.https://github.com/.insteadOf
+2026-05-03T20:46:00.2351405Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add url.https://github.com/.insteadOf git@github.com:
+2026-05-03T20:46:00.2566251Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add url.https://github.com/.insteadOf org-174583460@github.com:
+2026-05-03T20:46:00.2780377Z ##[endgroup]
+2026-05-03T20:46:00.2780737Z ##[group]Fetching submodules
+2026-05-03T20:46:00.2788487Z [command]"C:\Program Files\Git\bin\git.exe" submodule sync --recursive
+2026-05-03T20:46:00.7393029Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 submodule update --init --force --depth=1 --recursive
+2026-05-03T20:46:01.1456640Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local gc.auto 0"
+2026-05-03T20:46:01.5505435Z ##[endgroup]
+2026-05-03T20:46:01.5505905Z ##[group]Persisting credentials for submodules
+2026-05-03T20:46:01.5516658Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :\""
+2026-05-03T20:46:01.9752461Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url\""
+2026-05-03T20:46:02.3819410Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'"
+2026-05-03T20:46:02.7875961Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --add 'url.https://github.com/.insteadOf' 'org-174583460@github.com:'"
+2026-05-03T20:46:03.1924829Z ##[endgroup]
+2026-05-03T20:46:03.2252486Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-05-03T20:46:03.2446768Z 54a74bfe655d3d6902b6be7e3ededda88004d3eb
+2026-05-03T20:46:03.2722569Z ##[group]Run actions/download-artifact@master
+2026-05-03T20:46:03.2722898Z with:
+2026-05-03T20:46:03.2723067Z   name: bridge-artifact
+2026-05-03T20:46:03.2723272Z   path: ./
+2026-05-03T20:46:03.2723427Z   merge-multiple: false
+2026-05-03T20:46:03.2723638Z   repository: luoda2024/RustDesk1.4.5
+2026-05-03T20:46:03.2723862Z   run-id: 25290221774
+2026-05-03T20:46:03.2724043Z   skip-decompress: false
+2026-05-03T20:46:03.2724235Z   digest-mismatch: error
+2026-05-03T20:46:03.2724407Z env:
+2026-05-03T20:46:03.2724574Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:46:03.2725162Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:46:03.2767249Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:46:03.2767461Z ##[endgroup]
+2026-05-03T20:46:03.4518562Z Downloading single artifact
+2026-05-03T20:46:03.6478835Z Preparing to download the following artifacts:
+2026-05-03T20:46:03.6479649Z - bridge-artifact (ID: 6773640540, Size: 77139, Expected Digest: sha256:392d55499040aa0992f56d251593946d3bde3570138f5273d80bf445026edaf3)
+2026-05-03T20:46:04.0040875Z Redirecting to blob download url: https://productionresultssa4.blob.core.windows.net/actions-results/3ea5765a-b10e-47eb-a83c-bd120710c443/workflow-job-run-3c9f9ad4-cd5b-5685-98da-7cbc375d7bda/artifacts/531302e33062b66f08129f34193b580119511f4cfe8fb1782dc102d4e242f178.zip
+2026-05-03T20:46:04.0043294Z Starting download of artifact to: D:\a\RustDesk1.4.5\RustDesk1.4.5
+2026-05-03T20:46:04.2274863Z (node:5460) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-05-03T20:46:04.2275990Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-05-03T20:46:04.3297117Z SHA256 digest of downloaded artifact is 392d55499040aa0992f56d251593946d3bde3570138f5273d80bf445026edaf3
+2026-05-03T20:46:04.3297711Z Artifact download completed successfully.
+2026-05-03T20:46:04.3297977Z Total of 1 artifact(s) downloaded
+2026-05-03T20:46:04.3304154Z Download artifact has finished successfully
+2026-05-03T20:46:04.3575184Z ##[group]Run KyleMayes/install-llvm-action@v1
+2026-05-03T20:46:04.3575502Z with:
+2026-05-03T20:46:04.3575668Z   version: 15.0.6
+2026-05-03T20:46:04.3575834Z env:
+2026-05-03T20:46:04.3576014Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:46:04.3576630Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:46:04.3618557Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:46:04.3618764Z ##[endgroup]
+2026-05-03T20:46:04.4275754Z Installing LLVM and Clang 15.0.6 (15.0.6)...
+2026-05-03T20:46:04.4281201Z Downloading and extracting 'https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.6/LLVM-15.0.6-win64.exe'...
+2026-05-03T20:46:06.4912109Z [command]C:\ProgramData\Chocolatey\bin\7z.exe x D:\a\_temp\a2092e39-665c-4df4-9159-52d5a91a04f4 "-oC:\Program Files\LLVM" -y
+2026-05-03T20:46:06.7216658Z 
+2026-05-03T20:46:06.7217591Z 7-Zip 26.00 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-02-12
+2026-05-03T20:46:06.7218303Z 
+2026-05-03T20:46:06.7218587Z Scanning the drive for archives:
+2026-05-03T20:46:06.7219636Z 1 file, 290951930 bytes (278 MiB)
+2026-05-03T20:46:06.7220002Z 
+2026-05-03T20:46:06.7220334Z Extracting archive: D:\a\_temp\a2092e39-665c-4df4-9159-52d5a91a04f4
+2026-05-03T20:46:23.6794688Z --
+2026-05-03T20:46:23.6795141Z Path = D:\a\_temp\a2092e39-665c-4df4-9159-52d5a91a04f4
+2026-05-03T20:46:23.6795610Z Type = Nsis
+2026-05-03T20:46:23.6795870Z Physical Size = 290951930
+2026-05-03T20:46:23.6796670Z Method = LZMA:25
+2026-05-03T20:46:23.6796925Z Solid = +
+2026-05-03T20:46:23.6797166Z Headers Size = 390396
+2026-05-03T20:46:23.6797468Z Embedded Stub Size = 116736
+2026-05-03T20:46:23.6797801Z SubType = NSIS-3 Unicode
+2026-05-03T20:46:23.6798009Z 
+2026-05-03T20:46:23.6839966Z Everything is Ok
+2026-05-03T20:46:23.6840190Z 
+2026-05-03T20:46:23.6840303Z Files: 440
+2026-05-03T20:46:23.6840495Z Size:       2454843461
+2026-05-03T20:46:23.6840733Z Compressed: 290951930
+2026-05-03T20:46:23.6879905Z Installed LLVM and Clang 15.0.6 (15.0.6)!
+2026-05-03T20:46:23.6880321Z Install location: C:\Program Files\LLVM
+2026-05-03T20:46:23.7167284Z ##[group]Run subosito/flutter-action@v2.12.0
+2026-05-03T20:46:23.7167603Z with:
+2026-05-03T20:46:23.7167777Z   flutter-version: 3.24.5
+2026-05-03T20:46:23.7167981Z   channel: stable
+2026-05-03T20:46:23.7168139Z   cache: false
+2026-05-03T20:46:23.7168374Z   cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:
+2026-05-03T20:46:23.7168779Z   cache-path: C:\hostedtoolcache\windows/flutter/:channel:-:version:-:arch:
+2026-05-03T20:46:23.7169141Z   architecture: X64
+2026-05-03T20:46:23.7169298Z env:
+2026-05-03T20:46:23.7169480Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:46:23.7170077Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:46:23.7212010Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:46:23.7212241Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:46:23.7212494Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:46:23.7212796Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:46:23.7213031Z ##[endgroup]
+2026-05-03T20:46:23.7373966Z ##[group]Run chmod +x $GITHUB_ACTION_PATH/setup.sh
+2026-05-03T20:46:23.7374337Z [36;1mchmod +x $GITHUB_ACTION_PATH/setup.sh[0m
+2026-05-03T20:46:23.7391401Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:46:23.7391796Z env:
+2026-05-03T20:46:23.7392037Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:46:23.7392644Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:46:23.7434502Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:46:23.7434725Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:46:23.7434974Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:46:23.7435255Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:46:23.7435494Z ##[endgroup]
+2026-05-03T20:46:23.9117138Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -p -c 'C:\hostedtoolcache\windows/flutter/:channel:-:version:-:arch:' -k 'flutter-:os:-:channel:-:version:-:arch:-:hash:' -n '3.24.5' -a 'X64' stable
+2026-05-03T20:46:23.9118370Z [36;1m$GITHUB_ACTION_PATH/setup.sh -p -c 'C:\hostedtoolcache\windows/flutter/:channel:-:version:-:arch:' -k 'flutter-:os:-:channel:-:version:-:arch:-:hash:' -n '3.24.5' -a 'X64' stable[0m
+2026-05-03T20:46:23.9130526Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:46:23.9130907Z env:
+2026-05-03T20:46:23.9131102Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:46:23.9131710Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:46:23.9174435Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:46:23.9174681Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:46:23.9174936Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:46:23.9175220Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:46:23.9175486Z ##[endgroup]
+2026-05-03T20:46:27.1098610Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -c 'C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64' -n '3.24.5' -a 'x64' stable
+2026-05-03T20:46:27.1099429Z [36;1m$GITHUB_ACTION_PATH/setup.sh -c 'C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64' -n '3.24.5' -a 'x64' stable[0m
+2026-05-03T20:46:27.1111240Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:46:27.1112362Z env:
+2026-05-03T20:46:27.1112558Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:46:27.1113177Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:46:27.1155118Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:46:27.1155352Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:46:27.1155605Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:46:27.1155886Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:46:27.1157711Z ##[endgroup]
+2026-05-03T20:46:28.5649040Z   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+2026-05-03T20:46:28.5649895Z                                  Dload  Upload  Total   Spent   Left   Speed
+2026-05-03T20:46:28.5650197Z 
+2026-05-03T20:46:29.5640885Z   0      0   0      0   0      0      0      0                              0
+2026-05-03T20:46:30.5630176Z  28 985.8M  28 281.1M   0      0 281.1M      0   00:03           00:03 281.1M
+2026-05-03T20:46:31.0595883Z  74 985.8M  74 735.4M   0      0 367.9M      0   00:02   00:01   00:01 367.9M
+2026-05-03T20:46:31.0597015Z 100 985.8M 100 985.8M   0      0 395.0M      0   00:02   00:02         367.9M
+2026-05-03T20:46:31.0597514Z 100 985.8M 100 985.8M   0      0 395.0M      0   00:02   00:02         367.9M
+2026-05-03T20:46:31.0598112Z 100 985.8M 100 985.8M   0      0 395.0M      0   00:02   00:02         367.9M
+2026-05-03T20:47:34.5263160Z ##[group]Run flutter doctor -v
+2026-05-03T20:47:34.5263506Z [36;1mflutter doctor -v[0m
+2026-05-03T20:47:34.5263757Z [36;1mflutter precache --windows[0m
+2026-05-03T20:47:34.5264417Z [36;1mInvoke-WebRequest -Uri https://github.com/rustdesk/engine/releases/download/main/windows-x64-release.zip -OutFile windows-x64-release.zip[0m
+2026-05-03T20:47:34.5265259Z [36;1mExpand-Archive -Path windows-x64-release.zip -DestinationPath windows-x64-release[0m
+2026-05-03T20:47:34.5266127Z [36;1mmv -Force windows-x64-release/*  C:/hostedtoolcache/windows/flutter/stable-3.24.5-x64/bin/cache/artifacts/engine/windows-x64-release/[0m
+2026-05-03T20:47:34.5407414Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-03T20:47:34.5407806Z env:
+2026-05-03T20:47:34.5408028Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:47:34.5408837Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:47:34.5454206Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:47:34.5454442Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:47:34.5454696Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:47:34.5454968Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:47:34.5455313Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:47:34.5455762Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:47:34.5456111Z ##[endgroup]
+2026-05-03T20:47:39.9812100Z 
+2026-05-03T20:47:39.9838597Z   ╔════════════════════════════════════════════════════════════════════════════╗
+2026-05-03T20:47:39.9839681Z   ║                 Welcome to Flutter! - https://flutter.dev                  ║
+2026-05-03T20:47:39.9840476Z   ║                                                                            ║
+2026-05-03T20:47:39.9841318Z   ║ The Flutter tool uses Google Analytics to anonymously report feature usage ║
+2026-05-03T20:47:39.9842721Z   ║ statistics and basic crash reports. This data is used to help improve      ║
+2026-05-03T20:47:39.9843744Z   ║ Flutter tools over time.                                                   ║
+2026-05-03T20:47:39.9844636Z   ║                                                                            ║
+2026-05-03T20:47:39.9845587Z   ║ Flutter tool analytics are not sent on the very first run. To disable      ║
+2026-05-03T20:47:39.9846559Z   ║ reporting, type 'flutter config --no-analytics'. To display the current    ║
+2026-05-03T20:47:39.9847891Z   ║ setting, type 'flutter config'. If you opt out of analytics, an opt-out    ║
+2026-05-03T20:47:39.9848816Z   ║ event will be sent, and then no further information will be sent by the    ║
+2026-05-03T20:47:39.9849724Z   ║ Flutter tool.                                                              ║
+2026-05-03T20:47:39.9850490Z   ║                                                                            ║
+2026-05-03T20:47:39.9851398Z   ║ By downloading the Flutter SDK, you agree to the Google Terms of Service.  ║
+2026-05-03T20:47:39.9852532Z   ║ The Google Privacy Policy describes how data is handled in this service.   ║
+2026-05-03T20:47:39.9853458Z   ║                                                                            ║
+2026-05-03T20:47:39.9854384Z   ║ Moreover, Flutter includes the Dart SDK, which may send usage metrics and  ║
+2026-05-03T20:47:39.9855342Z   ║ crash reports to Google.                                                   ║
+2026-05-03T20:47:39.9856189Z   ║                                                                            ║
+2026-05-03T20:47:39.9857040Z   ║ Read about data we send with crash reports:                                ║
+2026-05-03T20:47:39.9858061Z   ║ https://flutter.dev/to/crash-reporting                                     ║
+2026-05-03T20:47:39.9858926Z   ║                                                                            ║
+2026-05-03T20:47:39.9862172Z   ║ See Google's privacy policy:                                               ║
+2026-05-03T20:47:39.9863417Z   ║ https://policies.google.com/privacy                                        ║
+2026-05-03T20:47:39.9864356Z   ║                                                                            ║
+2026-05-03T20:47:39.9865261Z   ║ To disable animations in this tool, use                                    ║
+2026-05-03T20:47:39.9866361Z   ║ 'flutter config --no-cli-animations'.                                      ║
+2026-05-03T20:47:39.9867434Z   ╚════════════════════════════════════════════════════════════════════════════╝
+2026-05-03T20:47:39.9867893Z 
+2026-05-03T20:47:53.4245967Z [√] Flutter (Channel stable, 3.24.5, on Microsoft Windows [Version 10.0.20348.4893], locale en-US)
+2026-05-03T20:47:53.4248339Z     • Flutter version 3.24.5 on channel stable at C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:47:53.4249863Z     • Upstream repository https://github.com/flutter/flutter.git
+2026-05-03T20:47:53.4251508Z     • Framework revision dec2ee5c1f (1 year, 6 months ago), 2024-11-13 11:13:06 -0800
+2026-05-03T20:47:53.4252511Z     • Engine revision a18df97ca5
+2026-05-03T20:47:53.4253917Z     • Dart version 3.5.4
+2026-05-03T20:47:53.4255272Z     • DevTools version 2.37.3
+2026-05-03T20:47:53.4256143Z 
+2026-05-03T20:47:55.0523434Z [√] Windows Version (Installed version of Windows is version 10 or higher)
+2026-05-03T20:47:55.0523914Z 
+2026-05-03T20:48:02.1714192Z [!] Android toolchain - develop for Android devices (Android SDK version 37.0.0)
+2026-05-03T20:48:02.1716398Z     • Android SDK at C:\Android\android-sdk
+2026-05-03T20:48:02.1717905Z     • Platform android-37.0, build-tools 37.0.0
+2026-05-03T20:48:02.1719297Z     • ANDROID_HOME = C:\Android\android-sdk
+2026-05-03T20:48:02.1720720Z     • ANDROID_SDK_ROOT = C:\Android\android-sdk
+2026-05-03T20:48:02.1723076Z     • Java binary at: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\8.0.482-8\x64\bin\java
+2026-05-03T20:48:02.1723973Z     X Could not determine java version
+2026-05-03T20:48:02.1726176Z     ! Some Android licenses not accepted. To resolve this, run: flutter doctor --android-licenses
+2026-05-03T20:48:02.1726938Z 
+2026-05-03T20:48:02.1729293Z [√] Chrome - develop for the web
+2026-05-03T20:48:02.1731602Z     • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-03T20:48:02.1732045Z 
+2026-05-03T20:48:02.1735648Z [√] Visual Studio - develop Windows apps (Visual Studio Enterprise 2022 17.14.29 (March 2026))
+2026-05-03T20:48:02.1737598Z     • Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Enterprise
+2026-05-03T20:48:02.1739688Z     • Visual Studio Enterprise 2022 version 17.14.37111.16
+2026-05-03T20:48:02.1741781Z     • Windows 10 SDK version 10.0.26100.0
+2026-05-03T20:48:02.1743290Z 
+2026-05-03T20:48:02.1745350Z [!] Android Studio (not installed)
+2026-05-03T20:48:02.1747725Z     • Android Studio not found; download from https://developer.android.com/studio/index.html
+2026-05-03T20:48:02.1748967Z       (or visit https://flutter.dev/to/windows-android-setup for detailed instructions).
+2026-05-03T20:48:02.1749631Z 
+2026-05-03T20:48:02.1752029Z [√] Connected device (2 available)
+2026-05-03T20:48:02.1753714Z     • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.20348.4893]
+2026-05-03T20:48:02.1754703Z     • Chrome (web)      • chrome  • web-javascript • unknown
+2026-05-03T20:48:02.1755195Z 
+2026-05-03T20:48:02.1757397Z [√] Network resources
+2026-05-03T20:48:02.1758940Z     • All expected network resources are available.
+2026-05-03T20:48:02.1759401Z 
+2026-05-03T20:48:02.1760853Z ! Doctor found issues in 2 categories.
+2026-05-03T20:48:05.6070416Z ##[group]Run flutter doctor -v
+2026-05-03T20:48:05.6070768Z [36;1mflutter doctor -v[0m
+2026-05-03T20:48:05.6071061Z [36;1mFLUTTER_DIR=$(dirname $(dirname $(which flutter)))[0m
+2026-05-03T20:48:05.6071536Z [36;1mcp .github/patches/flutter_3.24.4_dropdown_menu_enableFilter.diff $FLUTTER_DIR[0m
+2026-05-03T20:48:05.6071955Z [36;1mcd $FLUTTER_DIR[0m
+2026-05-03T20:48:05.6072526Z [36;1m[[ "3.24.5" == 3.24.5 ]] && git apply flutter_3.24.4_dropdown_menu_enableFilter.diff || echo "Patch apply attempted"[0m
+2026-05-03T20:48:05.6086247Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:05.6086638Z env:
+2026-05-03T20:48:05.6086841Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:05.6087468Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:05.6129666Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:05.6129936Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:05.6130197Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:05.6130484Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:05.6130828Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:05.6131259Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:05.6131597Z ##[endgroup]
+2026-05-03T20:48:06.4856912Z [√] Flutter (Channel stable, 3.24.5, on Microsoft Windows [Version 10.0.20348.4893], locale en-US)
+2026-05-03T20:48:06.4861242Z     • Flutter version 3.24.5 on channel stable at C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:06.4862840Z     • Upstream repository https://github.com/flutter/flutter.git
+2026-05-03T20:48:06.4864404Z     • Framework revision dec2ee5c1f (1 year, 6 months ago), 2024-11-13 11:13:06 -0800
+2026-05-03T20:48:06.4865345Z     • Engine revision a18df97ca5
+2026-05-03T20:48:06.4866775Z     • Dart version 3.5.4
+2026-05-03T20:48:06.4867967Z     • DevTools version 2.37.3
+2026-05-03T20:48:06.4868812Z 
+2026-05-03T20:48:08.0414123Z [√] Windows Version (Installed version of Windows is version 10 or higher)
+2026-05-03T20:48:08.0417604Z 
+2026-05-03T20:48:08.3130350Z [!] Android toolchain - develop for Android devices (Android SDK version 37.0.0)
+2026-05-03T20:48:08.3132184Z     • Android SDK at C:\Android\android-sdk
+2026-05-03T20:48:08.3134099Z     • Platform android-37.0, build-tools 37.0.0
+2026-05-03T20:48:08.3136146Z     • ANDROID_HOME = C:\Android\android-sdk
+2026-05-03T20:48:08.3138178Z     • ANDROID_SDK_ROOT = C:\Android\android-sdk
+2026-05-03T20:48:08.3140928Z     • Java binary at: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\8.0.482-8\x64\bin\java
+2026-05-03T20:48:08.3142580Z     X Could not determine java version
+2026-05-03T20:48:08.3144973Z     ! Some Android licenses not accepted. To resolve this, run: flutter doctor --android-licenses
+2026-05-03T20:48:08.3145874Z 
+2026-05-03T20:48:08.3150902Z [√] Chrome - develop for the web
+2026-05-03T20:48:08.3152946Z     • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-03T20:48:08.3153450Z 
+2026-05-03T20:48:08.3157586Z [√] Visual Studio - develop Windows apps (Visual Studio Enterprise 2022 17.14.29 (March 2026))
+2026-05-03T20:48:08.3159382Z     • Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Enterprise
+2026-05-03T20:48:08.3160740Z     • Visual Studio Enterprise 2022 version 17.14.37111.16
+2026-05-03T20:48:08.3161982Z     • Windows 10 SDK version 10.0.26100.0
+2026-05-03T20:48:08.3162525Z 
+2026-05-03T20:48:08.3164934Z [!] Android Studio (not installed)
+2026-05-03T20:48:08.3167889Z     • Android Studio not found; download from https://developer.android.com/studio/index.html
+2026-05-03T20:48:08.3168637Z       (or visit https://flutter.dev/to/windows-android-setup for detailed instructions).
+2026-05-03T20:48:08.3169703Z 
+2026-05-03T20:48:08.3171925Z [√] Connected device (2 available)
+2026-05-03T20:48:08.3175828Z     • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.20348.4893]
+2026-05-03T20:48:08.3176525Z     • Chrome (web)      • chrome  • web-javascript • unknown
+2026-05-03T20:48:08.3176757Z 
+2026-05-03T20:48:08.3177990Z [√] Network resources
+2026-05-03T20:48:08.3179592Z     • All expected network resources are available.
+2026-05-03T20:48:08.3179934Z 
+2026-05-03T20:48:08.3181968Z ! Doctor found issues in 2 categories.
+2026-05-03T20:48:08.4696602Z ##[group]Run dtolnay/rust-toolchain@v1
+2026-05-03T20:48:08.4696937Z with:
+2026-05-03T20:48:08.4697101Z   toolchain: 1.75
+2026-05-03T20:48:08.4697295Z   targets: x86_64-pc-windows-msvc
+2026-05-03T20:48:08.4697516Z   components: rustfmt
+2026-05-03T20:48:08.4697686Z env:
+2026-05-03T20:48:08.4697867Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:08.4698468Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:08.4740476Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:08.4740711Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:08.4740953Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.4741230Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.4741577Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:08.4742003Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:08.4742378Z ##[endgroup]
+2026-05-03T20:48:08.4842436Z ##[group]Run : parse toolchain version
+2026-05-03T20:48:08.4842732Z [36;1m: parse toolchain version[0m
+2026-05-03T20:48:08.4842966Z [36;1mif [[ -z $toolchain ]]; then[0m
+2026-05-03T20:48:08.4843442Z [36;1m  # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070[0m
+2026-05-03T20:48:08.4843959Z [36;1m  echo "'toolchain' is a required input" >&2[0m
+2026-05-03T20:48:08.4844231Z [36;1m  exit 1[0m
+2026-05-03T20:48:08.4844529Z [36;1melif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+2026-05-03T20:48:08.4844910Z [36;1m  if [[ Windows == macOS ]]; then[0m
+2026-05-03T20:48:08.4845404Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:48:08.4845898Z [36;1m  else[0m
+2026-05-03T20:48:08.4846279Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:48:08.4846705Z [36;1m  fi[0m
+2026-05-03T20:48:08.4846965Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+2026-05-03T20:48:08.4847455Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:48:08.4847885Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+2026-05-03T20:48:08.4849126Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:48:08.4849596Z [36;1melse[0m
+2026-05-03T20:48:08.4849810Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:48:08.4850071Z [36;1mfi[0m
+2026-05-03T20:48:08.4862588Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:08.4862952Z env:
+2026-05-03T20:48:08.4863162Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:08.4863774Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:08.4905720Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:08.4905953Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:08.4906203Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.4906475Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.4906848Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:08.4907290Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:08.4907632Z   toolchain: 1.75
+2026-05-03T20:48:08.4907791Z ##[endgroup]
+2026-05-03T20:48:08.5607961Z ##[group]Run : construct rustup command line
+2026-05-03T20:48:08.5608360Z [36;1m: construct rustup command line[0m
+2026-05-03T20:48:08.5608950Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:48:08.5611509Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:48:08.5612075Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:48:08.5625719Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:08.5626091Z env:
+2026-05-03T20:48:08.5626285Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:08.5626906Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:08.5668879Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:08.5669103Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:08.5669349Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.5669618Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.5669957Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:08.5670409Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:08.5670764Z   targets: x86_64-pc-windows-msvc
+2026-05-03T20:48:08.5670973Z   components: rustfmt
+2026-05-03T20:48:08.5671149Z ##[endgroup]
+2026-05-03T20:48:08.6211465Z ##[group]Run : set $CARGO_HOME
+2026-05-03T20:48:08.6211718Z [36;1m: set $CARGO_HOME[0m
+2026-05-03T20:48:08.6212048Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$USERPROFILE\.cargo"} >> $GITHUB_ENV[0m
+2026-05-03T20:48:08.6224736Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:08.6225123Z env:
+2026-05-03T20:48:08.6225323Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:08.6225941Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:08.6268587Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:08.6268842Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:08.6269099Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.6269388Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.6269740Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:08.6270181Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:08.6270531Z ##[endgroup]
+2026-05-03T20:48:08.6659351Z ##[group]Run : install rustup if needed on windows
+2026-05-03T20:48:08.6659713Z [36;1m: install rustup if needed on windows[0m
+2026-05-03T20:48:08.6660223Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+2026-05-03T20:48:08.6661012Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://win.rustup.rs/x86_64 --output 'D:\a\_temp\rustup-init.exe'[0m
+2026-05-03T20:48:08.6661887Z [36;1m  'D:\a\_temp\rustup-init.exe' --default-toolchain none --no-modify-path -y[0m
+2026-05-03T20:48:08.6662298Z [36;1m  echo "$CARGO_HOME\bin" >> $GITHUB_PATH[0m
+2026-05-03T20:48:08.6662563Z [36;1mfi[0m
+2026-05-03T20:48:08.6674985Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:08.6675370Z env:
+2026-05-03T20:48:08.6675558Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:08.6676174Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:08.6718475Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:08.6718736Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:08.6718992Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.6719271Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.6719611Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:08.6720046Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:08.6720411Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2026-05-03T20:48:08.6720639Z ##[endgroup]
+2026-05-03T20:48:08.7206355Z ##[group]Run rustup toolchain install 1.75 --target x86_64-pc-windows-msvc --component rustfmt --profile minimal --no-self-update
+2026-05-03T20:48:08.7207271Z [36;1mrustup toolchain install 1.75 --target x86_64-pc-windows-msvc --component rustfmt --profile minimal --no-self-update[0m
+2026-05-03T20:48:08.7219864Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:08.7220242Z env:
+2026-05-03T20:48:08.7220434Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:08.7221073Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:08.7263037Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:08.7263268Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:08.7263547Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.7263829Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:08.7264169Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:08.7264617Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:08.7264971Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2026-05-03T20:48:08.7265198Z ##[endgroup]
+2026-05-03T20:48:09.5956872Z info: syncing channel updates for 1.75-x86_64-pc-windows-msvc
+2026-05-03T20:48:10.1522483Z info: latest update on 2023-12-28 for version 1.75.0 (82e1608df 2023-12-21)
+2026-05-03T20:48:10.1641753Z info: downloading 4 components
+2026-05-03T20:48:16.2803737Z 
+2026-05-03T20:48:17.0488450Z   1.75-x86_64-pc-windows-msvc installed - rustc 1.75.0 (82e1608df 2023-12-21)
+2026-05-03T20:48:17.0489654Z 
+2026-05-03T20:48:17.0699485Z ##[group]Run rustup default 1.75
+2026-05-03T20:48:17.0699725Z [36;1mrustup default 1.75[0m
+2026-05-03T20:48:17.0712290Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:17.0712651Z env:
+2026-05-03T20:48:17.0712841Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:17.0713464Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:17.0756392Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:17.0756635Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:17.0756883Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:17.0757159Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:17.0757500Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:17.0758131Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:17.0758487Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2026-05-03T20:48:17.0758712Z ##[endgroup]
+2026-05-03T20:48:17.1312572Z info: using existing install for 1.75-x86_64-pc-windows-msvc
+2026-05-03T20:48:17.1350014Z info: default toolchain set to 1.75-x86_64-pc-windows-msvc
+2026-05-03T20:48:17.1350546Z 
+2026-05-03T20:48:17.1501808Z   1.75-x86_64-pc-windows-msvc unchanged - rustc 1.75.0 (82e1608df 2023-12-21)
+2026-05-03T20:48:17.1502165Z 
+2026-05-03T20:48:17.1651572Z ##[group]Run : create cachekey
+2026-05-03T20:48:17.1651821Z [36;1m: create cachekey[0m
+2026-05-03T20:48:17.1652281Z [36;1mDATE=$(rustc +1.75 --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+2026-05-03T20:48:17.1652881Z [36;1mHASH=$(rustc +1.75 --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+2026-05-03T20:48:17.1653343Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+2026-05-03T20:48:17.1666186Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:17.1666552Z env:
+2026-05-03T20:48:17.1666744Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:17.1667351Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:17.1709345Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:17.1709738Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:17.1709990Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:17.1710265Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:17.1710602Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:17.1711017Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:17.1711370Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2026-05-03T20:48:17.1711609Z ##[endgroup]
+2026-05-03T20:48:17.8669059Z ##[group]Run : disable incremental compilation
+2026-05-03T20:48:17.8669396Z [36;1m: disable incremental compilation[0m
+2026-05-03T20:48:17.8669688Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+2026-05-03T20:48:17.8669987Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+2026-05-03T20:48:17.8670230Z [36;1mfi[0m
+2026-05-03T20:48:17.8682698Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:17.8683075Z env:
+2026-05-03T20:48:17.8683278Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:17.8683876Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:17.8729134Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:17.8729397Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:17.8729659Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:17.8729938Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:17.8730303Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:17.8730727Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:17.8731080Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2026-05-03T20:48:17.8731305Z ##[endgroup]
+2026-05-03T20:48:17.9111532Z ##[group]Run : enable colors in Cargo output
+2026-05-03T20:48:17.9111852Z [36;1m: enable colors in Cargo output[0m
+2026-05-03T20:48:17.9112170Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+2026-05-03T20:48:17.9112505Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+2026-05-03T20:48:17.9112791Z [36;1mfi[0m
+2026-05-03T20:48:17.9125198Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:17.9125567Z env:
+2026-05-03T20:48:17.9125756Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:17.9126364Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:17.9168571Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:17.9168801Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:17.9169039Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:17.9169313Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:17.9169656Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:17.9170075Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:17.9170437Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2026-05-03T20:48:17.9170667Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:48:17.9170842Z ##[endgroup]
+2026-05-03T20:48:17.9544659Z ##[group]Run : enable Cargo sparse registry
+2026-05-03T20:48:17.9544958Z [36;1m: enable Cargo sparse registry[0m
+2026-05-03T20:48:17.9545287Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+2026-05-03T20:48:17.9545929Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+2026-05-03T20:48:17.9546591Z [36;1m  if rustc +1.75 --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+2026-05-03T20:48:17.9547064Z [36;1m    touch "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2026-05-03T20:48:17.9547521Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+2026-05-03T20:48:17.9548116Z [36;1m  elif rustc +1.75 --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+2026-05-03T20:48:17.9548592Z [36;1m    touch "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2026-05-03T20:48:17.9549022Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+2026-05-03T20:48:17.9549327Z [36;1m  fi[0m
+2026-05-03T20:48:17.9549475Z [36;1mfi[0m
+2026-05-03T20:48:17.9561582Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:17.9561970Z env:
+2026-05-03T20:48:17.9562162Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:17.9562762Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:17.9604679Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:17.9604906Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:17.9605146Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:17.9605418Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:17.9605779Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:17.9606212Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:17.9606580Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2026-05-03T20:48:17.9606819Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:48:17.9607010Z   CARGO_TERM_COLOR: always
+2026-05-03T20:48:17.9607190Z ##[endgroup]
+2026-05-03T20:48:18.1326374Z ##[group]Run : work around spurious network errors in curl 8.0
+2026-05-03T20:48:18.1326781Z [36;1m: work around spurious network errors in curl 8.0[0m
+2026-05-03T20:48:18.1327298Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+2026-05-03T20:48:18.1327872Z [36;1mif rustc +1.75 --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+2026-05-03T20:48:18.1328308Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+2026-05-03T20:48:18.1328582Z [36;1mfi[0m
+2026-05-03T20:48:18.1340989Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:18.1341369Z env:
+2026-05-03T20:48:18.1341565Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:18.1342172Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:18.1386253Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:18.1386495Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:18.1386974Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:18.1387255Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:18.1387596Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:18.1388017Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:18.1388374Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2026-05-03T20:48:18.1388605Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:48:18.1388782Z   CARGO_TERM_COLOR: always
+2026-05-03T20:48:18.1388964Z ##[endgroup]
+2026-05-03T20:48:18.2438590Z ##[group]Run rustc +1.75 --version --verbose
+2026-05-03T20:48:18.2438934Z [36;1mrustc +1.75 --version --verbose[0m
+2026-05-03T20:48:18.2452012Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-05-03T20:48:18.2452392Z env:
+2026-05-03T20:48:18.2452589Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:18.2453200Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:18.2495241Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:18.2495468Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:18.2495724Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:18.2495995Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:18.2496344Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:18.2496786Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:18.2497907Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2026-05-03T20:48:18.2498193Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:48:18.2498384Z   CARGO_TERM_COLOR: always
+2026-05-03T20:48:18.2498569Z ##[endgroup]
+2026-05-03T20:48:18.3156744Z rustc 1.75.0 (82e1608df 2023-12-21)
+2026-05-03T20:48:18.3157167Z binary: rustc
+2026-05-03T20:48:18.3157522Z commit-hash: 82e1608dfa6e0b5569232559e3d385fea5a93112
+2026-05-03T20:48:18.3157948Z commit-date: 2023-12-21
+2026-05-03T20:48:18.3158283Z host: x86_64-pc-windows-msvc
+2026-05-03T20:48:18.3158594Z release: 1.75.0
+2026-05-03T20:48:18.3158851Z LLVM version: 17.0.6
+2026-05-03T20:48:18.3369628Z ##[group]Run lukka/run-vcpkg@v11
+2026-05-03T20:48:18.3369921Z with:
+2026-05-03T20:48:18.3370085Z   vcpkgDirectory: C:\vcpkg
+2026-05-03T20:48:18.3370366Z   vcpkgGitCommitId: 120deac3062162151622ca4860575a33844ba10b
+2026-05-03T20:48:18.3370654Z   doNotCache: false
+2026-05-03T20:48:18.3370827Z   runVcpkgInstall: false
+2026-05-03T20:48:18.3371081Z   vcpkgGitURL: https://github.com/microsoft/vcpkg.git
+2026-05-03T20:48:18.3371362Z   doNotUpdateVcpkg: false
+2026-05-03T20:48:18.3371557Z   vcpkgJsonGlob: **/vcpkg.json
+2026-05-03T20:48:18.3371761Z   vcpkgJsonIgnores: ['**/vcpkg/**']
+2026-05-03T20:48:18.3372043Z   vcpkgConfigurationJsonGlob: **/vcpkg-configuration.json
+2026-05-03T20:48:18.3372728Z   runVcpkgFormatString: [`install`, `--recurse`, `--clean-after-build`, `--x-install-root`, `$[env.VCPKG_INSTALLED_DIR]`, `--triplet`, `$[env.VCPKG_DEFAULT_TRIPLET]`]
+2026-05-03T20:48:18.3373363Z   useShell: true
+2026-05-03T20:48:18.3373845Z   logCollectionRegExps: \s*"(.+CMakeOutput\.log)"\.\s*;\s*"(.+CMakeError\.log)"\.\s*;\s*(.+out\.log)\s*;\s+(.+err\.log)\s*;\s*(.+vcpkg.+\.log)\s*
+2026-05-03T20:48:18.3374339Z env:
+2026-05-03T20:48:18.3374513Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:18.3375107Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:18.3425529Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:18.3425802Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:18.3426057Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:18.3426335Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:18.3426698Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:18.3427137Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:18.3427754Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2026-05-03T20:48:18.3427984Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:48:18.3428178Z   CARGO_TERM_COLOR: always
+2026-05-03T20:48:18.3428365Z ##[endgroup]
+2026-05-03T20:48:18.5065611Z ##[group]Prepare output directories
+2026-05-03T20:48:18.5067318Z The vpckg root directory: 'C:\vcpkg'
+2026-05-03T20:48:18.5081467Z (node:2024) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-05-03T20:48:18.5082144Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-05-03T20:48:18.5117038Z ##[endgroup]
+2026-05-03T20:48:18.5117557Z ⏱ elapsed: 0.005 seconds
+2026-05-03T20:48:18.5117924Z ##[group]Computing vcpkg cache key
+2026-05-03T20:48:18.6002153Z Fetching the Git commit id at 'C:\vcpkg' ...
+2026-05-03T20:48:18.6009400Z Running command '"C:\Program Files\Git\bin\git.exe"' with args '^"rev-parse^",^"HEAD^"' in current directory 'C:\vcpkg'.
+2026-05-03T20:48:18.6057777Z (node:2024) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-05-03T20:48:18.8026194Z b80e0066576f98276a53fd3a8aed379edaf945d6
+2026-05-03T20:48:18.8077566Z vcpkg identified at Git commit id 'b80e0066576f98276a53fd3a8aed379edaf945d6', adding it to the cache's key.
+2026-05-03T20:48:18.8079502Z Computed key: {"primary":"runnerOS=win2220260413.111.1-vcpkgGitCommit=b80e0066576f98276a53fd3a8aed379edaf945d6","restore":[]}
+2026-05-03T20:48:18.8080171Z ##[endgroup]
+2026-05-03T20:48:18.8080678Z ⏱ elapsed: 0.296 seconds
+2026-05-03T20:48:18.8081606Z ##[group]Restore vcpkg installation from cache (not the packages, that is done by vcpkg via Binary Caching stored onto the GitHub Action cache)
+2026-05-03T20:48:18.8085711Z Cache key: 'runnerOS=win2220260413.111.1-vcpkgGitCommit=b80e0066576f98276a53fd3a8aed379edaf945d6'
+2026-05-03T20:48:18.8086176Z Cache restore keys: ''
+2026-05-03T20:48:18.8086718Z Cached paths: 'C:\vcpkg\*,.\!C:\vcpkg\installed,.\!C:\vcpkg\vcpkg_installed,.\!C:\vcpkg\packages,.\!C:\vcpkg\buildtrees,.\!C:\vcpkg\downloads'
+2026-05-03T20:48:19.0052863Z ##[warning]Failed to restore: Cache service responded with 400
+2026-05-03T20:48:19.0060384Z Cache miss.
+2026-05-03T20:48:19.0060700Z ##[endgroup]
+2026-05-03T20:48:19.0061150Z ⏱ elapsed: 0.195 seconds
+2026-05-03T20:48:19.0881706Z Running command '"C:\Program Files\Git\bin\git.exe"' with args '^"submodule^",^"status^",^"C:\vcpkg^"' in current directory 'D:\a\RustDesk1.4.5\RustDesk1.4.5'.
+2026-05-03T20:48:19.5259024Z fatal: C:\vcpkg: 'C:\vcpkg' is outside repository at 'D:/a/RustDesk1.4.5/RustDesk1.4.5'
+2026-05-03T20:48:19.5362858Z ##[group]Setup to run on GitHub Action runners
+2026-05-03T20:48:19.5364209Z ##[endgroup]
+2026-05-03T20:48:19.5365020Z ⏱ elapsed: 0.000 seconds
+2026-05-03T20:48:19.5365721Z ##[group]Retrieving the vcpkg Git commit id at: 'C:\vcpkg'
+2026-05-03T20:48:19.6164175Z Fetching the Git commit id at 'C:\vcpkg' ...
+2026-05-03T20:48:19.6165526Z Running command '"C:\Program Files\Git\bin\git.exe"' with args '^"rev-parse^",^"HEAD^"' in current directory 'C:\vcpkg'.
+2026-05-03T20:48:19.6431116Z b80e0066576f98276a53fd3a8aed379edaf945d6
+2026-05-03T20:48:19.6465262Z ##[endgroup]
+2026-05-03T20:48:19.6466069Z ⏱ elapsed: 0.112 seconds
+2026-05-03T20:48:19.6466509Z ##[group]Check whether vcpkg repository is up to date
+2026-05-03T20:48:19.6469111Z Checking whether vcpkg's repository is updated to commit id 'b80e0066576f98276a53fd3a8aed379edaf945d6' ...
+2026-05-03T20:48:19.6470678Z Current commit id of vcpkg: 'b80e0066576f98276a53fd3a8aed379edaf945d6'.
+2026-05-03T20:48:19.6471575Z Is vcpkg repository updated? No
+2026-05-03T20:48:19.6472181Z ##[endgroup]
+2026-05-03T20:48:19.6472522Z ⏱ elapsed: 0.001 seconds
+2026-05-03T20:48:19.6472896Z ##[group]Download vcpkg source code repository
+2026-05-03T20:48:19.6474605Z Cloning vcpkg in 'C:\vcpkg'...
+2026-05-03T20:48:30.1586748Z Running command '"C:\Program Files\Git\bin\git.exe"' with args '^"clone^",^"https://github.com/microsoft/vcpkg.git^",^"-n^",^".^"' in current directory 'C:\vcpkg'.
+2026-05-03T20:48:30.1852383Z Cloning into '.'...
+2026-05-03T20:48:43.4450882Z Running command '"C:\Program Files\Git\bin\git.exe"' with args '^"checkout^",^"--force^",^"120deac3062162151622ca4860575a33844ba10b^"' in current directory 'C:\vcpkg'.
+2026-05-03T20:48:52.1709954Z Note: switching to '120deac3062162151622ca4860575a33844ba10b'.
+2026-05-03T20:48:52.1710444Z 
+2026-05-03T20:48:52.1711003Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-03T20:48:52.1711950Z changes and commit them, and you can discard any commits you make in this
+2026-05-03T20:48:52.1712849Z state without impacting any branches by switching back to a branch.
+2026-05-03T20:48:52.1713279Z 
+2026-05-03T20:48:52.1713764Z If you want to create a new branch to retain commits you create, you may
+2026-05-03T20:48:52.1714305Z do so (now or later) by using -c with the switch command. Example:
+2026-05-03T20:48:52.1714596Z 
+2026-05-03T20:48:52.1714756Z   git switch -c <new-branch-name>
+2026-05-03T20:48:52.1714922Z 
+2026-05-03T20:48:52.1715071Z Or undo this operation with:
+2026-05-03T20:48:52.1715219Z 
+2026-05-03T20:48:52.1715299Z   git switch -
+2026-05-03T20:48:52.1715408Z 
+2026-05-03T20:48:52.1715742Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-03T20:48:52.1716043Z 
+2026-05-03T20:48:52.1716361Z HEAD is now at 120deac306 [eigen3] update to 3.4.1-250818 from 3.4.0  (#34542)
+2026-05-03T20:48:52.1806325Z Clone vcpkg in 'C:\vcpkg'.
+2026-05-03T20:48:52.1807038Z ##[endgroup]
+2026-05-03T20:48:52.1807494Z ⏱ elapsed: 32.533 seconds
+2026-05-03T20:48:52.1807867Z ##[group]Build vcpkg executable
+2026-05-03T20:48:52.2706382Z Running command '"C:\Windows\system32\cmd.exe"' with args '^"/c^",^"C:\vcpkg\bootstrap-vcpkg.bat^"' in current directory 'C:\vcpkg'.
+2026-05-03T20:48:53.1340506Z Downloading https://github.com/microsoft/vcpkg-tool/releases/download/2025-07-21/vcpkg.exe -> C:\vcpkg\vcpkg.exe... done.
+2026-05-03T20:48:53.1781861Z Validating signature... done.
+2026-05-03T20:48:53.1899489Z 
+2026-05-03T20:48:53.3779732Z vcpkg package management program version 2025-07-21-d4b65a2b83ae6c3526acd1c6f3b51aff2a884533
+2026-05-03T20:48:53.3780289Z 
+2026-05-03T20:48:53.3780842Z See LICENSE.txt for license information.
+2026-05-03T20:48:53.3803421Z Telemetry
+2026-05-03T20:48:53.3803749Z ---------
+2026-05-03T20:48:53.3804288Z vcpkg collects usage data in order to help us improve your experience.
+2026-05-03T20:48:53.3804781Z The data collected by Microsoft is anonymous.
+2026-05-03T20:48:53.3805448Z You can opt-out of telemetry by re-running the bootstrap-vcpkg script with -disableMetrics,
+2026-05-03T20:48:53.3806718Z passing --disable-metrics to vcpkg on the command line,
+2026-05-03T20:48:53.3807528Z or by setting the VCPKG_DISABLE_METRICS environment variable.
+2026-05-03T20:48:53.3807990Z 
+2026-05-03T20:48:53.3808463Z Read more about vcpkg telemetry at docs/about/privacy.md
+2026-05-03T20:48:53.4822534Z Fetching the Git commit id at 'C:\vcpkg' ...
+2026-05-03T20:48:53.4824726Z Running command '"C:\Program Files\Git\bin\git.exe"' with args '^"rev-parse^",^"HEAD^"' in current directory 'C:\vcpkg'.
+2026-05-03T20:48:53.5085385Z 120deac3062162151622ca4860575a33844ba10b
+2026-05-03T20:48:53.5126451Z Stored last built vcpkg commit id '120deac3062162151622ca4860575a33844ba10b' in file 'C:\vcpkg\vcpkgLastBuiltCommitId'.
+2026-05-03T20:48:53.5127257Z ##[endgroup]
+2026-05-03T20:48:53.5127841Z ⏱ elapsed: 1.332 seconds
+2026-05-03T20:48:53.5128211Z ##[group]Add to PATH vcpkg at 'C:\vcpkg'
+2026-05-03T20:48:53.5131046Z ##[endgroup]
+2026-05-03T20:48:53.5132279Z ⏱ elapsed: 0.000 seconds
+2026-05-03T20:48:53.5133470Z ##[group]Set output environment variables
+2026-05-03T20:48:53.5135317Z Set the workflow environment variable 'RUNVCPKG_VCPKG_ROOT' to value 'C:\vcpkg'
+2026-05-03T20:48:53.5139879Z Set the workflow environment variable 'VCPKG_ROOT' to value 'C:\vcpkg'
+2026-05-03T20:48:53.5143460Z Set the step output variable 'RUNVCPKG_VCPKG_ROOT_OUT' to value 'C:\vcpkg''
+2026-05-03T20:48:53.5146915Z ##[endgroup]
+2026-05-03T20:48:53.5147343Z ⏱ elapsed: 0.001 seconds
+2026-05-03T20:48:53.5154389Z ##[group]Save vcpkg into the GitHub Action cache (only the tool, not the built packages which are saved by vcpkg`s Binary Caching on GitHub Action`s cache).
+2026-05-03T20:48:53.5156822Z Saving a new cache entry, because primary key was missed or a fallback restore key was hit.
+2026-05-03T20:48:53.5157832Z Caching paths: 'C:\vcpkg\*,.\!C:\vcpkg\installed,.\!C:\vcpkg\vcpkg_installed,.\!C:\vcpkg\packages,.\!C:\vcpkg\buildtrees,.\!C:\vcpkg\downloads'
+2026-05-03T20:48:53.5158859Z Saving cache with primary key 'runnerOS=win2220260413.111.1-vcpkgGitCommit=b80e0066576f98276a53fd3a8aed379edaf945d6' ...
+2026-05-03T20:48:53.7257608Z [command]"C:\Program Files\Git\usr\bin\tar.exe" --posix -cf cache.tzst --exclude cache.tzst -P -C D:/a/RustDesk1.4.5/RustDesk1.4.5 --files-from manifest.txt --force-local --use-compress-program "zstd -T0"
+2026-05-03T20:48:56.7248583Z ##[warning]Failed to save: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0uLT3aQAAAACzIvrORjOqSLahwM8+o+KQREVOMzAxMDAwMTA2MDQ5AEVkZ2U=
+2026-05-03T20:48:56.7299413Z ##[endgroup]
+2026-05-03T20:48:56.7300048Z ⏱ elapsed: 3.214 seconds
+2026-05-03T20:48:56.7301507Z run-vcpkg action execution succeeded
+2026-05-03T20:48:56.7528198Z ##[group]Run $VCPKG_ROOT/vcpkg install --triplet x64-windows-static --x-install-root="$VCPKG_ROOT/installed" --feature-flags=manifests --retry 3 --retry-delay 5
+2026-05-03T20:48:56.7529418Z [36;1m$VCPKG_ROOT/vcpkg install --triplet x64-windows-static --x-install-root="$VCPKG_ROOT/installed" --feature-flags=manifests --retry 3 --retry-delay 5[0m
+2026-05-03T20:48:56.7530144Z [36;1mls $VCPKG_ROOT/installed/x64-windows-static/[0m
+2026-05-03T20:48:56.7563105Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-03T20:48:56.7563458Z env:
+2026-05-03T20:48:56.7563649Z   VCPKG_BINARY_SOURCES: clear;x-gha,readwrite
+2026-05-03T20:48:56.7564258Z   ACTIONS_CACHE_URL: https://artifactcache.actions.githubusercontent.com/RddlIUTev849mdkVXgQWa4XnQsk0UQYjY0DzYufJK4oUG8DbWS/
+2026-05-03T20:48:56.7606335Z   ACTIONS_RUNTIME_TOKEN: ***
+2026-05-03T20:48:56.7606558Z   LLVM_PATH: C:\Program Files\LLVM
+2026-05-03T20:48:56.7606837Z   LD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:56.7607114Z   DYLD_LIBRARY_PATH: C:\Program Files\LLVM\lib;
+2026-05-03T20:48:56.7607472Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64
+2026-05-03T20:48:56.7607913Z   PUB_CACHE: C:\hostedtoolcache\windows\flutter\stable-3.24.5-x64/.pub-cache
+2026-05-03T20:48:56.7608293Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2026-05-03T20:48:56.7608526Z   CARGO_INCREMENTAL: 0
+2026-05-03T20:48:56.7608710Z   CARGO_TERM_COLOR: always
+2026-05-03T20:48:56.7609129Z   VCPKG_DEFAULT_BINARY_CACHE: D:/a/RustDesk1.4.5/RustDesk1.4.5/969f6665-88a2-4c98-938e-ca9259871fec/vcpkg_cache
+2026-05-03T20:48:56.7609594Z   RUNVCPKG_VCPKG_ROOT: C:\vcpkg
+2026-05-03T20:48:56.7609804Z   VCPKG_ROOT: C:\vcpkg
+2026-05-03T20:48:56.7610020Z   VCPKG_DEFAULT_HOST_TRIPLET: x64-windows-static
+2026-05-03T20:48:56.7610274Z ##[endgroup]
+2026-05-03T20:48:57.2220250Z [31;1mParserError: [0mD:\a\_temp\f470e179-4048-47a3-8541-042f8bb5a87c.ps1:2[0m
+2026-05-03T20:48:57.2221065Z [31;1m[0m[36;1mLine |[0m
+2026-05-03T20:48:57.2222174Z [31;1m[0m[36;1m[36;1m   2 | [0m $VCPKG_ROOT/[36;1mv[0mcpkg install --triplet x64-windows-static --x-install-ro …[0m
+2026-05-03T20:48:57.2222980Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m             ~[0m
+2026-05-03T20:48:57.2223947Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou must provide a value expression following the '/' operator.[0m
+2026-05-03T20:48:57.2684675Z ##[error]Process completed with exit code 1.
+2026-05-03T20:48:57.2873088Z Post job cleanup.
+2026-05-03T20:48:57.3017862Z Post job cleanup.
+2026-05-03T20:48:57.5606174Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-03T20:48:57.5834168Z git version 2.53.0.windows.2
+2026-05-03T20:48:57.5900264Z Temporarily overriding HOME='D:\a\_temp\374e37d3-39f3-48d1-bbaa-48dba26ea7d8' before making global git config changes
+2026-05-03T20:48:57.5901179Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-03T20:48:57.5911736Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\RustDesk1.4.5\RustDesk1.4.5
+2026-05-03T20:48:57.6144168Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-03T20:48:57.6379215Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-03T20:48:58.0831863Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-03T20:48:58.1030885Z http.https://github.com/.extraheader
+2026-05-03T20:48:58.1066449Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2026-05-03T20:48:58.1291796Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-03T20:48:58.5345761Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-03T20:48:58.5582902Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-03T20:48:58.9813744Z Cleaning up orphan processes
+2026-05-03T20:48:59.0056271Z Terminate orphan process: pid (7000) (adb)
+2026-05-03T20:48:59.0072348Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/github-script@v6, KyleMayes/install-llvm-action@v1. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

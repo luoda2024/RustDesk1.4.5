@@ -158,9 +158,9 @@ jobs:
           doNotCache: false
 
       - name: Install vcpkg dependencies
-        shell: bash
+        shell: pwsh
         run: |
-          "$VCPKG_ROOT/vcpkg.exe" install --triplet x64-windows-static --x-install-root="$VCPKG_ROOT/installed"
+          & "$VCPKG_ROOT/vcpkg.exe" install --triplet x64-windows-static --x-install-root="$VCPKG_ROOT/installed"
           ls "$VCPKG_ROOT/installed/x64-windows-static/"
 
       - name: Get Flutter dependencies
