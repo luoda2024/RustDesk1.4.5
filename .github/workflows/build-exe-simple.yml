@@ -160,9 +160,26 @@ jobs:
       - name: Install vcpkg dependencies
         shell: pwsh
         run: |
+          $ErrorActionPreference = 'Stop'
           $vcpkgExe = Join-Path $env:VCPKG_ROOT "vcpkg.exe"
+          Write-Host "VCPKG_ROOT: $env:VCPKG_ROOT"
+          Write-Host "vcpkgExe path: $vcpkgExe"
+          if (-not (Test-Path $vcpkgExe)) {
+            Write-Host "ERROR: vcpkg.exe not found at $vcpkgExe"
+            Write-Host "Available files in VCPKG_ROOT:"
+            Get-ChildItem $env:VCPKG_ROOT -ErrorAction SilentlyContinue | Select-Object -First 20
+            throw "vcpkg.exe not found"
+          }
+          Write-Host "vcpkg.exe found, running install..."
           & $vcpkgExe install --triplet x64-windows-static --x-install-root=(Join-Path $env:VCPKG_ROOT "installed")
-          Get-ChildItem (Join-Path $env:VCPKG_ROOT "installed/x64-windows-static/")
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "ERROR: vcpkg install failed with exit code $LASTEXITCODE"
+            throw "vcpkg install failed"
+          }
+          Write-Host "vcpkg install completed, checking installed files..."
+          Get-ChildItem (Join-Path $env:VCPKG_ROOT "installed/x64-windows-static/") -ErrorAction SilentlyContinue | Select-Object -First 30
+          Write-Host "Checking for FFmpeg libraries..."
+          Get-ChildItem (Join-Path $env:VCPKG_ROOT "installed/x64-windows-static/lib/") -Filter "*.lib" -ErrorAction SilentlyContinue | Select-Object -First 20
 
       - name: Get Flutter dependencies
         run: |
