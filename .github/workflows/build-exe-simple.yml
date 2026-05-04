@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  VCPKG_BINARY_SOURCES: "clear;x-gha,readwrite"
+  VCPKG_BINARY_SOURCES: "clear"
 
 jobs:
   generate-bridge:
