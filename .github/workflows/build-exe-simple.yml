@@ -160,8 +160,9 @@ jobs:
       - name: Install vcpkg dependencies
         shell: pwsh
         run: |
-          & "$VCPKG_ROOT/vcpkg.exe" install --triplet x64-windows-static --x-install-root="$VCPKG_ROOT/installed"
-          ls "$VCPKG_ROOT/installed/x64-windows-static/"
+          $vcpkgExe = Join-Path $env:VCPKG_ROOT "vcpkg.exe"
+          & $vcpkgExe install --triplet x64-windows-static --x-install-root=(Join-Path $env:VCPKG_ROOT "installed")
+          Get-ChildItem (Join-Path $env:VCPKG_ROOT "installed/x64-windows-static/")
 
       - name: Get Flutter dependencies
         run: |
