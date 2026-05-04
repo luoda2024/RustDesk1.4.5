@@ -1,4 +1,4 @@
-﻿name: Build Windows EXE Simple
+name: Build Windows EXE Simple
 
 on:
   push:
@@ -94,6 +94,8 @@ jobs:
   build-windows:
     runs-on: windows-2022
     needs: generate-bridge
+    env:
+      VCPKG_ROOT: C:\vcpkg
     steps:
       - name: Export GitHub Actions cache environment variables
         uses: actions/github-script@v6
@@ -158,8 +160,8 @@ jobs:
       - name: Install vcpkg dependencies
         shell: bash
         run: |
-          "${VCPKG_ROOT}/vcpkg install --triplet x64-windows-static --x-install-root=${VCPKG_ROOT}/installed --retry 3 --retry-delay 5
-          ls "${VCPKG_ROOT}/installed/x64-windows-static/"
+          "$env:VCPKG_ROOT/vcpkg.exe" install --triplet x64-windows-static --x-install-root="$env:VCPKG_ROOT/installed" --retry 3 --retry-delay 5
+          ls "$env:VCPKG_ROOT/installed/x64-windows-static/"
 
       - name: Get Flutter dependencies
         run: |
