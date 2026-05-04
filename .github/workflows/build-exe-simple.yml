@@ -170,6 +170,9 @@ jobs:
 
       - name: Build librustdesk.dll
         shell: bash
+        env:
+          CPLUS_INCLUDE_PATH: "$VCPKG_ROOT/installed/x64-windows-static/include"
+          INCLUDE: "$VCPKG_ROOT/installed/x64-windows-static/include"
         run: |
           cargo build --release --features flutter,hwcodec
 
