@@ -173,6 +173,7 @@ jobs:
         env:
           CPLUS_INCLUDE_PATH: "$VCPKG_ROOT/installed/x64-windows-static/include"
           INCLUDE: "$VCPKG_ROOT/installed/x64-windows-static/include"
+          LIB: "$VCPKG_ROOT/installed/x64-windows-static/lib"
         run: |
           cargo build --release --features flutter,hwcodec
 
