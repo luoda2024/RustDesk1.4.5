@@ -53,7 +53,7 @@ jobs:
         uses: subosito/flutter-action@v2.12.0
         with:
           channel: 'stable'
-          flutter-version: '3.24.5'
+          flutter-version: '3.24.6'
           cache: true
 
       - name: Patch flutter
@@ -62,7 +62,7 @@ jobs:
           FLUTTER_DIR=$(dirname $(dirname $(which flutter)))
           cp .github/patches/flutter_3.24.4_dropdown_menu_enableFilter.diff $FLUTTER_DIR
           cd $FLUTTER_DIR
-          [[ "3.24.5" == 3.24.5 ]] && git apply flutter_3.24.4_dropdown_menu_enableFilter.diff || echo "Patch apply attempted"
+          [[ "3.24.6" == 3.24.4 ]] && git apply flutter_3.24.4_dropdown_menu_enableFilter.diff || echo "Patch skipped (version mismatch, expected 3.24.4)"
 
       - name: Install flutter rust bridge deps
         shell: bash
@@ -123,7 +123,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2.12.0
         with:
-          flutter-version: '3.24.5'
+          flutter-version: '3.24.6'
           channel: 'stable'
 
       - name: Replace engine with rustdesk custom flutter engine
@@ -132,7 +132,7 @@ jobs:
           flutter precache --windows
           Invoke-WebRequest -Uri https://github.com/rustdesk/engine/releases/download/main/windows-x64-release.zip -OutFile windows-x64-release.zip
           Expand-Archive -Path windows-x64-release.zip -DestinationPath windows-x64-release
-          mv -Force windows-x64-release/*  C:/hostedtoolcache/windows/flutter/stable-3.24.5-x64/bin/cache/artifacts/engine/windows-x64-release/
+          mv -Force windows-x64-release/*  C:/hostedtoolcache/windows/flutter/stable-3.24.6-x64/bin/cache/artifacts/engine/windows-x64-release/
 
       - name: Patch flutter
         shell: bash
@@ -141,7 +141,7 @@ jobs:
           FLUTTER_DIR=$(dirname $(dirname $(which flutter)))
           cp .github/patches/flutter_3.24.4_dropdown_menu_enableFilter.diff $FLUTTER_DIR
           cd $FLUTTER_DIR
-          [[ "3.24.5" == 3.24.5 ]] && git apply flutter_3.24.4_dropdown_menu_enableFilter.diff || echo "Patch apply attempted"
+          [[ "3.24.6" == 3.24.4 ]] && git apply flutter_3.24.4_dropdown_menu_enableFilter.diff || echo "Patch skipped (version mismatch, expected 3.24.4)"
 
       - name: Install Rust toolchain for build
         uses: dtolnay/rust-toolchain@v1
@@ -173,7 +173,7 @@ jobs:
             throw "vcpkg.exe not found"
           }
           Write-Host "vcpkg.exe found, running install (manifest mode without package arguments)..."
-          & $vcpkgExe install --triplet x64-windows-static --x-install-root=$installRoot
+          & $vcpkgExe install --triplet x64-windows-static "--x-install-root=$installRoot"
           if ($LASTEXITCODE -ne 0) {
             Write-Host "ERROR: vcpkg install failed with exit code $LASTEXITCODE"
             throw "vcpkg install failed"

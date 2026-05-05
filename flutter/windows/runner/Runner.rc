@@ -1,4 +1,4 @@
-﻿// Microsoft Visual C++ generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #pragma code_page(65001)
 #include "resource.h"
@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "Luoda Ltd" "\0"
-            VALUE "FileDescription", "Luoda Remote Desktop" "\0"
+            VALUE "CompanyName", "Purslane Ltd" "\0"
+            VALUE "FileDescription", "LUODA Remote Desktop" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "luoda" "\0"
-            VALUE "LegalCopyright", "Copyright © 2025 Luoda Ltd. All rights reserved." "\0"
-            VALUE "OriginalFilename", "luoda.exe" "\0"
-            VALUE "ProductName", "Luoda" "\0"
+            VALUE "InternalName", "luodad" "\0"
+            VALUE "LegalCopyright", "Copyright © 2025 Purslane Ltd. All rights reserved." "\0"
+            VALUE "OriginalFilename", "luodad.exe" "\0"
+            VALUE "ProductName", "LUODA" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
