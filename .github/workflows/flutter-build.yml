@@ -161,7 +161,12 @@ jobs:
           head -n 100 "${VCPKG_ROOT}/buildtrees/ffmpeg/build-${{ matrix.job.vcpkg-triplet }}-rel-out.log" || true
         shell: bash
 
+      - name: Setup MSVC environment for clang/bindgen
+        uses: ilammy/msvc-dev-cmd@v1
+
       - name: Build rustdesk
+        env:
+          BINDGEN_EXTRA_CLANG_ARGS: --target=x86_64-pc-windows-msvc
         run: |
           # Windows: build RustDesk
           python3 .\build.py --portable --hwcodec --flutter --vram --skip-portable-pack
