@@ -60,7 +60,7 @@
     },
     {
       "name": "ffmpeg",
-      "host": true,
+      "host": false,
       "features": [
         {
           "name": "amf",
@@ -76,11 +76,6 @@
         }
       ],
       "platform": "((windows | (linux & !arm32) | osx) & static)"
-    },
-    {
-      "name": "ffmpeg",
-      "host": false,
-      "platform": "((android | ios | (linux & arm32)) & static)"
     }
   ],
   "vcpkg-configuration": {
