@@ -77,12 +77,12 @@ if [ -f "luodad.exe" ]; then
     echo "  LUODA 出现次数: $LUODA_COUNT"
     echo "  dicad.cn 出现次数: $DICAD_COUNT"
     
-    # 检查RustDesk残留
+    # 检查LUODA残留
     RUSTDESK_COUNT=$(strings luodad.exe 2>/dev/null | grep -i "rustdesk" | wc -l)
     if [ "$RUSTDESK_COUNT" -eq 0 ]; then
-        echo "  ✅ 无 RustDesk 残留"
+        echo "  ✅ 无 LUODA 残留"
     else
-        echo "  ❌ 发现 RustDesk 残留: $RUSTDESK_COUNT 处"
+        echo "  ❌ 发现 LUODA 残留: $RUSTDESK_COUNT 处"
         echo "  具体内容:"
         strings luodad.exe 2>/dev/null | grep -i "rustdesk" | head -5
     fi
@@ -163,7 +163,7 @@ LUODA 品牌化构建测试报告
 4. 图标验证: 图标文件存在
 
 发现的问题:
-$(if [ -n "$RUSTDESK_COUNT" ] && [ "$RUSTDESK_COUNT" -gt 0 ]; then echo "- 发现 $RUSTDESK_COUNT 处 RustDesk 残留"; fi)
+$(if [ -n "$RUSTDESK_COUNT" ] && [ "$RUSTDESK_COUNT" -gt 0 ]; then echo "- 发现 $RUSTDESK_COUNT 处 LUODA 残留"; fi)
 $(for artifact in "${BUILD_ARTIFACTS[@]}"; do if [ ! -f "$artifact" ]; then echo "- $artifact 未下载"; fi; done)
 
 建议:

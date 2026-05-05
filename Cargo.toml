@@ -32,11 +32,12 @@ use_rubato = ["rubato"]
 use_dasp = ["dasp"]
 flutter = ["flutter_rust_bridge"]
 default = ["use_dasp"]
+pam = ["dep:pam"]
 hwcodec = ["scrap/hwcodec"]
 vram = ["scrap/vram"]
 mediacodec = ["scrap/mediacodec"]
 plugin_framework = []
-linux-pkg-config = ["magnum-opus/linux-pkg-config", "scrap/linux-pkg-config"]
+linux-pkg-config = ["scrap/linux-pkg-config"]
 unix-file-copy-paste = [
     "dep:x11-clipboard",
     "dep:x11rb",
@@ -60,8 +61,8 @@ cfg-if = "1.0"
 lazy_static = "1.4"
 sha2 = "0.10"
 repng = "0.2"
-parity-tokio-ipc = { git = "https://github.com/luoda-org/parity-tokio-ipc" }
-magnum-opus = { git = "https://github.com/luoda-org/magnum-opus" }
+parity-tokio-ipc = "0.9.0"
+magnum-opus = "0.3.2"
 dasp = { version = "0.11", features = ["signal", "interpolate-linear", "interpolate"], optional = true }
 rubato = { version = "0.12", optional = true }
 samplerate = { version = "0.2", optional = true }
@@ -74,7 +75,7 @@ default-net = "0.14"
 wol-rs = "1.0"
 flutter_rust_bridge = { version = "=1.80", features = ["uuid"], optional = true}
 errno = "0.3"
-rdev = { git = "https://github.com/luoda-org/rdev" }
+rdev = "0.5.3"
 url = { version = "2.3", features = ["serde"] }
 crossbeam-queue = "0.3"
 hex = "0.4"
@@ -85,25 +86,25 @@ zip = "0.6"
 shutdown_hooks = "0.1"
 totp-rs = { version = "5.4", default-features = false, features = ["gen_secret", "otpauth"] }
 stunclient = "0.4"
-kcp-sys= { git = "https://github.com/luoda-org/kcp-sys"}
-reqwest = { version = "0.12", features = ["blocking", "socks", "json", "native-tls", "rustls-tls", "rustls-tls-native-roots", "gzip"], default-features=false }
+kcp-sys = "0.1.0"
+reqwest = { version = "0.12", features = ["blocking", "socks", "json", "rustls-tls", "rustls-tls-native-roots", "gzip"], default-features=false }
 
 [target.'cfg(not(target_os = "linux"))'.dependencies]
 # https://github.com/luoda/luoda/discussions/10197, not use cpal on linux
-cpal = { git = "https://github.com/luoda-org/cpal", branch = "osx-screencapturekit" }
+cpal = { git = "https://github.com/rustdesk-org/cpal", branch = "osx-screencapturekit" }
 ringbuf = "0.3"
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
 mac_address = "1.1"
-sciter-rs = { git = "https://github.com/luoda-org/rust-sciter", branch = "dyn" }
+sciter-rs = "0.5.58"
 sys-locale = "0.3"
 enigo = { path = "libs/enigo", features = [ "with_serde" ] }
 clipboard = { path = "libs/clipboard" }
 ctrlc = "3.2"
 # arboard = { version = "3.4", features = ["wayland-data-control"] }
-arboard = { git = "https://github.com/luoda-org/arboard", features = ["wayland-data-control"] }
-clipboard-master = { git = "https://github.com/luoda-org/clipboard-master" }
-portable-pty = { git = "https://github.com/luoda-org/wezterm", branch = "luoda/pty_based_0.8.1", package = "portable-pty" }
+arboard = "3.6.1"
+clipboard-master = "4.0.0"
+portable-pty = "0.9.0"
 
 system_shutdown = "4.0"
 qrcode-generator = "4.1"
@@ -144,7 +145,7 @@ winreg = "0.11"
 windows-service = "0.6"
 virtual_display = { path = "libs/virtual_display" }
 remote_printer = { path = "libs/remote_printer" }
-impersonate_system = { git = "https://github.com/luoda-org/impersonate-system" }
+# impersonate_system = { git = "https://github.com/luoda-org/impersonate-system" }
 shared_memory = "0.12"
 tauri-winrt-notification = "0.1"
 runas = "1.2"
@@ -164,15 +165,16 @@ piet-coregraphics = "0.6"
 foreign-types = "0.3"
 
 [target.'cfg(any(target_os = "macos", target_os = "linux", target_os = "windows"))'.dependencies]
-tray-icon = { git = "https://github.com/tauri-apps/tray-icon" }
-tao = { git = "https://github.com/luoda-org/tao", branch = "dev" }
+# tray-icon = { git = "https://github.com/tauri-apps/tray-icon" }
+tray-icon = "0.10"
+tao = "0.35.0"
 image = "0.24"
 
 [target.'cfg(any(target_os = "macos", target_os = "linux"))'.dependencies]
-keepawake = { git = "https://github.com/luoda-org/keepawake-rs" }
+keepawake = "0.6.0"
 
 [target.'cfg(any(target_os = "windows", target_os = "linux"))'.dependencies]
-wallpaper = { git = "https://github.com/luoda-org/wallpaper.rs" }
+wallpaper = "3.2.0"
 tiny-skia = "0.11"
 softbuffer = "0.4"
 fontdb = "0.23"
@@ -183,12 +185,12 @@ ttf-parser = "0.25"
 libxdo-sys = "0.11"
 psimple = { package = "libpulse-simple-binding", version = "2.27" }
 pulse = { package = "libpulse-binding", version = "2.27" }
-rust-pulsectl = { git = "https://github.com/luoda-org/pulsectl" }
+rust-pulsectl = "0.2.6"
 async-process = "1.7"
-evdev = { git="https://github.com/luoda-org/evdev" }
+evdev = "0.13.2"
 dbus = "0.9"
 dbus-crossroads = "0.5"
-pam = { git="https://github.com/luoda-org/pam" }
+pam = { version = "0.8.0", optional = true }
 x11-clipboard = {git="https://github.com/clslaid/x11-clipboard", branch = "feat/store-batch", optional = true}
 x11rb =  {version = "0.12", features = ["all-extensions"], optional = true}
 percent-encoding = {version = "2.3", optional = true}
@@ -205,7 +207,7 @@ openssl = { version = "0.10", features = ["vendored"] }
 [target.'cfg(target_os = "android")'.dependencies]
 android_logger = "0.13"
 jni = "0.21"
-android-wakelock = { git = "https://github.com/luoda-org/android-wakelock" }
+android-wakelock = "0.1.0"
 
 [workspace]
 members = ["libs/scrap", "libs/hbb_common", "libs/enigo", "libs/clipboard", "libs/virtual_display", "libs/virtual_display/dylib", "libs/portable", "libs/remote_printer"]

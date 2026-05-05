@@ -1,11 +1,11 @@
 #!/bin/bash
-# RustDesk 快速修复脚本
+# LUODA 快速修复脚本
 # 处理最紧急的品牌化问题
 # 作者: 小赫
 
 set -e  # 遇到错误退出
 
-echo "=== RustDesk 品牌化快速修复 ==="
+echo "=== LUODA 品牌化快速修复 ==="
 echo "开始时间: $(date)"
 echo
 
@@ -15,14 +15,14 @@ cd /home/luoda/rustdesk-custom/res
 
 if [ -f "rustdesk.desktop" ]; then
     cp rustdesk.desktop luoda.desktop
-    sed -i 's/RustDesk/LUODA/g' luoda.desktop
+    sed -i 's/LUODA/LUODA/g' luoda.desktop
     sed -i 's/rustdesk/luoda/g' luoda.desktop
     echo "  ✅ 创建 luoda.desktop"
 fi
 
 if [ -f "rustdesk-link.desktop" ]; then
     cp rustdesk-link.desktop luoda-link.desktop
-    sed -i 's/RustDesk/LUODA/g' luoda-link.desktop
+    sed -i 's/LUODA/LUODA/g' luoda-link.desktop
     sed -i 's/rustdesk/luoda/g' luoda-link.desktop
     sed -i 's/x-scheme-handler\/rustdesk/x-scheme-handler\/luoda/g' luoda-link.desktop
     echo "  ✅ 创建 luoda-link.desktop"
@@ -30,7 +30,7 @@ fi
 
 if [ -f "rustdesk.service" ]; then
     cp rustdesk.service luoda.service
-    sed -i 's/RustDesk/LUODA/g' luoda.service
+    sed -i 's/LUODA/LUODA/g' luoda.service
     sed -i 's/rustdesk/luoda/g' luoda.service
     echo "  ✅ 创建 luoda.service"
 fi

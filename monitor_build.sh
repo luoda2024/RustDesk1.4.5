@@ -1,11 +1,11 @@
 #!/bin/bash
-# RustDesk 构建监控脚本
+# LUODA 构建监控脚本
 # 每15分钟自动运行，监控构建状态并报告
 
 set -e
 
 echo "=========================================="
-echo "RustDesk 构建监控报告 - $(date '+%Y年%m月%d日 %H:%M:%S')"
+echo "LUODA 构建监控报告 - $(date '+%Y年%m月%d日 %H:%M:%S')"
 echo "=========================================="
 
 # 1. 检查最新提交
@@ -107,7 +107,7 @@ echo "## 📚 学习进度"
 if [ -f "LEARNING_PLAN.md" ]; then
     LEARNING_LINES=$(wc -l < LEARNING_PLAN.md)
     echo "✅ 学习计划已创建 ($LEARNING_LINES 行)"
-    echo "学习重点: RustDesk 构建系统和错误处理"
+    echo "学习重点: LUODA 构建系统和错误处理"
 else
     echo "⚠️ 学习计划未创建"
 fi
@@ -149,6 +149,6 @@ fi
 if [ "$REMOTE_STATUS" != "与远程同步" ] && [ -n "$REMOTE_STATUS" ]; then
     echo "2. 推送提交到远程"
 fi
-echo "3. 继续学习 RustDesk 网络协议"
+echo "3. 继续学习 LUODA 网络协议"
 echo "4. 准备测试环境"
 echo "5. 监控 GitHub Actions 构建日志"
